@@ -32,19 +32,30 @@ Node Version: 20.10.0
 ```bash
 git clone https://git@github.com:<your-GitHub-username >/fluenty-web-app.git
 ```
+2. Change to your project directory
 ```bash
 cd your-project
 ```
+3. Run npm install
 ```bash
 npm install
 ```
+4. Run development server
 ```bash
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+5. Open it up to see the results 
+```
+Open [http://localhost:3000]
+(http://localhost:3000) 
+with your browser to see the result.
+```
+5. Now you are ready to start developing
+```
+You can start editing
+ the page by modifying `pages/index.js`. 
+ The page auto-updates as you edit the file.
+```
 
 ## Usage
 
@@ -53,17 +64,47 @@ Explain how to use your project. Provide examples if necessary.
 ## Folder Structure
 
 your-project/
+
 │
+
 ├── pages/
+
 │   ├── index.js
-│   ├── about.js
+
+│   ├── about
+
+│   │   ├── index.js
+
+│   │   └── [id].js
+
+│   ├── [id]
+
+│   │   ├── [...id].js
+
+│   │   └── [id].js
+
 │   └── ...
+
 │
+
 ├── components/
-│   ├── Header.js
-│   ├── Footer.js
+
+│   ├── Header
+
+│   │   ├── Header.js
+
+│   │   └── Header.module.css
+
+│   ├── Footer
+
+│   │   ├── Footer.js
+
+│   │   └── Footer.module.css
+
 │   └── ...
+
 │
+
 └── ...
 
 ## Features
@@ -72,12 +113,24 @@ List the key features of your project.
 
 ## Contributing
 
-```
-1. Create a new branch
-2. Make changes and commit
-3. Push to the branch
-4. Open a pull request
-```
+Creating a new branch flow:
+1. Pull main 
+2. Create a new branch of main
+3. Make changes and commit
+4. Push to the branch
+5. Open a pull request
+
+OR
+
+Working branch flow:
+1. Pull on main (When Pull Requesy is merge to main)
+2. Checkout to your branch
+3. Git pull on your branch
+4. Git merge main into your branch
+5. Make changes and commit
+6. Push to the branch
+7. If you have not made a Pull Request then Open a pull request
+
 
 ## License
 
