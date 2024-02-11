@@ -1,6 +1,7 @@
+![Fluenty Logo](public/assets/images/fluenty.png)
 # Fluenty Web App
 
-Fluenty web site built in Next.js with React + Vite.
+Fluenty web-site built in Next.js with React + Vite.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -14,7 +15,9 @@ Fluenty web site built in Next.js with React + Vite.
 - [Learn More](#learn-more)
     - [Next.js](#nextjs)
     - [React + Vite](#react+vite)
-    - [Deploy on Vercel](#deployonvercel)
+    - [Deploy](#deploy)
+         - [Deployment Steps & Considerationsl](#deploymentsteps&considerations)
+         - [on Vercel](#deployonvercel)
 - [Acknowledgments](#acknowledgments)
 
 ## Getting Started
@@ -24,6 +27,9 @@ Fluenty web site built in Next.js with React + Vite.
 Make sure you have Node.js and npm installed.
 ```
 Node Version: 20.10.0
+```
+```
+Next-Auth Version: ^4.
 ```
 
 ### Installation
@@ -62,6 +68,11 @@ You can start editing
 Explain how to use your project. Provide examples if necessary.
 
 ## Folder Structure
+
+1. Always Make A Comment to make less code is the page directory.
+2. We are using the .module.css for style components
+
+![Create routes via your file + folder structure](public/assets/images/nextjs-file-based-routing.png)
 
 your-project/
 
@@ -113,6 +124,11 @@ List the key features of your project.
 
 ## Contributing
 
+Writing code:
+1. Use camelCase.
+2. Components have Uppercase starting letter in files & directory.
+3. Using Next-Auth version ^4.
+
 Creating a new branch flow:
 1. Pull main 
 2. Create a new branch of main
@@ -159,18 +175,27 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-### Deploy on Vercel
+### Deploy 
 
+Use standard build deploy, NOT Full Static Build.
+
+#### Deployment Steps & Considerations
+1. Add page metadata, optimize code, remove unnecessary dependencies
+2. Use environment variables for variable data (e.g. database credentials, API keys, ...)
+3. Do a test build and test the production-ready app locally or on some test server
+4. Deploy
+
+#### on Vercel
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Acknowledgments
 
-Thank you for your contribution to help build the web site:
+Thank you for your contribution to help build the web-site:
 
 Vincent van Wyk,
-Director Fluenty
+Founder Fluenty
 
 Terri Ogden,
 COO Fleunty
