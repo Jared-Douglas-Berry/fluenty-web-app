@@ -16,14 +16,102 @@ body {
   --color-grey-800: hsl(276, 5%, 20%);
   --color-grey-900: hsl(280, 5%, 13%);
 
-  --color-primary-50: #c8b3ce;
-  --color-primary-100: #a07aaa;
-  --color-primary-200: #884c97;
-  --color-primary-300: #843897;
-  --color-primary-400: #732392;
-  --color-primary-500: #5a097a;
-  --color-primary-600: #480264;
-  --color-primary-700: #3d0264;
+  --color-primary-0: #fafaff;
+  --color-primary-25: #f5f5ff;
+  --color-primary-30: #f0f0ff;
+  --color-primary-35: #ebebff;
+  --color-primary-40: #e6e6ff;
+  --color-primary-45: #e0e0ff;
+  --color-primary-50: #dbdbff;
+  --color-primary-55: #d6d6ff;
+  --color-primary-60: #d1d1ff;
+  --color-primary-65: #ccccff;
+  --color-primary-70: #c7c7ff;
+  --color-primary-75: #c2c2ff;
+  --color-primary-80: #bdbdff;
+  --color-primary-85: #b8b8ff;
+  --color-primary-90: #b3b3ff;
+  --color-primary-95: #adadff;
+  --color-primary-100: #a8a8ff;
+  --color-primary-105: #a3a3ff;
+  --color-primary-110: #9e9eff;
+  --color-primary-115: #9999ff;
+  --color-primary-120: #9494ff;
+  --color-primary-125: #8f8fff;
+  --color-primary-130: #8a8aff;
+  --color-primary-135: #8585ff;
+  --color-primary-140: #8080ff;
+  --color-primary-145: #7a7aff;
+  --color-primary-150: #7575ff;
+  --color-primary-155: #7070ff;
+  --color-primary-160: #6b6bff;
+  --color-primary-165: #6666ff;
+  --color-primary-170: #6161ff;
+  --color-primary-175: #5c5cff;
+  --color-primary-180: #5757ff;
+  --color-primary-185: #5252ff;
+  --color-primary-190: #4d4dff;
+  --color-primary-195: #4747ff;
+  --color-primary-200: #4242ff;
+  --color-primary-205: #3d3dff;
+  --color-primary-210: #3838ff;
+  --color-primary-215: #3333ff;
+  --color-primary-220: #2e2eff;
+  --color-primary-225: #2929ff;
+  --color-primary-230: #2424ff;
+  --color-primary-235: #1f1fff;
+  --color-primary-240: #1a1aff;
+  --color-primary-245: #1414ff;
+  --color-primary-250: #0f0fff;
+  --color-primary-255: #0a0aff;
+  --color-primary-260: #0505ff;
+  --color-primary-265: #0000ff;
+  --color-primary-270: #0000fa;
+  --color-primary-275: #0000f5;
+  --color-primary-280: #0000f0;
+  --color-primary-285: #0000eb;
+  --color-primary-290: #0000e6;
+  --color-primary-295: #0000e0;
+  --color-primary-300: #0000db;
+  --color-primary-305: #0000d6;
+  --color-primary-310: #0000d1;
+  --color-primary-315: #0000cc;
+  --color-primary-320: #0000c7;
+  --color-primary-325: #0000c2;
+  --color-primary-330: #0000bd;
+  --color-primary-335: #0000b8;
+  --color-primary-340: #0000b3;
+  --color-primary-345: #0000ad;
+  --color-primary-350: #0000a8;
+  --color-primary-355: #0000a3;
+  --color-primary-360: #00009e;
+  --color-primary-365: #000099;
+  --color-primary-370: #000094;
+  --color-primary-375: #00008f;
+  --color-primary-380: #00008a;
+  --color-primary-385: #000085;
+  --color-primary-390: #000080;
+  --color-primary-395: #00007a;
+  --color-primary-400: #000075;
+  --color-primary-405: #000070;
+  --color-primary-410: #00006b;
+  --color-primary-415: #000066;
+  --color-primary-420: #000061;
+  --color-primary-425: #00005c;
+  --color-primary-430: #000057;
+  --color-primary-435: #000052;
+  --color-primary-440: #00004d;
+  --color-primary-445: #000047;
+  --color-primary-450: #000042;
+  --color-primary-455: #00003d;
+  --color-primary-460: #000038;
+  --color-primary-465: #000033;
+  --color-primary-470: #00002e;
+  --color-primary-475: #000029;
+  --color-primary-480: #000024;
+  --color-primary-485: #00001f;
+  --color-primary-490: #00001a;
+  --color-primary-495: #000014;
 
   --color-success-100: #a2f0bc;
   --color-success-500: #12bd4b;
@@ -44,16 +132,26 @@ body {
   --size-20: 5rem;
   --size-40: 10rem;
 
+  --font-wight-bold: bold;
+  --font-wight-regular: regular;
+  --font-wight-semi-bold: semi-bold;
+
   margin: 0;
   background-color: var(--color-grey-900);
   color: var(--color-grey-50);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Avenir Next Condensed", Avenir-next, Avenir;
 }
 
 h1,
-h2,
-h3 {
-  font-family: 'Oswald', 'Roboto', sans-serif;
+h2 {
+  font-family: "Avenir Next Condensed", Avenir-next, Avenir;
+  font-weight: var(--font-wight-bold);
+}
+
+h3,
+h4 {
+  font-family: "Avenir Next Condensed", Avenir-next, Avenir;
+  font-weight: var(--font-wight-regular);
 }
 
 a {
@@ -63,4 +161,15 @@ a {
 button {
   font: inherit;
   cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
 }
