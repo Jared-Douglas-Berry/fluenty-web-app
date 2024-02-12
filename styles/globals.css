@@ -5,6 +5,20 @@
 }
 
 body {
+  --color-black-0: hsl(0, 0%, 0%);
+  --color-black-25: hsl(0, 0%, 5%);
+  --color-black-50: hsl(0, 0%, 10%);
+  --color-black-100: hsl(0, 0%, 12%);
+  --color-black-200: hsl(0, 0%, 30%);
+  --color-black-300: hsl(0, 0%, 34%);
+  --color-black-400: hsl(0, 0%, 43%);
+  --color-black-500: hsl(0, 0%, 47%);
+  --color-black-600: hsl(0, 0%, 58%);
+  --color-black-700: hsl(0, 0%, 69%);
+  --color-black-800: hsl(0, 0%, 80%);
+  --color-black-900: hsl(0, 0%, 87%);
+
+
   --color-grey-50: hsl(265, 55%, 96%);
   --color-grey-100: hsl(265, 19%, 88%);
   --color-grey-200: hsl(265, 7%, 70%);
@@ -137,7 +151,7 @@ body {
   --font-wight-semi-bold: semi-bold;
 
   margin: 0;
-  background-color: var(--color-grey-900);
+  background-color: var(--color-black-25);
   color: var(--color-grey-50);
   font-family: "Avenir Next Condensed", Avenir-next, Avenir;
 }
