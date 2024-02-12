@@ -59,7 +59,7 @@ with your browser to see the result.
 5. Now you are ready to start developing
 ```
 You can start editing
- the page by modifying `pages/index.js`. 
+ the page by modifying `pages/page.js`. 
  The page auto-updates as you edit the file.
 ```
 
@@ -80,11 +80,11 @@ your-project/
 
 ├── pages/
 
-│   ├── index.js
+│   ├── page.js
 
 │   ├── about
 
-│   │   ├── index.js
+│   │   ├── page.js
 
 │   │   └── [id].js
 
