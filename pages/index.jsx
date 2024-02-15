@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import Banner from "../components/Banner/Banner.jsx";
+import AllServices from "../components/Services/AllServices.jsx";
 
-export default function HomePage() {
+export default function HomePage({services}) {
     return (
         <Fragment>
             <Head>
@@ -17,7 +18,7 @@ export default function HomePage() {
             </section>
 
             <section id="services">
-                <h2>Services</h2>
+                <AllServices services={services} />
             </section>
 
             <section id="projects">
