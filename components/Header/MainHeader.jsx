@@ -22,7 +22,7 @@ export default function MainHeader() {
                         <a href='#team'>Team</a>
                     </li>
                     <li className={styles.linkItem}>
-                        <a href='/blog'>Blog</a>
+                        <Link href='/blog'>Blog</Link>
                     </li>
                 </ul>
             </nav>

@@ -1,4 +1,6 @@
 .header {
+    position: sticky;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -6,6 +8,7 @@
     padding: 1rem 10%;
     height: var(--size-40);
     background-color: var(--color-grey-900);
+    z-index: 100;
 }
 
 .logo {
@@ -46,5 +49,19 @@
 
     .navigation a {
         font-size: var(--size-6);
+    }
+}
+
+@media (max-width: 425px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .navigation a {
+        font-size: 1.5rem;
+    }
+
+    .navigationContainer {
+        display: none;
     }
 }

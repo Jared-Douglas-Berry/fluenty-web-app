@@ -127,6 +127,9 @@ body {
   --color-primary-490: #00001a;
   --color-primary-495: #000014;
 
+
+  --color-secondary-1: #49a5e1;
+
   --color-success-100: #a2f0bc;
   --color-success-500: #12bd4b;
 
@@ -143,8 +146,20 @@ body {
   --size-6: 1.5rem;
   --size-8: 2rem;
   --size-10: 2.5rem;
+  --size-11: 2.75rem;
+  --size-12: 3rem;
+  --size-13: 3.25rem;
+  --size-14: 3.5rem;
+  --size-15: 3.75rem;
   --size-16: 4rem;
+  --size-17: 4.25rem;
+  --size-18: 4.5rem;
+  --size-19: 4.75rem;
   --size-20: 5rem;
+  --size-24: 6rem;
+  --size-28: 7rem;
+  --size-32: 8rem;
+  --size-36: 9rem;
   --size-40: 10rem;
 
   --font-wight-bold: bold;
