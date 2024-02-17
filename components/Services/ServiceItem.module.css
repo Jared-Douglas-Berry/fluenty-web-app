@@ -1,16 +1,21 @@
-.service {
+.serviceItem {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     background-color: var(--color-grey-800);
     text-align: center;
 }
 
-.service a {
+.serviceItem:hover {
+    transform: scale(1.15);
+    background-color: var(--color-primary-220);
+}
+
+.serviceItem a {
     color: var(--color-grey-100);
 }
 
 .image {
     width: 100%;
-    max-height: 20rem;
+    max-height: 10rem;
     overflow: hidden;
 }
 
@@ -18,12 +23,32 @@
     object-fit: cover;
 }
 
+.icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+    position: absolute;
+    width: 5rem;
+    max-height: 5rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.icon img {
+    object-fit: cover;
+}
+
 .content {
+    margin: 45px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: var(--size-4);
 }
 
-.content h3 {
-    margin: var(--size-2) 0;
+.content h2 {
+    margin: 0;
     font-size: var(--size-6);
 }
 

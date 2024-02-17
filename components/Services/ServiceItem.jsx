@@ -5,16 +5,18 @@ import styles from './ServiceItem.module.css'
 export default function ServiceItem({service}) {
     const { title, image, icon, slug } = service;
 
+    console.log(image)
+
     const linkPath =`/services/${slug}`;
 
     return (
-        <li className={styles.service}>
+        <li className={styles.serviceItem}>
             <Link href={linkPath}>
                 <div className={styles.icon}>
-                    <Image src={icon} alt={title} width={300} height={200} layout='responsive'/>
+                    <Image src={icon} alt={title} width={80} height={80} layout='responsive'/>
                 </div>
                 <div className={styles.content}>
-                    <h3>{title}</h3>
+                    <h2>{title}</h2>
                 </div>
                 <div className={styles.image}>
                     <Image src={image} alt={title} width={300} height={200} layout='responsive'/>

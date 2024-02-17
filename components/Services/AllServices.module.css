@@ -6,8 +6,22 @@
 
 .services h1 {
     font-size: var(--size-8);
-    color: var(--color-grey-800);
     text-align: center;
+    margin: 0;
+}
+
+.services h3 {
+    margin: 0;
+    font-size: var(--size-4);
+    color: var(--color-secondary-1);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
