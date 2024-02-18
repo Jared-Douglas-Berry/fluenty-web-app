@@ -10,16 +10,16 @@ export default function MainHeader() {
             <nav className={styles.navigation}>
                 <ul className={styles.navigationContainer}>
                     <li className={styles.linkItem}>
-                        <a href='#home'>Home</a>
+                        <Link href='/#home'>Home</Link>
                     </li>
                     <li className={styles.linkItem}>
-                        <a href='#services'>Services</a>
+                        <Link href='/#services'>Services</Link>
                     </li>
                     <li className={styles.linkItem}>
-                        <a href='#projects'>Projects</a>
+                        <Link href='/#projects'>Projects</Link>
                     </li>
                     <li className={styles.linkItem}>
-                        <a href='#team'>Team</a>
+                        <Link href='/#team'>Team</Link>
                     </li>
                     <li className={styles.linkItem}>
                         <Link href='/blog'>Blog</Link>

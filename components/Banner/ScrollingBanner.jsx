@@ -5,7 +5,7 @@ export default function ScrollingBanner({items}) {
     return (
         <div className={styles.container}>
             <div className={styles.content}>
-                {items.map((item) => <span className={styles.context}><FaStarOfLife size={13}/>{item.title}</span>)}
+                {items.map((item, index) => <span key={index} className={styles.context}><FaStarOfLife size={13}/>{item.title}</span>)}
             </div>
         </div>
     );

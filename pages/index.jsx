@@ -43,9 +43,7 @@ export default function HomePage({services}) {
 export async function getStaticProps() {
     const client = await connectDatabase();
 
-    const services = await getAllDocuments(client, 'Fluenty', 'fluenty-dev', { _id: -1 })
-
-    console.log('services', services);
+    const services = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-services', { _id: -1 })
 
     // Extract only the necessary data for serialization
     const serializedServices = services.map(service => ({
@@ -57,8 +55,6 @@ export async function getStaticProps() {
         slug: service.title.trim().replace(/\s+/g, "-")
         // Include other necessary fields here
     }));
-
-    console.log('services', serializedServices);
 
     return {
         props: {

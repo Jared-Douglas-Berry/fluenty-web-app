@@ -38,3 +38,22 @@ export async function getDocumentId(client, dbName, collectName, sort, filter = 
 
     return documents;
 }
+
+export async function getDocumentIdFindOne(client, dbName, collectName, filter) {
+    const db = client.db(dbName)
+
+    const documents = await db.collection(collectName)
+        .findOne(filter)
+
+    return documents;
+}
+
+export async function getDocumentIdFind(client, dbName, collectName) {
+    const db = client.db(dbName)
+
+    const documents = await db.collection(collectName)
+        .find({}, { _id: 1 })
+        .toArray();
+
+    return documents;
+}
