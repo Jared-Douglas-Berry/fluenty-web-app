@@ -5,8 +5,22 @@
     flex-direction: column;
 }
 
+.title {
+    margin-left: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: var(--size-4);
+    font-size: var(--text-sub-header);
+}
+
+.iconTitle {
+    color: var(--color-secondary-1);
+}
+
 .image {
-    width: 50%;
+    width: 100%;
     max-height: 100rem;
     overflow: hidden;
 }
@@ -16,7 +30,7 @@
 }
 
 .content {
-    margin: 45px 0 0 0;
+    margin: auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +43,7 @@
 }
 
 .content p {
-    width: 50%;
+    width: 100%;
     margin: 0;
-    font-size: var(--size-10);
+    font-size: var(--size-6);
 }

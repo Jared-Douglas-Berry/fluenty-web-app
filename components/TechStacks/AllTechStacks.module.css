@@ -1,16 +1,16 @@
-.services {
+.tech {
     width: 90%;
     max-width: 60rem;
     margin: var(--size-8) auto;
 }
 
-.services h1 {
+.tech h1 {
     font-size: var(--text-sub-header);
     text-align: center;
     margin: 0;
 }
 
-.services h3 {
+.tech h3 {
     margin: 0;
     font-size: var(--text-blue-sub-header);
     color: var(--color-secondary-1);
@@ -25,7 +25,7 @@
 }
 
 @media (min-width: 768px) {
-    .services h1 {
+    .tech h1 {
         font-size: var(--size-16);
     }
 }

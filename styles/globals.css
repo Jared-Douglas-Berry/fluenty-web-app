@@ -162,6 +162,9 @@ body {
   --size-36: 9rem;
   --size-40: 10rem;
 
+  --text-sub-header: var(--size-8);
+  --text-blue-sub-header: var(--size-6);
+
   --font-wight-bold: bold;
   --font-wight-regular: regular;
   --font-wight-semi-bold: semi-bold;
