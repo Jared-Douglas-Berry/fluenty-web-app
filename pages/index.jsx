@@ -4,8 +4,9 @@ import Banner from "../components/Banner/Banner.jsx";
 import AllServices from "../components/Services/AllServices.jsx";
 import {connectDatabase, getAllDocuments} from "../helpers/db-utils";
 import ScrollingBanner from "../components/Banner/ScrollingBanner";
+import AllTechStacks from "../components/TechStacks/AllTechStacks";
 
-export default function HomePage({services}) {
+export default function HomePage({services, techStacks}) {
     return (
         <Fragment>
             <Head>
@@ -13,15 +14,19 @@ export default function HomePage({services}) {
                 <meta name='description' content='Fluenty Development'/>
             </Head>
 
-            <Banner />
+            <Banner/>
 
             <section id="home">
                 <h2>Home</h2>
             </section>
 
             <section id="services">
-                <AllServices services={services} />
-                <ScrollingBanner items={services} />
+                <AllServices services={services}/>
+                <ScrollingBanner items={services}/>
+            </section>
+
+            <section>
+                <AllTechStacks techStacks={techStacks} />
             </section>
 
             <section id="projects">
@@ -56,9 +61,21 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
+    const techStacks = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-tech', { _id: -1 })
+
+    // Extract only the necessary data for serialization
+    const serializedTechStacks = techStacks.map(techStack => ({
+        // Assuming _id is a string, if not, replace it with the appropriate property
+        _id: techStack._id.toString(),
+        title: techStack.title,
+        icon: techStack.icon,
+        // Include other necessary fields here
+    }));
+
     return {
         props: {
             services: serializedServices,
+            techStacks: serializedTechStacks,
         },
         revalidate: 1800,
     };
