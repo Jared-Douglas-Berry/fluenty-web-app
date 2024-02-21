@@ -17,7 +17,7 @@ export default function ProjectsDetails({projects, selectedProject}) {
 export async function getStaticPaths() {
     const client = await connectDatabase();
 
-    const projects = await getDocumentIdFind(client, 'Fluenty', 'fluenty-dev-projects')
+    const projects = await getDocumentIdFind(client, process.env.mongodb_database, process.env.mongodb_database_projects)
 
     const paths = projects.map((project) => ({
         params: {slug: project._id.toString()},
@@ -37,7 +37,7 @@ export async function getStaticProps(context) {
     try {
         const client = await connectDatabase();
 
-        const projects = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-projects', { _id: -1 });
+        const projects = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_projects, { _id: -1 });
 
 // Extract only the necessary data for serialization
         const serializedProjects = projects.map((project, index) => ({
@@ -65,7 +65,7 @@ export async function getStaticProps(context) {
             throw new Error("Service ID is missing");
         }
 
-        const project = await getDocumentIdFindOne(client, 'Fluenty', 'fluenty-dev-projects', {title: projectId})
+        const project = await getDocumentIdFindOne(client, process.env.mongodb_database, process.env.mongodb_database_projects, {title: projectId})
 
         client.close();
 

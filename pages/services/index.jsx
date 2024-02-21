@@ -15,7 +15,7 @@ export default function Services({services}) {
 export async function getStaticProps() {
     const client = await connectDatabase();
 
-    const services = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-services', { _id: -1 })
+    const services = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_services, { _id: -1 })
 
     // Extract only the necessary data for serialization
     const serializedServices = services.map(service => ({

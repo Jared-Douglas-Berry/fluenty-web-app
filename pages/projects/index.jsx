@@ -13,7 +13,7 @@ export default function Projects({projects}) {
 export async function getStaticProps() {
     const client = await connectDatabase();
 
-    const projects = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-projects', { _id: -1 });
+    const projects = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_projects, { _id: -1 });
 
 // Extract only the necessary data for serialization
     const serializedProjects = projects.map((project, index) => ({

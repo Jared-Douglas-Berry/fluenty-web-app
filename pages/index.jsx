@@ -49,7 +49,7 @@ export default function HomePage({services, techStacks, projects}) {
 export async function getStaticProps() {
     const client = await connectDatabase();
 
-    const services = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-services', { _id: -1 })
+    const services = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_services, { _id: -1 })
 
     // Extract only the necessary data for serialization
     const serializedServices = services.map(service => ({
@@ -62,7 +62,7 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
-    const techStacks = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-tech', { _id: -1 })
+    const techStacks = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_tech, { _id: -1 })
 
     // Extract only the necessary data for serialization
     const serializedTechStacks = techStacks.map(techStack => ({
@@ -73,7 +73,7 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
-    const projects = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-projects', { _id: -1 });
+    const projects = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_projects, { _id: -1 });
 
 // Extract only the necessary data for serialization
     const serializedProjects = projects.map((project, index) => ({

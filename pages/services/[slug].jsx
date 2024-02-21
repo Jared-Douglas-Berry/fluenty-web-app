@@ -17,7 +17,7 @@ export default function ServicesDetails({selectedService}) {
 export async function getStaticPaths() {
     const client = await connectDatabase();
 
-    const services = await getDocumentIdFind(client, 'Fluenty', 'fluenty-dev-services')
+    const services = await getDocumentIdFind(client, process.env.mongodb_database, process.env.mongodb_database_services)
 
     const paths = services.map((service) => ({
         params: {slug: service._id.toString()},
@@ -45,7 +45,7 @@ export async function getStaticProps(context) {
 
         const client = await connectDatabase();
 
-        const service = await getDocumentIdFindOne(client, 'Fluenty', 'fluenty-dev-services', {title: serviceId})
+        const service = await getDocumentIdFindOne(client, process.env.mongodb_database, process.env.mongodb_database_services, {title: serviceId})
 
         client.close();
 
