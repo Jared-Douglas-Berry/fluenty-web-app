@@ -1,14 +1,14 @@
 import {
-    connectDatabase,
+    connectDatabase, getAllDocuments,
     getDocumentIdFind,
     getDocumentIdFindOne
 } from "../../helpers/db-utils";
 import ProjectDetails from "../../components/Projects/ProjectDetails";
 
-export default function ProjectsDetails({selectedProject}) {
+export default function ProjectsDetails({projects, selectedProject}) {
     return (
         <div>
-            <ProjectDetails project={selectedProject} />
+            <ProjectDetails projects={projects} project={selectedProject} />
         </div>
     );
 }
@@ -33,7 +33,29 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+
     try {
+        const client = await connectDatabase();
+
+        const projects = await getAllDocuments(client, 'Fluenty', 'fluenty-dev-projects', { _id: -1 });
+
+// Extract only the necessary data for serialization
+        const serializedProjects = projects.map((project, index) => ({
+            // Assuming _id is a string, if not, replace it with the appropriate property
+            index: index,
+            id: project._id.toString(),
+            title: project.title,
+            image: project.image,
+            category: project.category,
+            challenge: project.challenge,
+            client: project.client,
+            date: project.date,
+            location: project.location,
+            results: project.results,
+            slug: project.title.trim().replace(/\s+/g, "-")
+            // Include other necessary fields here
+        }));
+
         // fetch data for a single meetup
         const projectSlug = context.params.slug;
 
@@ -42,8 +64,6 @@ export async function getStaticProps(context) {
         if (!projectId) {
             throw new Error("Service ID is missing");
         }
-
-        const client = await connectDatabase();
 
         const project = await getDocumentIdFindOne(client, 'Fluenty', 'fluenty-dev-projects', {title: projectId})
 
@@ -55,6 +75,7 @@ export async function getStaticProps(context) {
 
         return {
             props: {
+                projects: serializedProjects,
                 selectedProject: {
                     id: project._id.toString(),
                     title: project.title,
