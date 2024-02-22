@@ -1,0 +1,120 @@
+.contactUs {
+    width: 100%;
+    max-width: 60rem;
+    margin: var(--size-8) auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contactUs h1 {
+    font-size: var(--text-sub-header);
+    text-align: center;
+    margin: 0;
+}
+
+.contactUs h3 {
+    margin: 0;
+    font-size: var(--text-blue-sub-header);
+    color: var(--color-secondary-1);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+
+}
+
+.sections {
+    display: flex;
+    width: 100%;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    color: var(--color-grey-50);
+    border-bottom: 2px solid var(--color-secondary-1);
+    background-color: var(--color-grey-800);
+    font-size: var(--size-6);
+    margin: 10px;
+    width: 100%;
+    flex: .5;
+    height: 50px;
+}
+
+.input input{
+    display: flex;
+    align-items: center;
+    color: var(--color-grey-50);
+    border: none;
+    background-color: var(--color-grey-800);
+    font-size: var(--size-6);
+    width: 100%;
+    flex: 1;
+    height: 47px;
+    padding-left: 10px;
+    outline: none;
+}
+.input:focus input{
+    outline: none;
+}
+
+.dropdown {
+    flex: .555;
+}
+
+.sectionsBox {
+    position: relative;
+}
+
+.textBox {
+    position: relative;
+    top: -20px;
+    left: 0;
+    padding: 8px 12px 8px 50px;
+    color: var(--color-grey-50);
+    border-bottom: 2px solid var(--color-secondary-1);
+    background-color: var(--color-grey-800);
+    margin: 10px;
+    width: 98%;
+    flex: 1 1;
+    height: 250px;
+    font-size: var(--size-6);
+    outline: none;
+}
+
+.textBox:focus {
+    outline: none;
+}
+
+.icon {
+    z-index: 1;
+    position: relative;
+    top: 33px;
+    left: 20px;
+}
+
+.actions {
+    margin-top: var(--size-4);
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+    .contactUs h1 {
+        font-size: var(--size-16);
+    }
+}

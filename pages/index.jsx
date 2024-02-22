@@ -7,6 +7,8 @@ import ScrollingBanner from "../components/Banner/ScrollingBanner";
 import AllTechStacks from "../components/TechStacks/AllTechStacks";
 import AllProjects from "../components/Projects/AllProjects";
 import WholeTeam from "../components/Team/WholeTeam";
+import DropDown from "../components/Buttons/DropDown";
+import ContactUs from "../components/ContactUs/ContactUs";
 
 export default function HomePage({services, techStacks, projects, team}) {
     return (
@@ -28,19 +30,23 @@ export default function HomePage({services, techStacks, projects, team}) {
             </section>
 
             <section>
-                <AllTechStacks techStacks={techStacks} />
+                <AllTechStacks techStacks={techStacks}/>
             </section>
 
             <section id="projects">
-                <AllProjects projects={projects} />
+                <AllProjects projects={projects}/>
             </section>
 
             <section id="team">
-                <WholeTeam team={team} />
+                <WholeTeam team={team}/>
             </section>
 
             <section>
                 <h2>Blog</h2>
+            </section>
+
+            <section>
+                <ContactUs />
             </section>
 
         </Fragment>
