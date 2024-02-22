@@ -6,8 +6,9 @@ import {connectDatabase, getAllDocuments} from "../helpers/db-utils";
 import ScrollingBanner from "../components/Banner/ScrollingBanner";
 import AllTechStacks from "../components/TechStacks/AllTechStacks";
 import AllProjects from "../components/Projects/AllProjects";
+import WholeTeam from "../components/Team/WholeTeam";
 
-export default function HomePage({services, techStacks, projects}) {
+export default function HomePage({services, techStacks, projects, team}) {
     return (
         <Fragment>
             <Head>
@@ -35,7 +36,7 @@ export default function HomePage({services, techStacks, projects}) {
             </section>
 
             <section id="team">
-                <h2>Team</h2>
+                <WholeTeam team={team} />
             </section>
 
             <section>
@@ -92,12 +93,37 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
+    const team = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_team, { _id: -1 });
+
+// Extract only the necessary data for serialization
+    const serializedTeam = team.map((teamMate, index) => ({
+        // Assuming _id is a string, if not, replace it with the appropriate property
+        _id: teamMate._id.toString(),
+        index: index,
+        firstName: teamMate.firstName,
+        lastName: teamMate.lastName,
+        jobTitle: teamMate.jobTitle,
+        email: teamMate.email,
+        phone: teamMate.phone,
+        location: teamMate.location,
+        linkin: teamMate.linkin,
+        facebook: teamMate.facebook,
+        twitter: teamMate.twitter,
+        instagram: teamMate.instagram,
+        middleName: teamMate.middleName,
+        summary: teamMate.summary,
+        image: teamMate.image,
+        experience: teamMate.experience,
+        slug: `${teamMate.firstName} ${teamMate.middleName ? teamMate.middleName + ' ' : ''} ${teamMate.lastName}`.trim().replace(/\s+/g, "-")
+        // Include other necessary fields here
+    }));
 
     return {
         props: {
             services: serializedServices,
             techStacks: serializedTechStacks,
             projects: serializedProjects,
+            team: serializedTeam,
         },
         revalidate: 1800,
     };
