@@ -15,6 +15,7 @@ module.exports = (phase) => {
                 mongodb_database_services: 'fluenty-dev-services',
                 mongodb_database_tech: 'fluenty-dev-tech',
                 mongodb_database_team: 'fluenty-dev-team',
+                mongodb_database_send_email: 'fluenty-dev-emails',
             },
         };
     }
@@ -32,6 +33,7 @@ module.exports = (phase) => {
             mongodb_database_services: 'services',
             mongodb_database_tech: 'tech',
             mongodb_database_team: 'team',
+            mongodb_database_send_email: 'emails',
         },
     };
 };

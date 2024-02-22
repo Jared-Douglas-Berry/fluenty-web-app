@@ -1,0 +1,21 @@
+.dropdown {
+    display: inline-block;
+    width: 100%;
+    flex: 1;
+    height: 50px;
+    font-size: var(--size-6);
+}
+
+.dropdown select {
+    padding: 8px 12px;
+    color: var(--color-grey-50);
+    border-bottom: 2px solid var(--color-secondary-1);
+    background-color: var(--color-grey-800);
+    margin: 10px;
+    width: 100%;
+    flex: .5;
+    font-size: var(--size-6);
+    border-radius: 4px;
+    cursor: pointer;
+    height: 50px;
+}

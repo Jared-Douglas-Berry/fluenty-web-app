@@ -1,12 +1,13 @@
-'use client';
+import {Fragment} from "react";
+import styles from './Submitting.module.css';
 
-import { useFormStatus } from 'react-dom';
+export default function Submitting({bntText, isInvalid, isLoading, error}) {
 
-export default function Submitting({bntText}) {
-    const { pending } = useFormStatus();
     return (
-        <button disabled={pending}>
-            {pending ? 'Submitting...' : bntText}
-        </button>
+        <Fragment>
+            {isInvalid && <p className={styles.error}>{error}</p>}
+            <button className={styles.button} disabled={isLoading}>{isLoading ? 'Submitting...' : bntText}</button>
+        </Fragment>
+
     );
 }
