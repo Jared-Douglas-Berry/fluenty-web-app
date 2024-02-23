@@ -7,8 +7,8 @@ import ScrollingBanner from "../components/Banner/ScrollingBanner";
 import AllTechStacks from "../components/TechStacks/AllTechStacks";
 import AllProjects from "../components/Projects/AllProjects";
 import WholeTeam from "../components/Team/WholeTeam";
-import DropDown from "../components/Buttons/DropDown";
 import ContactUs from "../components/ContactUs/ContactUs";
+import About from "../components/About/About";
 
 export default function HomePage({services, techStacks, projects, team}) {
     return (
@@ -21,7 +21,7 @@ export default function HomePage({services, techStacks, projects, team}) {
             <Banner/>
 
             <section id="home">
-                <h2>Home</h2>
+                <About />
             </section>
 
             <section id="services">
