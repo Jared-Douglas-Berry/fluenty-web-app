@@ -1,6 +1,6 @@
 {
   "name": "Fluenty-Web-Site",
-  "version": "0.0.0",
+  "version": "0.10.2",
   "description": "Fluenty web application",
   "private": true,
   "scripts": {
