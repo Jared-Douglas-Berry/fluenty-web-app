@@ -58,8 +58,8 @@ export async function getStaticProps(context) {
                 selectedService: {
                     id: service._id.toString(),
                     title: service.title,
-                    icon: service.icon,
-                    image: service.image,
+                    image: service.pickedImage1.src,
+                    icon: service.pickedImage.src,
                     summary: service.summary,
                 },
             },

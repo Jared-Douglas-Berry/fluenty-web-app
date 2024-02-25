@@ -1,11 +1,10 @@
-'use client';
-
-import styles from './ImagePicker.module.css'
-import {useRef, useState} from "react";
+import styles from './ImagePicker.module.css';
+import { useRef } from "react";
 import Image from "next/image";
-export default function ImagePicker({ label, name }) {
-    const [pickedImage, setPickedImage] = useState()
+
+export default function ImagePicker({ label, name, pickedImage, setPickedImage }) {
     const imageInput = useRef();
+
     function handlePickClick() {
         imageInput.current.click();
     }
@@ -14,18 +13,22 @@ export default function ImagePicker({ label, name }) {
         const file = event.target.files[0];
 
         if (!file) {
-            setPickedImage(null);
+            setPickedImage([]);
             return;
         }
 
         const fileReader = new FileReader();
 
         fileReader.onload = () => {
-            setPickedImage(fileReader.result);
+            const imageData = {
+                src: fileReader.result,
+                name: file.name, // Add any additional information you need
+                type: file.type  // Add any additional information you need
+            };
+            setPickedImage(imageData);
         };
 
         fileReader.readAsDataURL(file);
-
     }
 
     return (
@@ -34,17 +37,16 @@ export default function ImagePicker({ label, name }) {
             <div className={styles.controls}>
                 <div className={styles.preview}>
                     {!pickedImage && <p>No image is picked yet.</p>}
-                    {pickedImage && <Image src={pickedImage} alt="The Image Selected" fill />}
+                    {pickedImage && <Image src={pickedImage.src} alt="The Image Selected" fill />}
                 </div>
                 <input
                     className={styles.input}
                     type='file'
                     id={name}
-                    accept='image/png, image/jpeg'
+                    accept='image/png, image/jpeg, image/svg+xml'
                     name={name}
                     ref={imageInput}
                     onChange={handleImageChange}
-                    required
                 />
                 <button
                     className={styles.button}

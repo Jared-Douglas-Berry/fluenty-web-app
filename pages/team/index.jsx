@@ -32,7 +32,7 @@ export async function getStaticProps() {
         instagram: teamMate.instagram,
         middleName: teamMate.middleName,
         summary: teamMate.summary,
-        image: teamMate.image,
+        image: teamMate.pickedImage.src,
         experience: teamMate.experience,
         slug: `${teamMate.firstName} ${teamMate.middleName ? teamMate.middleName + ' ' : ''} ${teamMate.lastName}`.trim().replace(/\s+/g, "-")
         // Include other necessary fields here

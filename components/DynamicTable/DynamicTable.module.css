@@ -1,0 +1,80 @@
+.title {
+    color: blue;
+}
+
+.container {
+    overflow: scroll;
+    width: 100%;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    border: 1px solid gray; /* Gray border */
+    padding: 8px;
+    text-align: center;
+    overflow: hidden; /* Hide overflow content */
+    vertical-align: top; /* Align content to the top */
+    white-space: nowrap; /* Prevent content from wrapping */
+}
+
+.table th {
+    background-color: var(--color-secondary-1); /* Light blue */
+    color: black; /* Black */
+}
+
+.table tbody tr {
+    background-color: var(--color-grey-50);
+    color: var(--color-black-0);
+}
+
+/* Alternate row background color */
+.table tbody tr:nth-child(even) {
+    background-color: var(--color-grey-50);
+}
+
+/* Hover effect */
+.table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.table td:first-child {
+    width: 100px; /* Width of the first column */
+}
+
+.columns {
+    max-height: 300px;
+    min-width: 160px;
+    white-space: pre-wrap;
+}
+
+.edit {
+    width: 50px;
+    color: var(--color-secondary-1);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.edit:hover {
+    background-color: var(--color-grey-800);
+}
+
+.trash {
+    width: 50px;
+    color: var(--color-error-500);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.trash:hover {
+    background-color: var(--color-secondary-1);
+}
+
+.icons {
+    display: flex;
+}

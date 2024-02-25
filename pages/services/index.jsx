@@ -22,8 +22,8 @@ export async function getStaticProps() {
         // Assuming _id is a string, if not, replace it with the appropriate property
         _id: service._id.toString(),
         title: service.title,
-        image: service.image,
-        icon: service.icon,
+        image: service.pickedImage1.src,
+        icon: service.pickedImage.src,
         slug: service.title.trim().replace(/\s+/g, "-")
         // Include other necessary fields here
     }));

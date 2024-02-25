@@ -66,7 +66,7 @@ export async function getStaticProps(context) {
                     instagram: teamMate.instagram,
                     middleName: teamMate.middleName,
                     summary: teamMate.summary,
-                    image: teamMate.image,
+                    image: teamMate.pickedImage.src,
                     experience: teamMate.experience,
                 },
             },

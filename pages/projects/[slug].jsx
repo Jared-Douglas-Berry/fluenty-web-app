@@ -45,7 +45,7 @@ export async function getStaticProps(context) {
             index: index,
             id: project._id.toString(),
             title: project.title,
-            image: project.image,
+            image: project.pickedImage.src,
             category: project.category,
             challenge: project.challenge,
             client: project.client,
@@ -79,7 +79,7 @@ export async function getStaticProps(context) {
                 selectedProject: {
                     id: project._id.toString(),
                     title: project.title,
-                    image: project.image,
+                    image: project.pickedImage.src,
                     category: project.category,
                     challenge: project.challenge,
                     client: project.client,
