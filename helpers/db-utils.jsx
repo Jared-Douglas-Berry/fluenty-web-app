@@ -1,4 +1,4 @@
-import {MongoClient} from "mongodb";
+import {MongoClient, ObjectId} from "mongodb";
 
 const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.foo9ysk.mongodb.net/?retryWrites=true&w=majority`
 
@@ -56,4 +56,25 @@ export async function getDocumentIdFind(client, dbName, collectName) {
         .toArray();
 
     return documents;
+}
+
+export async function updateDocumentById(client, dbName, collectName, id, updatedData) {
+    const db = client.db(dbName);
+    const filter = { _id: new ObjectId(id) };
+    const updateDoc = {
+        $set: updatedData // New data to be set
+    };
+
+    const result = await db.collection(collectName).updateOne(filter, updateDoc);
+
+    return result;
+}
+
+export async function deleteDocumentById(client, dbName, collectName, id) {
+    const db = client.db(dbName);
+    const filter = { _id: new ObjectId(id) };
+
+    const result = await db.collection(collectName).deleteOne(filter);
+
+    return result;
 }

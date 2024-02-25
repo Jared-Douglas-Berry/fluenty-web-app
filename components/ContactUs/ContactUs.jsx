@@ -7,13 +7,7 @@ import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt, FaPencilAlt } from "react-icons/fa";
 import NotificationContext from "../../store/notificationContext";
 
-const options = [
-    { label: 'Development', value: 'Development' },
-    { label: 'Designs', value: 'Designs' },
-    { label: 'SEO', value: 'SEO' },
-];
-
-export default function ContactUs() {
+export default function ContactUs({options}) {
     const [selectedOption, setSelectedOption] = useState('');
     const [enteredEmail, setEnteredEmail] = useState('');
     const [enteredName, setEnteredName] = useState('');
@@ -27,8 +21,6 @@ export default function ContactUs() {
 
     const handleSelect = (option) => {
         setSelectedOption(option);
-        // Do whatever you want with the selected option
-        console.log('Selected option:', option);
     };
 
     function handleSubmitMessage(event) {

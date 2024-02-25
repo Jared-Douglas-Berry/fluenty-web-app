@@ -16,6 +16,8 @@ module.exports = (phase) => {
                 mongodb_database_tech: 'fluenty-dev-tech',
                 mongodb_database_team: 'fluenty-dev-team',
                 mongodb_database_send_email: 'fluenty-dev-emails',
+                mongodb_database_email_subjects: 'fluenty-dev-emails-subjects',
+                mongodb_database_blog: 'fluenty-dev-blog',
             },
         };
     }
@@ -34,6 +36,8 @@ module.exports = (phase) => {
             mongodb_database_tech: 'tech',
             mongodb_database_team: 'team',
             mongodb_database_send_email: 'emails',
+            mongodb_database_email_subjects: 'emails-subjects',
+            mongodb_database_blog: 'blog',
         },
     };
 };

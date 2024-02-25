@@ -25,14 +25,15 @@
 
 .icon {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin: 10px;
     position: absolute;
-    width: 5rem;
-    max-height: 5rem;
+    width: 3rem;
+    max-height: 3rem;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 39%;
+    color: white;
 }
 
 .icon img {

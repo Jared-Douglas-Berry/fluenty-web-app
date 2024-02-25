@@ -4,6 +4,12 @@ import ProjectsCarousel from "./ProjectsCarousel";
 
 export default function ProjectDetails({project, projects}) {
     const { id, image, title, category, challenge, client, date, location, results, index } = project;
+
+    const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    });
     return (
         <section className={styles.projects}>
             <div className={styles.content}>
@@ -28,7 +34,7 @@ export default function ProjectDetails({project, projects}) {
                         </div>
                         <div className={styles.columnContent}>
                             <h4>Date</h4>
-                            <p>{date}</p>
+                            <p>{humanReadableDate}</p>
                         </div>
                         <div className={styles.columnContent}>
                             <h4>Location</h4>

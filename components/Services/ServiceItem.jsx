@@ -11,7 +11,7 @@ export default function ServiceItem({service}) {
             <li className={styles.serviceItem}>
                 <Link href={linkPath}>
                     <div className={styles.icon}>
-                        <Image src={icon} alt={title} width={80} height={80} layout='responsive'/>
+                        <Image src={icon} alt={title} width={40} height={40} layout='responsive'/>
                     </div>
                     <div className={styles.content}>
                         <h2>{title}</h2>

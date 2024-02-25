@@ -1,0 +1,18 @@
+.main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sideBar {
+    width: 15%;
+    background-color: var(--color-grey-800);
+    border-right: 3px solid var(--color-secondary-1);
+    padding: 15px 30px;
+}
+
+.child {
+    padding: 25px 60px;
+    width: 85%;
+}

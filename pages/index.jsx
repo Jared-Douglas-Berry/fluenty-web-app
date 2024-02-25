@@ -10,7 +10,7 @@ import WholeTeam from "../components/Team/WholeTeam";
 import ContactUs from "../components/ContactUs/ContactUs";
 import About from "../components/About/About";
 
-export default function HomePage({services, techStacks, projects, team}) {
+export default function HomePage({services, techStacks, projects, team, options}) {
     return (
         <Fragment>
             <Head>
@@ -46,7 +46,7 @@ export default function HomePage({services, techStacks, projects, team}) {
             </section>
 
             <section>
-                <ContactUs />
+                <ContactUs options={options[0].subjects} />
             </section>
 
         </Fragment>
@@ -63,8 +63,8 @@ export async function getStaticProps() {
         // Assuming _id is a string, if not, replace it with the appropriate property
         _id: service._id.toString(),
         title: service.title,
-        image: service.image,
-        icon: service.icon,
+        image: service.pickedImage1.src,
+        icon: service.pickedImage.src,
         slug: service.title.trim().replace(/\s+/g, "-")
         // Include other necessary fields here
     }));
@@ -76,7 +76,7 @@ export async function getStaticProps() {
         // Assuming _id is a string, if not, replace it with the appropriate property
         _id: techStack._id.toString(),
         title: techStack.title,
-        icon: techStack.icon,
+        icon: techStack.pickedImage.src,
         // Include other necessary fields here
     }));
 
@@ -88,7 +88,7 @@ export async function getStaticProps() {
         _id: project._id.toString(),
         index: index,
         title: project.title,
-        image: project.image,
+        image: project.pickedImage.src,
         category: project.category,
         challenge: project.challenge,
         client: project.client,
@@ -118,9 +118,21 @@ export async function getStaticProps() {
         instagram: teamMate.instagram,
         middleName: teamMate.middleName,
         summary: teamMate.summary,
-        image: teamMate.image,
+        image: teamMate.pickedImage.src,
         experience: teamMate.experience,
         slug: `${teamMate.firstName} ${teamMate.middleName ? teamMate.middleName + ' ' : ''} ${teamMate.lastName}`.trim().replace(/\s+/g, "-")
+        // Include other necessary fields here
+    }));
+
+    const options = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_email_subjects, { _id: 1 });
+
+// Extract only the necessary data for serialization
+    const serializedOptions = options.map((option) => ({
+        // Assuming _id is a string, if not, replace it with the appropriate property
+        _id: option._id.toString(),
+        subjects: option.subjects,
+        modifiedDate: option.modifiedDate.toISOString(),
+        createdDate: option.createdDate.toISOString(),
         // Include other necessary fields here
     }));
 
@@ -130,6 +142,7 @@ export async function getStaticProps() {
             techStacks: serializedTechStacks,
             projects: serializedProjects,
             team: serializedTeam,
+            options: serializedOptions,
         },
         revalidate: 1800,
     };
