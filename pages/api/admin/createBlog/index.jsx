@@ -120,13 +120,10 @@ export default async function handler(req, res) {
             // Update the document
             const result = await deleteDocumentById(clientMD, process.env.mongodb_database, process.env.mongodb_database_blog, documentIdToDelete);
 
-            console.log('result', result)
             // Check the result
             if (result.modifiedCount === 1) {
-                console.log("Document Deleted successfully!");
                 res.status(200).json({message: "Document Deleted successfully"});
             } else {
-                console.log("Document not found or not Deleted.");
                 res.status(404).json({message: "Document not found or not Deleted"});
             }
         } catch (error) {
@@ -167,10 +164,8 @@ export default async function handler(req, res) {
 
             // Check the result
             if (result.modifiedCount === 1) {
-                console.log("Document updated successfully!");
                 res.status(200).json({message: "Document updated successfully"});
             } else {
-                console.log("Document not found or not updated.");
                 res.status(404).json({message: "Document not found or not updated"});
             }
         } catch (error) {
