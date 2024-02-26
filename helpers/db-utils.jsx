@@ -78,3 +78,27 @@ export async function deleteDocumentById(client, dbName, collectName, id) {
 
     return result;
 }
+
+export async function createUser(client, document, dbName, collectName) {
+    const db = client.db(dbName)
+
+    const result = await db.collection(collectName).insertOne(document);
+
+    return result;
+}
+
+export async function existingUser(client, document, dbName, collectName) {
+    const db = client.db(dbName)
+
+    const result = await db.collection(collectName).findOne(document);
+
+    return result;
+}
+
+export async function updateUser(client, document1, document2, dbName, collectName) {
+    const db = client.db(dbName)
+
+    const result = await db.collection(collectName).updateOne(document1, document2);
+
+    return result;
+}

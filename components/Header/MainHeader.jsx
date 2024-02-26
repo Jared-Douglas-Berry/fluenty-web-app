@@ -1,7 +1,20 @@
 import styles from './MainHeader.module.css';
 import Link from "next/link";
+import {useSession, signOut, signIn} from "next-auth/react"
 
 export default function MainHeader() {
+    const {data: session, status, update} = useSession();
+
+    async function handleLogOut() {
+        try {
+            await signOut()
+        } catch (error) {
+            console.error("Failed to sign out", error);
+            // Handle sign-in failure
+        }
+
+    }
+
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
@@ -24,6 +37,11 @@ export default function MainHeader() {
                     <li className={styles.linkItem}>
                         <Link href='/blog'>Blog</Link>
                     </li>
+                    {session && status === 'authenticated' && (
+                        <li>
+                            <Link href='/' onClick={handleLogOut}>Logout</Link>
+                        </li>
+                    )}
                 </ul>
             </nav>
         </header>

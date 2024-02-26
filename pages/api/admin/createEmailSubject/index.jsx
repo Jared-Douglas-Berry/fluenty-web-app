@@ -29,10 +29,8 @@ export default async function handler(req, res) {
 
                 // Check the result
                 if (result.modifiedCount === 1) {
-                    console.log("Document updated successfully!");
                     res.status(200).json({ message: "Document updated successfully" });
                 } else {
-                    console.log("Document not found or not updated.");
                     res.status(404).json({ message: "Document not found or not updated" });
                 }
             } catch (error) {
