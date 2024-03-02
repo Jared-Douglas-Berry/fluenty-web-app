@@ -4,11 +4,10 @@ const jose = require('node-jose');
 module.exports = (phase) => {
 
 
-    async function generateKey() {
-        const keystore = jose.JWK.createKeyStore();
-        const key = await keystore.generate('oct', 512, { alg: 'HS512' });
-        console.log(JSON.stringify(key.toJSON()));
-    }
+    // async function generateKey() {
+    //     const keystore = jose.JWK.createKeyStore();
+    //     return await keystore.generate('oct', 512, {alg: 'HS512'})
+    // }
 
     if (phase === PHASE_DEVELOPMENT_SERVER) {
         return {
@@ -16,7 +15,7 @@ module.exports = (phase) => {
                 domains: ['static.vecteezy.com', 'img.freepik.com', 'static-00.iconduck.com', "media.licdn.com" ],
             },
             env: {
-                NEXTAUTH_SECRET: generateKey(),
+                // NEXTAUTH_SECRET: generateKey(),
                 mongodb_username: 'fluenty',
                 mongodb_password: 'e9jcfRdqz6QcqyW7',
                 mongodb_clustername: 'cluster0',
@@ -38,7 +37,7 @@ module.exports = (phase) => {
             domains: ['static.vecteezy.com', 'img.freepik.com', 'static-00.iconduck.com', "media.licdn.com" ],
         },
         env: {
-            NEXTAUTH_SECRET: generateKey(),
+            // NEXTAUTH_SECRET: generateKey(),
             mongodb_username: 'fluenty',
             mongodb_password: 'e9jcfRdqz6QcqyW7',
             mongodb_clustername: 'cluster0',

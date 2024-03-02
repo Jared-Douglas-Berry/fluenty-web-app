@@ -23,7 +23,7 @@ const DynamicTable = ({apiEndpoint, createPageUrl}) => {
         fetchData();
     }, []);
 
-    const filteredKeys = data.length > 0 ? Object.keys(data[0]).filter(key => key !== '_id') : [];
+    const filteredKeys = data.length > 0 ? Object.keys(data[0]).filter(key => key !== '_id' && key !== 'password') : [];
 
     const renderTableCell = (value) => {
         if (value instanceof Date && !isNaN(value)) {
@@ -103,7 +103,7 @@ const DynamicTable = ({apiEndpoint, createPageUrl}) => {
                                 <FaTrashAlt onClick={() => handleDelete(item)} className={styles.trash} size={40}/>
                             </div>
                         </td>
-                        {Object.keys(item).filter(key => key !== '_id').map((key, index) => (
+                        {Object.keys(item).filter(key => key !== '_id' && key !== 'password').map((key, index) => (
                             <td key={index}>
                                 <div className={styles.columns}>{renderTableCell(item[key])}</div>
                             </td>
