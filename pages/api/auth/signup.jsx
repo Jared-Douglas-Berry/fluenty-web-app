@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 
     if (req.method === 'POST') {
         const data = req.body;
-        const { email, password, role, firstName, lastName } = data;
+        const { email, password, role, firstName, lastName, confirmPassword } = data;
 
         if (!email || !email.includes('@') || email.trim() === '') {
             res.status(422).json({message: 'Invalid Email'})
@@ -22,6 +22,12 @@ export default async function handler(req, res) {
 
         if (!password || password.trim() === '' || password.trim().length < 7) {
             res.status(422).json({message: 'Invalid Password: Password should also be at least 7 characters long'})
+            await clientMD.close();
+            return;
+        }
+
+        if (confirmPassword !== password && (!confirmPassword || confirmPassword.trim() === '' || confirmPassword.trim().length < 7)) {
+            res.status(422).json({message: 'Invalid Password: Password does not match confirm password'})
             await clientMD.close();
             return;
         }
