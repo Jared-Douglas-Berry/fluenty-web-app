@@ -1,11 +1,16 @@
 import {connectDatabase, getDocumentIdFind, getDocumentIdFindOne} from "../../helpers/db-utils";
 import {Fragment} from "react";
 import TeamMateDetails from "../../components/Team/TeamMateDetails";
+import Head from "next/head";
 
 export default function TeamMate({selectedTeamMate}) {
 
     return (
         <Fragment>
+            <Head>
+                <title>Fluenty Team Mates</title>
+                <meta name='description' content='Fluenty Amazing team members'/>
+            </Head>
             <TeamMateDetails teamMate={selectedTeamMate} />
         </Fragment>
     );

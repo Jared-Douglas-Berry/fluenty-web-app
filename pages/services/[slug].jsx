@@ -4,12 +4,18 @@ import {
     getDocumentIdFindOne
 } from "../../helpers/db-utils";
 import ServiceDetails from "../../components/Services/ServiceDetails";
+import {Fragment} from "react";
+import Head from "next/head";
 
 export default function ServicesDetails({selectedService}) {
     return (
-        <div>
+        <Fragment>
+            <Head>
+                <title>Fluenty Services</title>
+                <meta name='description' content='Services offered by Fluenty'/>
+            </Head>
             <ServiceDetails service={selectedService}/>
-        </div>
+        </Fragment>
     );
 }
 

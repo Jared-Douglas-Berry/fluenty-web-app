@@ -1,8 +1,9 @@
 import styles from './CreateTechStack.module.css';
 import ImagePicker from '../Images/ImagePicker.js';
 import Submitting from "../Buttons/Submitting.js";
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 export default function CreateTechStack() {
     const [pageTitle, setPageTitle] = useState('Create New Tech Stack');
@@ -118,44 +119,50 @@ export default function CreateTechStack() {
     };
 
     return (
-        <div className={styles.container}> {/* Apply the CSS class */}
-            <h1>{pageTitle}</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="title">Tech Stack:</label>
-                    <input
-                        type="text"
-                        id="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorTitle}</p>}
-                </div>
-                <div className={styles.images}>
-                    <ImagePicker
-                        name={`${title}Image`}
-                        label="Tech Stack Icon"
-                        pickedImage={pickedImage}
-                        setPickedImage={setPickedImage}
-                        setErrorMessage={setErrorMessage}
-                        setIsInvalid={setIsInvalid}
-                        isRequired={false}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
-                </div>
+        <Fragment>
+            <Head>
+                <title>Fluenty Admin Tech Stack</title>
+                <meta name='description' content='Creating new Tech Stack for Fluenty Web site'/>
+            </Head>
+            <div className={styles.container}> {/* Apply the CSS class */}
+                <h1>{pageTitle}</h1>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="title">Tech Stack:</label>
+                        <input
+                            type="text"
+                            id="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorTitle}</p>}
+                    </div>
+                    <div className={styles.images}>
+                        <ImagePicker
+                            name={`${title}Image`}
+                            label="Tech Stack Icon"
+                            pickedImage={pickedImage}
+                            setPickedImage={setPickedImage}
+                            setErrorMessage={setErrorMessage}
+                            setIsInvalid={setIsInvalid}
+                            isRequired={false}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
+                    </div>
 
-                <div className={styles.actions}>
-                    <Submitting
-                        type="submit"
-                        bntText={"Save"}
-                        isLoading={isLoading}
-                        isInvalid={isInvalid}
-                        error={errorMessage}
-                    />
-                </div>
-            </form>
-        </div>
+                    <div className={styles.actions}>
+                        <Submitting
+                            type="submit"
+                            bntText={"Save"}
+                            isLoading={isLoading}
+                            isInvalid={isInvalid}
+                            error={errorMessage}
+                        />
+                    </div>
+                </form>
+            </div>
+        </Fragment>
     );
 }

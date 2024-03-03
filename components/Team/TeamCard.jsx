@@ -7,22 +7,15 @@ import {AiFillTwitterCircle} from "react-icons/ai";
 
 export default function TeamCard({teamMate}) {
     const {
-        _id,
-        index,
         firstName,
         lastName,
         jobTitle,
-        email,
-        phone,
-        location,
         linkin,
         facebook,
         twitter,
         instagram,
         middleName,
-        summary,
         image,
-        experience,
         slug
     } = teamMate;
 

@@ -1,9 +1,10 @@
 import styles from './CreateTeamMate.module.css';
 import ImagePicker from '../Images/ImagePicker.js';
 import Submitting from "../Buttons/Submitting.js";
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import DatePicker from "../DatePicker/DatePicker";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 export default function CreateTeamMate() {
     const [pageTitle, setPageTitle] = useState('Create New Team Mate');
@@ -289,170 +290,176 @@ export default function CreateTeamMate() {
     };
 
     return (
-        <div className={styles.container}> {/* Apply the CSS class */}
-            <h1>{pageTitle}</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="firstName">First Name:</label>
-                    <input
-                        type="text"
-                        id="firstName"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorFirstName}</p>}
-                </div>
-                <div>
-                    <label htmlFor="middleName">Middle Name:</label>
-                    <input
-                        type="text"
-                        id="middleName"
-                        value={middleName}
-                        onChange={(e) => setMiddleName(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorMiddleName}</p>}
-                </div>
-                <div>
-                    <label htmlFor="lastName">Last Name:</label>
-                    <input
-                        type="text"
-                        id="lastName"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorLastName}</p>}
-                </div>
-                <div>
-                    <label htmlFor="jobTitle">Job Title:</label>
-                    <input
-                        type="text"
-                        id="jobTitle"
-                        value={jobTitle}
-                        onChange={(e) => setJobTitle(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorJobTitle}</p>}
-                </div>
-                <div>
-                    <label htmlFor="summary">The Summary:</label>
-                    <textarea
-                        id="summary"
-                        value={summary}
-                        onChange={(e) => setSummary(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorSummary}</p>}
-                </div>
-                <div>
-                    <label htmlFor="location">Location:</label>
-                    <input
-                        type="text"
-                        id="location"
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorLocation}</p>}
-                </div>
-                <div>
-                    <label htmlFor="phone">Phone Number:</label>
-                    <input
-                        type="number"
-                        id="phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorPhone}</p>}
-                </div>
-                <div>
-                    <label htmlFor="email">Email Address:</label>
-                    <input
-                        type="text"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorEmail}</p>}
-                </div>
-                <div>
-                    <DatePicker selectedDate={experience} setSelectedDate={setExperience}
-                                label='Select Start Date of Experience'/>
-                    {isInvalid && <p className={styles.error}>{errorExperience}</p>}
-                </div>
-                <div>
-                    <label htmlFor="linkin">linkin Https Address:</label>
-                    <input
-                        type="text"
-                        id="linkin"
-                        value={linkin}
-                        onChange={(e) => setLinkin(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorLinkin}</p>}
-                </div>
-                <div>
-                    <label htmlFor="facebook">Facebook Https Address:</label>
-                    <input
-                        type="text"
-                        id="facebook"
-                        value={facebook}
-                        onChange={(e) => setFacebook(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorFacebook}</p>}
-                </div>
-                <div>
-                    <label htmlFor="twitter">Twitter Https Address:</label>
-                    <input
-                        type="text"
-                        id="twitter"
-                        value={twitter}
-                        onChange={(e) => setTwitter(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorTwitter}</p>}
-                </div>
-                <div>
-                    <label htmlFor="instagram">Instagram Https Address:</label>
-                    <input
-                        type="text"
-                        id="instagram"
-                        value={instagram}
-                        onChange={(e) => setInstagram(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorInstagram}</p>}
-                </div>
+        <Fragment>
+            <Head>
+                <title>Fluenty Admin Team</title>
+                <meta name='description' content='Creating new Team Mate for Fluenty Web site'/>
+            </Head>
+            <div className={styles.container}> {/* Apply the CSS class */}
+                <h1>{pageTitle}</h1>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="firstName">First Name:</label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorFirstName}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="middleName">Middle Name:</label>
+                        <input
+                            type="text"
+                            id="middleName"
+                            value={middleName}
+                            onChange={(e) => setMiddleName(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorMiddleName}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="lastName">Last Name:</label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorLastName}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="jobTitle">Job Title:</label>
+                        <input
+                            type="text"
+                            id="jobTitle"
+                            value={jobTitle}
+                            onChange={(e) => setJobTitle(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorJobTitle}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="summary">The Summary:</label>
+                        <textarea
+                            id="summary"
+                            value={summary}
+                            onChange={(e) => setSummary(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorSummary}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="location">Location:</label>
+                        <input
+                            type="text"
+                            id="location"
+                            value={location}
+                            onChange={(e) => setLocation(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorLocation}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="phone">Phone Number:</label>
+                        <input
+                            type="number"
+                            id="phone"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorPhone}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email Address:</label>
+                        <input
+                            type="text"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorEmail}</p>}
+                    </div>
+                    <div>
+                        <DatePicker selectedDate={experience} setSelectedDate={setExperience}
+                                    label='Select Start Date of Experience'/>
+                        {isInvalid && <p className={styles.error}>{errorExperience}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="linkin">linkin Https Address:</label>
+                        <input
+                            type="text"
+                            id="linkin"
+                            value={linkin}
+                            onChange={(e) => setLinkin(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorLinkin}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="facebook">Facebook Https Address:</label>
+                        <input
+                            type="text"
+                            id="facebook"
+                            value={facebook}
+                            onChange={(e) => setFacebook(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorFacebook}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="twitter">Twitter Https Address:</label>
+                        <input
+                            type="text"
+                            id="twitter"
+                            value={twitter}
+                            onChange={(e) => setTwitter(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorTwitter}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="instagram">Instagram Https Address:</label>
+                        <input
+                            type="text"
+                            id="instagram"
+                            value={instagram}
+                            onChange={(e) => setInstagram(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorInstagram}</p>}
+                    </div>
 
-                <div className={styles.images}>
-                    <ImagePicker
-                        name={`${firstName}Image`}
-                        label="Team Mate Image"
-                        pickedImage={pickedImage}
-                        setPickedImage={setPickedImage}
-                        setErrorMessage={setErrorMessage}
-                        setIsInvalid={setIsInvalid}
-                        isRequired={false}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
-                </div>
+                    <div className={styles.images}>
+                        <ImagePicker
+                            name={`${firstName}Image`}
+                            label="Team Mate Image"
+                            pickedImage={pickedImage}
+                            setPickedImage={setPickedImage}
+                            setErrorMessage={setErrorMessage}
+                            setIsInvalid={setIsInvalid}
+                            isRequired={false}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
+                    </div>
 
-                <div className={styles.actions}>
-                    <Submitting
-                        type="submit"
-                        bntText={"Save"}
-                        isLoading={isLoading}
-                        isInvalid={isInvalid}
-                        error={errorMessage}
-                    />
-                </div>
-            </form>
-        </div>
+                    <div className={styles.actions}>
+                        <Submitting
+                            type="submit"
+                            bntText={"Save"}
+                            isLoading={isLoading}
+                            isInvalid={isInvalid}
+                            error={errorMessage}
+                        />
+                    </div>
+                </form>
+            </div>
+        </Fragment>
     );
 }

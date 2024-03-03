@@ -46,8 +46,8 @@ export default function BlogDetails({blogs, blog}) {
     return (
         <Fragment>
             <Head>
-                <title>Fluenty - {title}</title>
-                <meta name='description' content={`Fluenty ${title}`}/>
+                <title>Fluenty blog - {title}</title>
+                <meta name='description' content={`Read the Fluenty blog the ${title} to know what happening`}/>
             </Head>
             <main className={styles.main}>
                 <div className={styles.blogAuthor}>

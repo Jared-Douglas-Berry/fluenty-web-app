@@ -1,7 +1,8 @@
 import styles from './UserChangePassword.module.css';
-import {useEffect, useRef, useState} from "react";
+import {Fragment, useEffect, useRef, useState} from "react";
 import {useSession} from "next-auth/react";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 function UserChangePassword() {
     const [formErrors, setFormErrors] = useState({
@@ -108,31 +109,37 @@ function UserChangePassword() {
 
 
     return (
-        <section className={styles.profile}>
-            <h1>Your User Profile</h1>
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <div className={styles.control}>
-                    <label htmlFor='oldPassword'>Old Password</label>
-                    <input autoComplete="oldPassword" type='password' id='oldPassword' ref={oldPasswordInputRef}/>
-                    {formErrors.enteredOldPassword && <p>{formErrors.enteredOldPassword}</p>}
-                </div>
-                <div className={styles.control}>
-                    <label htmlFor='newPassword'>New Password</label>
-                    <input autoComplete="newPassword" type='password' id='newPassword' ref={newPasswordInputRef}/>
-                    {formErrors.enteredNewPassword && <p>{formErrors.enteredNewPassword}</p>}
-                </div>
-                <div className={styles.control}>
-                    <label htmlFor='confirmPassword'>Confirm Password</label>
-                    <input autoComplete="confirmPassword" type='password' id='confirmPassword' ref={confirmPasswordInputRef}/>
-                    {formErrors.enteredConfirmPassword && <p>{formErrors.enteredConfirmPassword}</p>}
-                </div>
+        <Fragment>
+            <Head>
+                <title>Fluenty User Password</title>
+                <meta name='description' content='Updating the user password'/>
+            </Head>
+            <section className={styles.profile}>
+                <h1>Your User Profile</h1>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <div className={styles.control}>
+                        <label htmlFor='oldPassword'>Old Password</label>
+                        <input autoComplete="oldPassword" type='password' id='oldPassword' ref={oldPasswordInputRef}/>
+                        {formErrors.enteredOldPassword && <p>{formErrors.enteredOldPassword}</p>}
+                    </div>
+                    <div className={styles.control}>
+                        <label htmlFor='newPassword'>New Password</label>
+                        <input autoComplete="newPassword" type='password' id='newPassword' ref={newPasswordInputRef}/>
+                        {formErrors.enteredNewPassword && <p>{formErrors.enteredNewPassword}</p>}
+                    </div>
+                    <div className={styles.control}>
+                        <label htmlFor='confirmPassword'>Confirm Password</label>
+                        <input autoComplete="confirmPassword" type='password' id='confirmPassword'
+                               ref={confirmPasswordInputRef}/>
+                        {formErrors.enteredConfirmPassword && <p>{formErrors.enteredConfirmPassword}</p>}
+                    </div>
 
-                <div className={styles.action}>
-                    <button>Change Password</button>
-                </div>
-            </form>
-        </section>
-
+                    <div className={styles.action}>
+                        <button>Change Password</button>
+                    </div>
+                </form>
+            </section>
+        </Fragment>
     );
 }
 

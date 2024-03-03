@@ -1,9 +1,10 @@
 import styles from './CreateServices.module.css';
 import ImagePicker from '../Images/ImagePicker.js';
 import Submitting from "../Buttons/Submitting.js";
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import DatePicker from "../DatePicker/DatePicker";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 export default function CreateServices() {
     const [pageTitle, setPageTitle] = useState('Create New Service');
@@ -150,70 +151,76 @@ export default function CreateServices() {
     };
 
     return (
-        <div className={styles.container}> {/* Apply the CSS class */}
-            <h1>{pageTitle}</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="title">Title:</label>
-                    <input
-                        type="text"
-                        id="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorTitle}</p>}
-                </div>
-                <div className={styles.images}>
-                    <div className={styles.images}>
-                        <ImagePicker
-                            name="servicesIcon"
-                            label="Service Icon"
-                            pickedImage={pickedImage}
-                            setPickedImage={setPickedImage}
-                            setErrorMessage={setErrorMessage}
-                            setIsInvalid={setIsInvalid}
-                            isRequired={false}
+        <Fragment>
+            <Head>
+                <title>Fluenty Admin Service</title>
+                <meta name='description' content='Creating new service for Fluenty Web site'/>
+            </Head>
+            <div className={styles.container}> {/* Apply the CSS class */}
+                <h1>{pageTitle}</h1>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="title">Title:</label>
+                        <input
+                            type="text"
+                            id="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
                             required
                         />
-                        {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
+                        {isInvalid && <p className={styles.error}>{errorTitle}</p>}
                     </div>
                     <div className={styles.images}>
-                        <ImagePicker
-                            name="serviceImage"
-                            label="Service Image"
-                            pickedImage={pickedImage1}
-                            setPickedImage={setPickedImage1}
-                            setErrorMessage={setErrorMessage}
-                            setIsInvalid={setIsInvalid}
-                            isRequired={false}
+                        <div className={styles.images}>
+                            <ImagePicker
+                                name="servicesIcon"
+                                label="Service Icon"
+                                pickedImage={pickedImage}
+                                setPickedImage={setPickedImage}
+                                setErrorMessage={setErrorMessage}
+                                setIsInvalid={setIsInvalid}
+                                isRequired={false}
+                                required
+                            />
+                            {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
+                        </div>
+                        <div className={styles.images}>
+                            <ImagePicker
+                                name="serviceImage"
+                                label="Service Image"
+                                pickedImage={pickedImage1}
+                                setPickedImage={setPickedImage1}
+                                setErrorMessage={setErrorMessage}
+                                setIsInvalid={setIsInvalid}
+                                isRequired={false}
+                                required
+                            />
+                            {isInvalid && <p className={styles.error}>{errorPickedImage1}</p>}
+                        </div>
+                    </div>
+
+                    <div>
+                        <label htmlFor="summary">The Summary:</label>
+                        <textarea
+                            id="summary"
+                            value={summary}
+                            onChange={(e) => setSummary(e.target.value)}
                             required
                         />
-                        {isInvalid && <p className={styles.error}>{errorPickedImage1}</p>}
+                        {isInvalid && <p className={styles.error}>{errorSummary}</p>}
                     </div>
-                </div>
 
-                <div>
-                    <label htmlFor="summary">The Summary:</label>
-                    <textarea
-                        id="summary"
-                        value={summary}
-                        onChange={(e) => setSummary(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorSummary}</p>}
-                </div>
-
-                <div className={styles.actions}>
-                    <Submitting
-                        type="submit"
-                        bntText={"Save"}
-                        isLoading={isLoading}
-                        isInvalid={isInvalid}
-                        error={errorMessage}
-                    />
-                </div>
-            </form>
-        </div>
+                    <div className={styles.actions}>
+                        <Submitting
+                            type="submit"
+                            bntText={"Save"}
+                            isLoading={isLoading}
+                            isInvalid={isInvalid}
+                            error={errorMessage}
+                        />
+                    </div>
+                </form>
+            </div>
+        </Fragment>
     );
 }

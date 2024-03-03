@@ -1,8 +1,9 @@
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import styles from "./CreateSubjects.module.css";
 import Submitting from "../Buttons/Submitting";
 import { MdAddCircleOutline } from "react-icons/md";
 import { FaTrashAlt } from "react-icons/fa";
+import Head from "next/head";
 
 export default function CreateSubjects() {
     const [subjectsId, setSubjectsId] = useState('');
@@ -111,31 +112,37 @@ export default function CreateSubjects() {
     };
 
     return (
-        <form className={styles.container} onSubmit={handleSubmit}>
-            <div>
-                {subjects.map(subject => (
-                    <div key={subject.id} className={styles.content}>
-                        <input
-                            type="text"
-                            value={subject.value}
-                            onChange={e => handleInputChange(subject.id, e.target.value, e.target.value)}
-                        />
-                      <MdAddCircleOutline onClick={handleAddInput} className={styles.plus} size={40}/>
-                        <FaTrashAlt onClick={() => handleRemoveInput(subject.id)} className={styles.trash} size={40} />
-                    </div>
-                ))}
-                {isInvalid && <p className={styles.error}>{errorSubjects}</p>}
-            </div>
-            <div className={styles.actions}>
-                <Submitting
-                    type="submit"
-                    bntText={"Save"}
-                    isLoading={isLoading}
-                    isInvalid={isInvalid}
-                    error={errorMessage}
-                />
-            </div>
-        </form>
-
+        <Fragment>
+            <Head>
+                <title>Fluenty Admin Project</title>
+                <meta name='description' content='Creating new project for Fluenty Web site'/>
+            </Head>
+            <form className={styles.container} onSubmit={handleSubmit}>
+                <div>
+                    {subjects.map(subject => (
+                        <div key={subject.id} className={styles.content}>
+                            <input
+                                type="text"
+                                value={subject.value}
+                                onChange={e => handleInputChange(subject.id, e.target.value, e.target.value)}
+                            />
+                            <MdAddCircleOutline onClick={handleAddInput} className={styles.plus} size={40}/>
+                            <FaTrashAlt onClick={() => handleRemoveInput(subject.id)} className={styles.trash}
+                                        size={40}/>
+                        </div>
+                    ))}
+                    {isInvalid && <p className={styles.error}>{errorSubjects}</p>}
+                </div>
+                <div className={styles.actions}>
+                    <Submitting
+                        type="submit"
+                        bntText={"Save"}
+                        isLoading={isLoading}
+                        isInvalid={isInvalid}
+                        error={errorMessage}
+                    />
+                </div>
+            </form>
+        </Fragment>
     );
 }
