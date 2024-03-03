@@ -4,12 +4,18 @@ import {
     getDocumentIdFindOne
 } from "../../helpers/db-utils";
 import BlogDetails from "../../components/Blogs/BlogDetails";
+import {Fragment} from "react";
+import Head from "next/head";
 
 export default function BlogDetailsPage({blogs, selectedBlog}) {
     return (
-        <div>
+        <Fragment>
+            <Head>
+                <title>Fluenty Blogs</title>
+                <meta name='description' content='Read the Fluenty blogs to know what happening'/>
+            </Head>
             <BlogDetails blogs={blogs} blog={selectedBlog}/>
-        </div>
+        </Fragment>
     );
 }
 

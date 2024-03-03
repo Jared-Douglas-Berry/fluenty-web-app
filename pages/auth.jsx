@@ -1,8 +1,9 @@
 import AuthForm from '../components/Auth/AuthForm';
-import { useEffect, useState } from "react";
+import {Fragment, useEffect, useState} from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import DNASpinnerLoading from "../components/Loader/Loader";
+import Head from "next/head";
 
 function AuthPage() {
   const router = useRouter();
@@ -34,7 +35,16 @@ function AuthPage() {
     return <DNASpinnerLoading styleBtn={'center'} />;
   }
 
-  return <AuthForm />;
+  return (
+      <Fragment>
+        <Head>
+          <title>Fluenty Register</title>
+          <meta name='description' content='Fluenty Authotize sign in or sign up page'/>
+        </Head>
+        <AuthForm />
+      </Fragment>
+
+  );
 }
 
 export default AuthPage;

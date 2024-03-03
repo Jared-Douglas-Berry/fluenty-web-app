@@ -1,9 +1,10 @@
 import styles from './CreateProject.module.css';
 import ImagePicker from '../Images/ImagePicker.js';
 import Submitting from "../Buttons/Submitting.js";
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import DatePicker from "../DatePicker/DatePicker";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 export default function CreateProject() {
     const [pageTitle, setPageTitle] = useState('Create New Project');
@@ -205,101 +206,108 @@ export default function CreateProject() {
     };
 
     return (
-        <div className={styles.container}> {/* Apply the CSS class */}
-            <h1>{pageTitle}</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="client">Client:</label>
-                    <input
-                        type="text"
-                        id="client"
-                        value={client}
-                        onChange={(e) => setClient(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorClient}</p>}
-                </div>
-                <div>
-                    <label htmlFor="title">Title:</label>
-                    <input
-                        type="text"
-                        id="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorTitle}</p>}
-                </div>
-                <div className={styles.images}>
-                    <ImagePicker
-                        name="projectImage"
-                        label="Project Image"
-                        pickedImage={pickedImage}
-                        setPickedImage={setPickedImage}
-                        setErrorMessage={setErrorMessage}
-                        setIsInvalid={setIsInvalid}
-                        isRequired={false}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
-                </div>
-                <div>
-                    <label htmlFor="category">Category:</label>
-                    <input
-                        type="text"
-                        id="category"
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorCategory}</p>}
-                </div>
-                <div>
-                    <DatePicker selectedDate={date} setSelectedDate={setDate} label='Select Start Date'/>
-                    {isInvalid && <p className={styles.error}>{errorDate}</p>}
-                </div>
-                <div>
-                    <label htmlFor="location">Location:</label>
-                    <input
-                        type="text"
-                        id="location"
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorLocation}</p>}
-                </div>
-                <div>
-                    <label htmlFor="challenge">The Challenge:</label>
-                    <textarea
-                        id="challenge"
-                        value={challenge}
-                        onChange={(e) => setChallenge(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorChallenge}</p>}
-                </div>
-                <div>
-                    <label htmlFor="results">The Results:</label>
-                    <textarea
-                        id="results"
-                        value={results}
-                        onChange={(e) => setResults(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorResults}</p>}
-                </div>
+        <Fragment>
+            <Head>
+                <title>Fluenty Admin Projects</title>
+                <meta name='description'
+                      content='Making the Fluenty Web site projects dynamic and creating new content'/>
+            </Head>
+            <div className={styles.container}> {/* Apply the CSS class */}
+                <h1>{pageTitle}</h1>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="client">Client:</label>
+                        <input
+                            type="text"
+                            id="client"
+                            value={client}
+                            onChange={(e) => setClient(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorClient}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="title">Title:</label>
+                        <input
+                            type="text"
+                            id="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorTitle}</p>}
+                    </div>
+                    <div className={styles.images}>
+                        <ImagePicker
+                            name="projectImage"
+                            label="Project Image"
+                            pickedImage={pickedImage}
+                            setPickedImage={setPickedImage}
+                            setErrorMessage={setErrorMessage}
+                            setIsInvalid={setIsInvalid}
+                            isRequired={false}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="category">Category:</label>
+                        <input
+                            type="text"
+                            id="category"
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorCategory}</p>}
+                    </div>
+                    <div>
+                        <DatePicker selectedDate={date} setSelectedDate={setDate} label='Select Start Date'/>
+                        {isInvalid && <p className={styles.error}>{errorDate}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="location">Location:</label>
+                        <input
+                            type="text"
+                            id="location"
+                            value={location}
+                            onChange={(e) => setLocation(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorLocation}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="challenge">The Challenge:</label>
+                        <textarea
+                            id="challenge"
+                            value={challenge}
+                            onChange={(e) => setChallenge(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorChallenge}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="results">The Results:</label>
+                        <textarea
+                            id="results"
+                            value={results}
+                            onChange={(e) => setResults(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorResults}</p>}
+                    </div>
 
-                <div className={styles.actions}>
-                    <Submitting
-                        type="submit"
-                        bntText={"Save"}
-                        isLoading={isLoading}
-                        isInvalid={isInvalid}
-                        error={errorMessage}
-                    />
-                </div>
-            </form>
-        </div>
+                    <div className={styles.actions}>
+                        <Submitting
+                            type="submit"
+                            bntText={"Save"}
+                            isLoading={isLoading}
+                            isInvalid={isInvalid}
+                            error={errorMessage}
+                        />
+                    </div>
+                </form>
+            </div>
+        </Fragment>
     );
 }

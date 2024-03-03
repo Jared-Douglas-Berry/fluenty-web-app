@@ -1,10 +1,15 @@
 import {Fragment} from "react";
 import {connectDatabase, getAllDocuments} from "../../helpers/db-utils";
 import AllBlogs from "../../components/Blogs/AllBlogs";
+import Head from "next/head";
 
 export default function Blogs({blogs}) {
     return (
         <Fragment>
+            <Head>
+                <title>Fluenty Blogs</title>
+                <meta name='description' content='Read the Fluenty blogs to know what happening'/>
+            </Head>
             <AllBlogs blogs={blogs} />
         </Fragment>
     );

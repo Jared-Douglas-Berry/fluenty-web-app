@@ -1,10 +1,15 @@
 import {Fragment} from "react";
 import AllProjects from "../../components/Projects/AllProjects";
 import {connectDatabase, getAllDocuments} from "../../helpers/db-utils";
+import Head from "next/head";
 
 export default function Projects({projects}) {
     return (
         <Fragment>
+            <Head>
+                <title>Fluenty Projects</title>
+                <meta name='description' content='Projects Fluenty working on'/>
+            </Head>
             <AllProjects projects={projects} />
         </Fragment>
     );

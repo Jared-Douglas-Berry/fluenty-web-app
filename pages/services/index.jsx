@@ -2,10 +2,15 @@ import AllServices from "../../components/Services/AllServices";
 import ScrollingBanner from "../../components/Banner/ScrollingBanner";
 import {Fragment} from "react";
 import {connectDatabase, getAllDocuments} from "../../helpers/db-utils";
+import Head from "next/head";
 
 export default function Services({services}) {
     return (
         <Fragment>
+            <Head>
+                <title>Fluenty Services</title>
+                <meta name='description' content='Services offered by Fluenty'/>
+            </Head>
             <AllServices services={services} />
             <ScrollingBanner items={services} />
         </Fragment>

@@ -1,8 +1,9 @@
 import styles from './CreateUser.module.css';
 import Submitting from "../Buttons/Submitting.js";
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function CreateUser() {
     const [pageTitle, setPageTitle] = useState('Create New Team Mate');
@@ -154,103 +155,109 @@ export default function CreateUser() {
     };
 
     return (
-        <div className={styles.container}> {/* Apply the CSS class */}
-            <h1>{pageTitle}</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="firstName">First Name:</label>
-                    <input
-                        type="text"
-                        id="firstName"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorFirstName}</p>}
-                </div>
-                <div>
-                    <label htmlFor="lastName">Last Name:</label>
-                    <input
-                        type="text"
-                        id="lastName"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorLastName}</p>}
-                </div>
-                <div>
-                    <label htmlFor="email">Email Address:</label>
-                    <input
-                        type="text"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorEmail}</p>}
-                </div>
-                <div>
-                    <label htmlFor="role">Role:</label>
-                    <select required value={role} onChange={(e) => setRole(e.target.value)}>
-                        <option disabled key={'selected role option'} value=''>
-                            selected role option
-                        </option>
-                        <option key={'user'} value='user'>
-                            user
-                        </option>
-                        <option key={'admin'} value='admin'>
-                            admin
-                        </option>
-                    </select>
-                    {isInvalid && <p className={styles.error}>{errorRole}</p>}
-                </div>
-                {!userId && (
-                    <>
-                        <div>
-                            <label htmlFor="password">Your Password</label>
-                            <input
-                                autoComplete="password"
-                                disabled={userId}
-                                type="password"
-                                id="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            {isInvalid && <p className={styles.error}>{errorPassword}</p>}
-                        </div>
-                        <div>
-                            <label htmlFor="confirmPassword">Confirm your Password</label>
-                            <input
-                                autoComplete="confirmPassword"
-                                disabled={userId}
-                                type="password"
-                                id="confirmPassword"
-                                value={confirmPassword}
-                                onChange={(e) => setConfirmPassword(e.target.value)}
-                            />
-                            {isInvalid && <p className={styles.error}>{errorConfirmPassword}</p>}
-                        </div>
-                    </>
-                )}
-                {userId && (
+        <Fragment>
+            <Head>
+                <title>Fluenty Admin Users</title>
+                <meta name='description' content='Creating new user for Fluenty Web site'/>
+            </Head>
+            <div className={styles.container}> {/* Apply the CSS class */}
+                <h1>{pageTitle}</h1>
+                <form onSubmit={handleSubmit}>
                     <div>
-                        <Link href="/admin/users/profile">
-                            Change Your Password
-                        </Link>
+                        <label htmlFor="firstName">First Name:</label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorFirstName}</p>}
                     </div>
-                )}
+                    <div>
+                        <label htmlFor="lastName">Last Name:</label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorLastName}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email Address:</label>
+                        <input
+                            type="text"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorEmail}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="role">Role:</label>
+                        <select required value={role} onChange={(e) => setRole(e.target.value)}>
+                            <option disabled key={'selected role option'} value=''>
+                                selected role option
+                            </option>
+                            <option key={'user'} value='user'>
+                                user
+                            </option>
+                            <option key={'admin'} value='admin'>
+                                admin
+                            </option>
+                        </select>
+                        {isInvalid && <p className={styles.error}>{errorRole}</p>}
+                    </div>
+                    {!userId && (
+                        <>
+                            <div>
+                                <label htmlFor="password">Your Password</label>
+                                <input
+                                    autoComplete="password"
+                                    disabled={userId}
+                                    type="password"
+                                    id="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                                {isInvalid && <p className={styles.error}>{errorPassword}</p>}
+                            </div>
+                            <div>
+                                <label htmlFor="confirmPassword">Confirm your Password</label>
+                                <input
+                                    autoComplete="confirmPassword"
+                                    disabled={userId}
+                                    type="password"
+                                    id="confirmPassword"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                />
+                                {isInvalid && <p className={styles.error}>{errorConfirmPassword}</p>}
+                            </div>
+                        </>
+                    )}
+                    {userId && (
+                        <div>
+                            <Link href="/admin/users/profile">
+                                Change Your Password
+                            </Link>
+                        </div>
+                    )}
 
-                <div className={styles.actions}>
-                    <Submitting
-                        type="submit"
-                        bntText={"Save"}
-                        isLoading={isLoading}
-                        isInvalid={isInvalid}
-                        error={errorMessage}
-                    />
-                </div>
-            </form>
-        </div>
+                    <div className={styles.actions}>
+                        <Submitting
+                            type="submit"
+                            bntText={"Save"}
+                            isLoading={isLoading}
+                            isInvalid={isInvalid}
+                            error={errorMessage}
+                        />
+                    </div>
+                </form>
+            </div>
+        </Fragment>
     );
 }

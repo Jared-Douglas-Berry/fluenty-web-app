@@ -1,10 +1,15 @@
 import {connectDatabase, getAllDocuments} from "../../helpers/db-utils";
 import {Fragment} from "react";
 import WholeTeam from "../../components/Team/WholeTeam";
+import Head from "next/head";
 
 export default function Team({team}) {
     return (
         <Fragment>
+            <Head>
+                <title>Fluenty Amazing Team</title>
+                <meta name='description' content='Fluenty Amazing Team'/>
+            </Head>
             <WholeTeam team={team} />
         </Fragment>
     );

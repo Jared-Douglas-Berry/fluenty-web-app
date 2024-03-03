@@ -1,8 +1,9 @@
 import styles from './CreateBlog.module.css';
 import ImagePicker from '../Images/ImagePicker.js';
 import Submitting from "../Buttons/Submitting.js";
-import {useEffect, useState} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 export default function CreateBlog() {
     const [pageTitle, setPageTitle] = useState('Create New Blogs');
@@ -202,115 +203,121 @@ export default function CreateBlog() {
     };
 
     return (
-        <div className={styles.container}> {/* Apply the CSS class */}
-            <h1>{pageTitle}</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="author">Author:</label>
-                    <input
-                        type="text"
-                        id="author"
-                        value={author}
-                        onChange={(e) => setAuthor(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorAuthor}</p>}
-                </div>
-                <div>
-                    <label htmlFor="title">Title:</label>
-                    <input
-                        type="text"
-                        id="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorTitle}</p>}
-                </div>
-                <div className={styles.images}>
-                    <ImagePicker
-                        name="blogImage"
-                        label="Blog Image"
-                        pickedImage={pickedImage}
-                        setPickedImage={setPickedImage}
-                        setErrorMessage={setErrorMessage}
-                        setIsInvalid={setIsInvalid}
-                        isRequired={false}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
-                </div>
-                <div>
-                    <label htmlFor="paragraphOne">Paragraph One:</label>
-                    <textarea
-                        id="paragraphOne"
-                        value={paragraphOne}
-                        onChange={(e) => setParagraphOne(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorParagraphOne}</p>}
-                </div>
+        <Fragment>
+            <Head>
+                <title>Fluenty Blog Create</title>
+                <meta name='description' content='creating new Fluenty Web site blog content'/>
+            </Head>
+            <div className={styles.container}>
+                <h1>{pageTitle}</h1>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="author">Author:</label>
+                        <input
+                            type="text"
+                            id="author"
+                            value={author}
+                            onChange={(e) => setAuthor(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorAuthor}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="title">Title:</label>
+                        <input
+                            type="text"
+                            id="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorTitle}</p>}
+                    </div>
+                    <div className={styles.images}>
+                        <ImagePicker
+                            name="blogImage"
+                            label="Blog Image"
+                            pickedImage={pickedImage}
+                            setPickedImage={setPickedImage}
+                            setErrorMessage={setErrorMessage}
+                            setIsInvalid={setIsInvalid}
+                            isRequired={false}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorPickedImage}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="paragraphOne">Paragraph One:</label>
+                        <textarea
+                            id="paragraphOne"
+                            value={paragraphOne}
+                            onChange={(e) => setParagraphOne(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorParagraphOne}</p>}
+                    </div>
 
-                <div className={styles.images}>
-                    <ImagePicker
-                        name="blogImage1"
-                        label="Blog Image 1"
-                        pickedImage={pickedImage1}
-                        setPickedImage={setPickedImage1}
-                        setErrorMessage={setErrorMessage}
-                        setIsInvalid={setIsInvalid}
-                        isRequired={false}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorPickedImage1}</p>}
-                </div>
+                    <div className={styles.images}>
+                        <ImagePicker
+                            name="blogImage1"
+                            label="Blog Image 1"
+                            pickedImage={pickedImage1}
+                            setPickedImage={setPickedImage1}
+                            setErrorMessage={setErrorMessage}
+                            setIsInvalid={setIsInvalid}
+                            isRequired={false}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorPickedImage1}</p>}
+                    </div>
 
-                <div>
-                    <label htmlFor="paragraphTwo">Paragraph Two:</label>
-                    <textarea
-                        id="paragraphTwo"
-                        value={paragraphTwo}
-                        onChange={(e) => setParagraphTwo(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorParagraphTwo}</p>}
-                </div>
+                    <div>
+                        <label htmlFor="paragraphTwo">Paragraph Two:</label>
+                        <textarea
+                            id="paragraphTwo"
+                            value={paragraphTwo}
+                            onChange={(e) => setParagraphTwo(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorParagraphTwo}</p>}
+                    </div>
 
-                <div className={styles.images}>
-                    <ImagePicker
-                        name="blogImage2"
-                        label="Blog Image 2"
-                        pickedImage={pickedImage2}
-                        setPickedImage={setPickedImage2}
-                        setErrorMessage={setErrorMessage}
-                        setIsInvalid={setIsInvalid}
-                        isRequired={false}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorPickedImage2}</p>}
-                </div>
+                    <div className={styles.images}>
+                        <ImagePicker
+                            name="blogImage2"
+                            label="Blog Image 2"
+                            pickedImage={pickedImage2}
+                            setPickedImage={setPickedImage2}
+                            setErrorMessage={setErrorMessage}
+                            setIsInvalid={setIsInvalid}
+                            isRequired={false}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorPickedImage2}</p>}
+                    </div>
 
-                <div>
-                    <label htmlFor="paragraphThree">Paragraph Three:</label>
-                    <textarea
-                        id="paragraphThree"
-                        value={paragraphThree}
-                        onChange={(e) => setParagraphThree(e.target.value)}
-                        required
-                    />
-                    {isInvalid && <p className={styles.error}>{errorParagraphThree}</p>}
-                </div>
+                    <div>
+                        <label htmlFor="paragraphThree">Paragraph Three:</label>
+                        <textarea
+                            id="paragraphThree"
+                            value={paragraphThree}
+                            onChange={(e) => setParagraphThree(e.target.value)}
+                            required
+                        />
+                        {isInvalid && <p className={styles.error}>{errorParagraphThree}</p>}
+                    </div>
 
-                <div className={styles.actions}>
-                    <Submitting
-                        type="submit"
-                        bntText={"Save"}
-                        isLoading={isLoading}
-                        isInvalid={isInvalid}
-                        error={errorMessage}
-                    />
-                </div>
-            </form>
-        </div>
+                    <div className={styles.actions}>
+                        <Submitting
+                            type="submit"
+                            bntText={"Save"}
+                            isLoading={isLoading}
+                            isInvalid={isInvalid}
+                            error={errorMessage}
+                        />
+                    </div>
+                </form>
+            </div>
+        </Fragment>
     );
 }

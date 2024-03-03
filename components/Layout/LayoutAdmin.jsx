@@ -2,10 +2,15 @@ import {Fragment} from 'react';
 import styles from './LayoutAdmin.module.css';
 import NavSideBar from "../Admin/NavSideBar";
 import Auth from "../Auth/Auth";
+import Head from "next/head";
 
 export default function LayoutAdmin({children}) {
     return (
         <Fragment>
+            <Head>
+                <title>Fluenty Admin</title>
+                <meta name='description' content='Making the Fluenty Web site dynamic in the adin page'/>
+            </Head>
             <Auth>
                 <main className={styles.main}>
                     <div className={styles.sideBar}>

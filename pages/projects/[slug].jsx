@@ -4,12 +4,18 @@ import {
     getDocumentIdFindOne
 } from "../../helpers/db-utils";
 import ProjectDetails from "../../components/Projects/ProjectDetails";
+import {Fragment} from "react";
+import Head from "next/head";
 
 export default function ProjectsDetails({projects, selectedProject}) {
     return (
-        <div>
+        <Fragment>
+            <Head>
+                <title>Fluenty Projects</title>
+                <meta name='description' content='Projects Fluenty working on'/>
+            </Head>
             <ProjectDetails projects={projects} project={selectedProject} />
-        </div>
+        </Fragment>
     );
 }
 
