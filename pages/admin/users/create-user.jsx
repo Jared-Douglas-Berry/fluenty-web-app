@@ -1,10 +1,10 @@
-import CreateBlog from "../../../components/Blogs/CreateBlog";
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
+import CreateUser from "../../../components/Users/CreateUser";
 
-export default function AdminBlogCreate() {
+export default function AdminUserCreate() {
     return (
         <LayoutAdmin>
-            <CreateBlog />
+            <CreateUser />
         </LayoutAdmin>
 
     );

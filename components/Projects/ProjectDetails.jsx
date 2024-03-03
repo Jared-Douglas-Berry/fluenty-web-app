@@ -1,6 +1,6 @@
 import styles from "./ProjectDetails.module.css";
 import Image from "next/image";
-import ProjectsCarousel from "./ProjectsCarousel";
+import ItemCarousel from "../Carousel/ItemCarousel";
 
 export default function ProjectDetails({project, projects}) {
     const { id, image, title, category, challenge, client, date, location, results, index } = project;
@@ -64,7 +64,7 @@ export default function ProjectDetails({project, projects}) {
                 <div className={styles.line}/>
             </div>
 
-            <ProjectsCarousel projects={projects} index={index} projectId={id} />
+            <ItemCarousel items={projects} page={'projects'} itemsId={id} index={index} image="image" />
         </section>
     );
 }

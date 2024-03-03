@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 
 export default function CreateBlog() {
-    const [pageTitle, setPageTitle] = useState('Create New Blog');
+    const [pageTitle, setPageTitle] = useState('Create New Blogs');
     const [blogId, setBlogId] = useState(null);
     const [author, setAuthor] = useState('');
     const [title, setTitle] = useState('');
@@ -33,7 +33,7 @@ export default function CreateBlog() {
 
     useEffect(() => {
         if (parsedData) {
-            setPageTitle('Update this Blog')
+            setPageTitle('Update this Blogs')
             setBlogId(parsedData._id);
             setAuthor(parsedData.author);
             setTitle(parsedData.title);
@@ -100,20 +100,20 @@ export default function CreateBlog() {
                     return;
                 } else if (pickedImage === null || (pickedImage && pickedImage.size === 0)) {
                     setIsInvalid(true);
-                    setErrorPickedImage('Invalid picked blog image')
-                    setErrorMessage('Invalid picked blog image')
+                    setErrorPickedImage('Invalid picked blogs image')
+                    setErrorMessage('Invalid picked blogs image')
                     setIsLoading(false);
                     return;
                 } else if (pickedImage1 && pickedImage1.size === 0) {
                     setIsInvalid(true);
-                    setErrorPickedImage1('Invalid  picked blog image 1')
-                    setErrorMessage('Invalid  picked blog image 1')
+                    setErrorPickedImage1('Invalid  picked blogs image 1')
+                    setErrorMessage('Invalid  picked blogs image 1')
                     setIsLoading(false);
                     return;
                 } else if (pickedImage2 && pickedImage2.size === 0) {
                     setIsInvalid(true);
-                    setErrorPickedImage2('Invalid  picked blog image 2')
-                    setErrorMessage('Invalid  picked blog image 2')
+                    setErrorPickedImage2('Invalid  picked blogs image 2')
+                    setErrorMessage('Invalid  picked blogs image 2')
                     setIsLoading(false);
                     return;
                 } else {

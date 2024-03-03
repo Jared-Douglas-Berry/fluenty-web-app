@@ -5,8 +5,8 @@ import {verifyPassword} from "../../../helpers/auth";
 export const authOptions = {
     session: {
         jwt: true, // This is optional as it's already true by default
-        encryption: true,
-        jwtSecret: process.env.NEXTAUTH_SECRET,
+        // encryption: true,
+        // jwtSecret: process.env.NEXTAUTH_SECRET,
         maxAge: 30 * 24 * 60 * 60, // 30 days
         updateAge: 24 * 60 * 60, // 24 hours
         generateSessionToken: () => {
@@ -29,7 +29,7 @@ export const authOptions = {
             async authorize(credentials, req) {
                 const client = await connectDatabase();
                 try {
-                    const user = await existingUser(client, { email: credentials.email, role: credentials.role }, process.env.mongodb_database, process.env.mongodb_database_user);
+                    const user = await existingUser(client, { email: credentials.email }, process.env.mongodb_database, process.env.mongodb_database_user);
 
                     if (!user) {
                         await client.close();
@@ -47,13 +47,10 @@ export const authOptions = {
 
                     // Set the role from the user data
 
-                    const { email, firstName, role } = user;
+                    const { email, role } = user;
 
-// Assign the role to the user object
-                    user.role = role;
-
-// Return user information including the role
-                    return { firstName, email, role };
+                    // Return user information including the role
+                    return { email, role };
                 } catch (error) {
                     console.error("Authentication error:", error);
                     throw error; // Rethrow the error to be caught elsewhere if needed
@@ -64,5 +61,21 @@ export const authOptions = {
 
         }),
     ],
+    callbacks: {
+        // Optional: Define custom JWT token handling
+        async jwt(token, user) {
+            // Add access_token from the user object to the token
+            if (user) {
+                token.accessToken = user.accessToken;
+            }
+            return token;
+        },
+        // Optional: Define custom session handling
+        async session(session, token) {
+            // Add user information from token to the session
+            session.user = token;
+            return session;
+        },
+    },
 }
 export default NextAuth(authOptions)

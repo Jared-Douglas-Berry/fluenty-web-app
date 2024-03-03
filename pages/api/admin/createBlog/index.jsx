@@ -65,15 +65,15 @@ export default async function handler(req, res) {
                 await clientMD.close();
                 return;
             } else if (pickedImage === null || pickedImage && pickedImage.size === 0) {
-                res.status(422).json({message: 'Invalid picked blog image'})
+                res.status(422).json({message: 'Invalid picked blogs image'})
                 await clientMD.close();
                 return;
             } else if (pickedImage1 && pickedImage1.size === 0) {
-                res.status(422).json({message: 'Invalid  picked blog image 1'})
+                res.status(422).json({message: 'Invalid  picked blogs image 1'})
                 await clientMD.close();
                 return;
             } else if (pickedImage2 && pickedImage2.size === 0) {
-                res.status(422).json({message: 'Invalid  picked blog image 2'})
+                res.status(422).json({message: 'Invalid  picked blogs image 2'})
                 await clientMD.close();
                 return;
             }
@@ -97,7 +97,7 @@ export default async function handler(req, res) {
             result = await insertDocument(clientMD, newBlog, process.env.mongodb_database, process.env.mongodb_database_blog);
             newBlog._id = result.insertedId;
 
-            res.status(201).json({message: 'Successfully Submitted Blog', newBlog})
+            res.status(201).json({message: 'Successfully Submitted Blogs', newBlog})
         } catch (error) {
             res.status(500).json({message: 'Inserting data failed'});
         }
