@@ -9,8 +9,9 @@ import AllProjects from "../components/Projects/AllProjects";
 import WholeTeam from "../components/Team/WholeTeam";
 import ContactUs from "../components/ContactUs/ContactUs";
 import About from "../components/About/About";
+import AllBlogs from "../components/Blogs/AllBlogs";
 
-export default function HomePage({services, techStacks, projects, team, options}) {
+export default function HomePage({services, techStacks, projects, team, options, blogs}) {
     return (
         <Fragment>
             <Head>
@@ -42,7 +43,7 @@ export default function HomePage({services, techStacks, projects, team, options}
             </section>
 
             <section>
-                <h2>Blog</h2>
+                <AllBlogs blogs={blogs} />
             </section>
 
             <section>
@@ -136,6 +137,27 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
+    const blogs = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_blog, { _id: -1 });
+
+// Extract only the necessary data for serialization
+    const serializedBlogs = blogs.map((blog, index) => ({
+        // Assuming _id is a string, if not, replace it with the appropriate property
+        index: index,
+        id: blog._id.toString(),
+        author: blog.author,
+        title: blog.title,
+        paragraphOne: blog.paragraphOne,
+        paragraphTwo: blog.paragraphTwo,
+        paragraphThree: blog.paragraphThree,
+        pickedImage: blog.pickedImage.src,
+        image: blog.pickedImage1.src,
+        pickedImage2: blog.pickedImage2.src,
+        modifiedDate: blog.modifiedDate.toISOString(),
+        createdDate: blog.createdDate.toISOString(),
+        slug: blog.title.trim().replace(/\s+/g, "-")
+        // Include other necessary fields here
+    }));
+
     return {
         props: {
             services: serializedServices,
@@ -143,6 +165,7 @@ export async function getStaticProps() {
             projects: serializedProjects,
             team: serializedTeam,
             options: serializedOptions,
+            blogs: serializedBlogs
         },
         revalidate: 1800,
     };

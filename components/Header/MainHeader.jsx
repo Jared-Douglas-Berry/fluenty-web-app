@@ -35,7 +35,7 @@ export default function MainHeader() {
                         <Link href='/#team'>Team</Link>
                     </li>
                     <li className={styles.linkItem}>
-                        <Link href='/blog'>Blog</Link>
+                        <Link href='/blogs'>Blog</Link>
                     </li>
                     {session && status === 'authenticated' && (
                         <li>

@@ -1,4 +1,4 @@
-import CreateBlog from "../../../components/Blog/CreateBlog";
+import CreateBlog from "../../../components/Blogs/CreateBlog";
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
 
 export default function AdminBlogCreate() {

@@ -5,7 +5,7 @@ import {MdOutlineEdit} from "react-icons/md";
 import {FaTrashAlt} from "react-icons/fa";
 import Creating from "../Buttons/Creating";
 import Link from "next/link";
-import CreateBlog from "../Blog/CreateBlog";
+import CreateBlog from "../Blogs/CreateBlog";
 
 const DynamicTable = ({apiEndpoint, createPageUrl}) => {
     const [data, setData] = useState([]);
