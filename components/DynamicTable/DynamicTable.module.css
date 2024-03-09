@@ -78,3 +78,29 @@
 .icons {
     display: flex;
 }
+
+@media screen and  (max-width: 768px) {
+    .table th, .table td {
+        padding: 4px;
+    }
+
+    .columns {
+        max-height: 150px;
+        min-width: 80px;
+    }
+
+    .edit {
+        width: 25px;
+        padding: 2.5px;
+
+    }
+
+    .trash {
+        width: 25px;
+        padding: 2.5px;
+    }
+}
+
+@media screen and  (max-width: 425px) {
+
+}

@@ -5,7 +5,7 @@
 
 .content {
     display: flex; /* Display items in a row */
-    gap: 10px; /* Adjust the gap between items */
+    gap: 50px; /* Adjust the gap between items */
     white-space: nowrap;
     animation: scroll 25s linear infinite; /* Adjust duration to make it slower */
 }
@@ -13,6 +13,7 @@
 .context {
     display: flex; /* Ensure the icon and text are aligned */
     align-items: center; /* Center items vertically */
+    font-size: var(--text-scrolling-banner);
 }
 
 @keyframes scroll {
@@ -20,6 +21,36 @@
         transform: translateX(100%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-25%);
+    }
+}
+
+@media screen and  (max-width: 768px) {
+    .context {
+        font-size: var(--text-scrolling-banner-tab);
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .context {
+        font-size: var(--text-scrolling-banner-mobi);
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-75%);
+        }
     }
 }

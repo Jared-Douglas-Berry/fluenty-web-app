@@ -163,7 +163,14 @@ body {
   --size-40: 10rem;
 
   --text-sub-header: var(--size-8);
+  --text-sub-header-tab: var(--size-6);
+  --text-sub-header-mobi: var(--size-4);
   --text-blue-sub-header: var(--size-6);
+  --text-blue-sub-header-tab: var(--size-4);
+  --text-blue-sub-header-mobi: var(--size-2);
+  --text-scrolling-banner: var(--size-16);
+  --text-scrolling-banner-tab: var(--size-12);
+  --text-scrolling-banner-mobi: var(--size-8);
 
   --font-wight-bold: bold;
   --font-wight-regular: regular;

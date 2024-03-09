@@ -116,3 +116,82 @@
     color: var(--color-secondary-1);
     transform: scale(1.1);
 }
+
+.readMore svg {
+    width: 50px;
+    height: 50px;
+}
+
+.facebook svg, .instagram svg, .linkin svg {
+    width: 42px;
+    height: 42px;
+}
+
+.twitter svg {
+    width: 47px;
+    height: 47px;
+}
+
+@media screen and (max-width: 768px) {
+    .teamMember .image {
+        max-height: 25rem;
+    }
+
+    .teamMember .content {
+        padding-right: 15px;
+    }
+
+    .teamMember .content h4 {
+        line-height: .7;
+        font-size: var(--size-6);
+        margin: 12.5px 0;
+    }
+
+    .teamMember .content span {
+        line-height: .7;
+        font-size: var(--size-4);
+    }
+
+    .teamMember .content .readMore {
+        top: 7.5px;
+        font-size: 15px;
+    }
+
+    .teamMember .btnSocial {
+        bottom: 60px;
+        padding-right: 15px;
+    }
+
+    .teamMember .btnSocial .readMore {
+        line-height: .7;
+        font-size: var(--size-4);
+        margin: 12.5px 5px;
+    }
+
+    .teamMember .btnSocial .socialStyleTwo {
+        margin-top: 5px;
+    }
+
+    .socialStyleTwo a {
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .readMore svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .facebook svg, .instagram svg, .linkin svg {
+        width: 21px;
+        height: 21px;
+    }
+
+    .twitter svg {
+        width: 23.5px;
+        height: 23.5px;
+    }
+}

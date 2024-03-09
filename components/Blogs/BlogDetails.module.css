@@ -91,13 +91,13 @@
     margin: 50px;
 }
 
-@media (max-width: 768px) {
+@media screen and  (max-width: 768px) {
    .navigation a {
         font-size: var(--size-6);
     }
 }
 
-@media (max-width: 425px) {
+@media screen and  (max-width: 425px) {
     .navigation a {
         font-size: 1.5rem;
     }

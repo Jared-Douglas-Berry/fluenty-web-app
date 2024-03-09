@@ -17,6 +17,8 @@
 
 .iconTitle {
     color: var(--color-secondary-1);
+    width: 60px;
+    height: 60px;
 }
 
 .image {
@@ -37,7 +39,7 @@
     padding: var(--size-4);
 }
 
-.content h2 {
+.title h2 {
     margin: 0;
     font-size: var(--size-15);
 }
@@ -46,4 +48,63 @@
     width: 100%;
     margin: 0;
     font-size: var(--size-6);
+}
+
+@media screen and  (max-width: 768px) {
+    .title {
+        margin-left: 15px;
+        padding: var(--size-6);
+        font-size: var(--text-sub-header-tab);
+    }
+
+    .iconTitle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .image {
+        max-height: 50rem;
+    }
+
+    .content {
+        padding: var(--size-4);
+    }
+
+    .title h2 {
+        font-size: var(--size-8);
+    }
+
+    .content p {
+        font-size: var(--size-6);
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .title {
+        margin-left: 7.5px;
+        padding: var(--size-3);
+        font-size: var(--text-sub-header-mobi);
+    }
+
+    .iconTitle {
+        width: 15px;
+        height: 15px;
+    }
+
+    .image {
+        max-height: 25rem;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: var(--size-2);
+    }
+
+    .title h2 {
+        font-size: var(--size-4);
+    }
+
+    .content p {
+        font-size: var(--size-3);
+    }
 }

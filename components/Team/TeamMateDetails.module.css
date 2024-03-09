@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 150px;
     margin: 150px 0;
 }
@@ -16,6 +16,7 @@
     font-size: var(--size-20);
     margin: 50px auto 25px auto;
 }
+
 .content h3 {
     font-size: var(--size-10);
     margin: 0;
@@ -53,7 +54,7 @@
 
 .gITContent h1, .gITContent h3 {
     margin: 0;
-  font-size: var(--size-6);
+    font-size: var(--size-6);
     color: var(--color-grey-50);
 }
 
@@ -70,7 +71,7 @@
 
 .image {
     flex: .5;
-    padding: 0 50px;
+    padding: 100px 50px;
     width: 100%;
     max-height: 80rem;
     overflow: hidden;
@@ -78,4 +79,79 @@
 
 .image img {
     object-fit: cover;
+}
+
+.gITContainer svg {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and  (max-width: 768px) {
+    .container {
+        padding: 0 75px;
+        margin: 75px 0;
+    }
+
+    .content {
+        padding: 0 25px;
+    }
+
+    .content h1 {
+        font-size: var(--size-10);
+    }
+
+    .content h3 {
+        font-size: var(--size-5);
+    }
+
+    .content p {
+        font-size: var(--size-4);
+        margin: 25px auto 25px auto;
+    }
+
+    .gITContainer {
+        margin: 10px 0;
+    }
+
+    .gITContainer span {
+        width: 25px;
+        height: 25px;
+    }
+
+    .gITContent {
+        margin-left: 10px;
+    }
+
+    .gITContent h1, .gITContent h3 {
+        font-size: var(--size-3);
+    }
+
+    .gITContent h2, .gITContent h4 {
+        font-size: var(--size-3);
+    }
+
+    .gITContent:hover h4 {
+        font-size: var(--size-3);
+    }
+
+    .image {
+        padding: 50px 25px;
+        max-height: 40rem;
+        max-width: 20rem;
+    }
+
+    .gITContainer svg {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .image {
+        padding: 0 25px;
+    }
 }

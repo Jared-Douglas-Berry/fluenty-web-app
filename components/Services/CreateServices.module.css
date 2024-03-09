@@ -43,3 +43,11 @@
     color: var(--color-error-500);
     font-size: var(--size-4);
 }
+
+@media screen and  (max-width: 768px) {
+
+}
+
+@media screen and  (max-width: 425px) {
+
+}

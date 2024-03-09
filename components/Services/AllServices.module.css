@@ -24,8 +24,32 @@
     margin-bottom: 15px;
 }
 
-@media (min-width: 768px) {
+@media screen and  (max-width: 768px) {
+    .services {
+        max-width: 30rem;
+        margin: var(--size-4) auto;
+    }
+
     .services h1 {
-        font-size: var(--size-16);
+        font-size: var(--text-sub-header-tab);
+    }
+
+    .services h3 {
+        font-size: var(--text-blue-sub-header-tab);
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .services {
+        max-width: 15rem;
+        margin: var(--size-2) auto;
+    }
+
+    .services h1 {
+        font-size: var(--text-sub-header-mobi);
+    }
+
+    .services h3 {
+        font-size: var(--text-blue-sub-header-mobi);
     }
 }

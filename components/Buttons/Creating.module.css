@@ -21,3 +21,15 @@
     color: var(--color-error-500);
     font-size: var(--size-8);
 }
+
+@media screen and (max-width: 768px) {
+    .button {
+        padding: var(--size-1) var(--size-2);
+        width: 90px;
+        font-size: var(--size-3);
+    }
+
+    .error {
+        font-size: var(--size-4);
+    }
+}

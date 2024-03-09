@@ -30,6 +30,8 @@
 
 .image {
     overflow: hidden;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .image img {
@@ -60,4 +62,50 @@
 .btnLeft {
     display: flex;
     justify-content: left;
+}
+
+@media screen and  (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+
+    .title {
+        font-size: var(--size-4);
+    }
+
+    .btn {
+        font-size: var(--size-3);
+    }
+
+    .contentNext {
+        margin-right: 7.5px;
+    }
+
+    .contentPrevious {
+        margin-left: 7.5px;
+    }
+
+    .image {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .image img {
+        object-fit: cover;
+    }
+
+}
+
+@media screen and  (max-width: 425px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .btnRight {
+        margin-top: 15px;
+    }
+
+    .btnLeft {
+        margin-bottom: 15px;
+    }
 }

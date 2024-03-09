@@ -28,7 +28,7 @@ export default function TeamMateDetails({teamMate}) {
             </Head>
             <div className={styles.container}>
                 <div className={styles.image}>
-                    <Image src={image} alt={firstName} width={800} height={1200} layout='response'/>
+                    <Image src={image} alt={firstName} width={800} height={1200} layout='responsive'/>
                 </div>
                 <div className={styles.content}>
                     <h1>{firstName} {middleName} {lastName}</h1>
@@ -37,21 +37,21 @@ export default function TeamMateDetails({teamMate}) {
 
                     <h3>Get In Touch</h3>
                     <div className={styles.gITContainer}>
-                        <span><FaLocationDot size={30}/></span>
+                        <span><FaLocationDot /></span>
                         <div className={styles.gITContent}>
                             <h1>Location</h1>
                             <h2>{location}</h2>
                         </div>
                     </div>
                     <div className={styles.gITContainer}>
-                        <span><IoMdMail size={30}/></span>
+                        <span><IoMdMail /></span>
                         <div className={styles.gITContent}>
                             <h3>Email Address</h3>
                             <Link href={`mailto:${email}`}><h4>{email}</h4></Link>
                         </div>
                     </div>
                     <div className={styles.gITContainer}>
-                        <span><FaPhone size={30}/></span>
+                        <span><FaPhone /></span>
                         <div className={styles.gITContent}>
                             <h3>Phone Us</h3>
                             <Link href={`callto:${phone}`}><h4>{phone}</h4></Link>

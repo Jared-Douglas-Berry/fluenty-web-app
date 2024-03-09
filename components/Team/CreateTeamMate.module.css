@@ -44,3 +44,41 @@
     color: var(--color-error-500);
     font-size: var(--size-4);
 }
+
+@media screen and  (max-width: 768px) {
+    .container {
+        max-width: 75%;
+        padding: 10px;
+    }
+
+    .container h1 {
+        font-size: 12.5px;
+        margin-bottom: 10px;
+    }
+
+    .container label {
+        margin-bottom: 4px;
+    }
+
+    .container input[type="text"],
+    .container input[type="number"],
+    .container textarea {
+        padding: 5px;
+        margin-bottom: 7.5px;
+    }
+
+    .actions {
+        padding: .5rem;
+    }
+
+    .error {
+        margin-bottom: 7.5px;
+        font-size: var(--size-3);
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .container {
+        max-width: 100%;
+    }
+}

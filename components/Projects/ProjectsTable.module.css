@@ -77,6 +77,20 @@
     margin-right: auto;
 }
 
+.image {
+    width: 100%;
+    max-height: 100rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.image img {
+    object-fit: cover;
+}
+
 .rightBtn {
     visibility: visible;
 }
@@ -124,4 +138,91 @@
 .projectTimeline:hover .rightBtn .detailsBtn {
     background: var(--color-secondary-1);
     color: white;
+}
+
+@media screen and  (max-width: 768px) {
+    .projectTimeline {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+    }
+
+    .projectTimeline .container {
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+    }
+
+
+    .projectTimeline .content {
+        max-width: 175px;
+        margin-right: 10px;
+    }
+
+    .projectTimeline .content .serialNumber {
+        font-size: 25px;
+        margin-bottom: 22.5px;
+    }
+
+    .projectTimeline .content h4 a {
+        line-height: .7;
+        font-size: 25px;
+        margin-bottom: 22.5px;
+    }
+
+    .detailsBtn {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+        line-height: 50px;
+    }
+
+    .image {
+        width: 60%;
+        max-height: 75rem;
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .projectTimeline {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        padding-left: 3.75px;
+        padding-right: 3.75px;
+    }
+
+    .projectTimeline .container {
+        padding-left: 3.75px;
+        padding-right: 3.75px;
+    }
+
+
+    .projectTimeline .content {
+        max-width: 87.5px;
+        margin-right: 5px;
+    }
+
+    .projectTimeline .content .serialNumber {
+        font-size: 15.5px;
+        margin-bottom: 11.25px;
+    }
+
+    .projectTimeline .content h4 a {
+        line-height: 1;
+        font-size: 15.5px;
+        margin-bottom: 11.25px;
+    }
+
+    .detailsBtn {
+        display: none;
+        visibility: hidden;
+    }
+    .rightBtn {
+        display: none;
+        visibility: hidden;
+    }
+    .image {
+        width: 50%;
+        max-height: 11rem;
+    }
 }
