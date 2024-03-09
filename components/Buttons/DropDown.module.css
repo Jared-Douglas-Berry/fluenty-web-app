@@ -1,6 +1,6 @@
 .dropdown {
     display: inline-block;
-    width: 100%;
+    width: 96%;
     flex: 1;
     height: 50px;
     font-size: var(--size-6);
@@ -12,10 +12,24 @@
     border-bottom: 2px solid var(--color-secondary-1);
     background-color: var(--color-grey-800);
     margin: 10px;
-    width: 100%;
+    width: 96%;
     flex: .5;
     font-size: var(--size-6);
     border-radius: 4px;
     cursor: pointer;
     height: 50px;
+}
+
+@media screen and  (max-width: 768px) {
+    .dropdown {
+        height: 25px;
+        font-size: var(--size-3);
+    }
+
+    .dropdown select {
+        padding: 4px 6px;
+        margin: 5px;
+        font-size: var(--size-3);
+        height: 25px;
+    }
 }

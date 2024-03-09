@@ -16,3 +16,26 @@
     padding: 25px 60px;
     width: 85%;
 }
+
+@media screen and  (max-width: 768px) {
+    .sideBar {
+        width: 20%;
+        padding: 7.5px 15px;
+    }
+
+    .child {
+        padding: 12.5px 30px;
+        width: 80%;
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .sideBar {
+        width: max-content;
+        padding: 3.75px 7.5px;
+    }
+
+    .child {
+        width: 100%;
+    }
+}

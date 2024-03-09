@@ -182,7 +182,7 @@ export default function ContactUs({options}) {
                     </div>
                     <div className={styles.sectionsBox}>
                         <div className={styles.icon}>
-                            <FaPencilAlt size={30}/>
+                            <FaPencilAlt />
                         </div>
                         <textarea
                             id='message'

@@ -31,20 +31,20 @@ export default function TeamCard({teamMate}) {
                     <h4>{firstName} {middleName} {lastName}</h4>
                     <span>{jobTitle}</span>
                     <Link className={styles.readMore} href={`/team/${slug}`}>
-                        <PiArrowBendDoubleUpRightLight size={50}/>
+                        <PiArrowBendDoubleUpRightLight />
                     </Link>
                 </div>
 
                 <div className={styles.btnSocial}>
                     <Link className={styles.readMore} href={`/team/${slug}`}>
                         <span>View Details</span>
-                        <PiArrowBendDoubleUpRightLight size={50}/>
+                        <PiArrowBendDoubleUpRightLight />
                     </Link>
                     <div className={styles.socialStyleTwo}>
-                        <Link className={styles.facebook} href={facebook}><FaFacebook size={42}/></Link>
-                        <Link className={styles.twitter} href={twitter}><AiFillTwitterCircle size={47}/></Link>
-                        <Link className={styles.instagram} href={instagram}><FaInstagramSquare size={42}/></Link>
-                        <Link className={styles.linkin} href={linkin}><FaLinkedin size={42}/></Link>
+                        <Link className={styles.facebook} href={facebook}><FaFacebook /></Link>
+                        <Link className={styles.twitter} href={twitter}><AiFillTwitterCircle /></Link>
+                        <Link className={styles.instagram} href={instagram}><FaInstagramSquare /></Link>
+                        <Link className={styles.linkin} href={linkin}><FaLinkedin /></Link>
                     </div>
                 </div>
             </div>

@@ -81,3 +81,38 @@
 .comments:hover {
     color: var(--color-secondary-1);
 }
+
+@media screen and  (max-width: 768px) {
+
+    .content {
+        padding: var(--size-2);
+    }
+
+    .linkItem {
+        padding: 0 10px;
+    }
+
+    .blogAuthor {
+        margin: 5px 7.5px;
+        font-size: var(--size-4)
+    }
+
+    .iconDot {
+        margin: 0 4px;
+    }
+
+    .btn {
+        margin: 10px;
+    }
+
+    .btn a {
+        font-size: var(--size-4);
+    }
+    .content h2 {
+        margin: 0;
+    }
+}
+
+@media screen and  (max-width: 425px) {
+
+}

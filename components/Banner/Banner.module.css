@@ -53,7 +53,7 @@
     height: 100%;
 }
 
-@media (max-width: 1440px) {
+@media screen and  (max-width: 1440px) {
     .container {
         height: 700px;
     }
@@ -85,53 +85,22 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media screen and  (max-width: 768px) {
     .container {
-        height: 600px;
+        height: 277px;
     }
 
     .textContainer {
-        padding: 2rem .8rem .8rem 6rem;
-        width: 80%;
+        padding: 1.25rem .5rem .5rem 2rem;
+        width: 50%;
     }
 
     .textContainer h1 {
-        font-size: var(--size-18);
-    }
-
-    .textContainer h3 {
-        font-size: var(--size-14);
-        width: 75%;
-    }
-
-    .textContainer p {
-        font-size: var(--size-11);
-        width: 100%;
-    }
-
-    .image {
-        top: 80px;
-        right: 0;
-        width: 600px;
-        height: 600px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        height: 400px;
-    }
-
-    .textContainer {
-        padding: 1.25rem .5rem .5rem 4rem;
-    }
-
-    .textContainer h1 {
-        font-size: var(--size-12);
-    }
-
-    .textContainer h3 {
         font-size: var(--size-8);
+    }
+
+    .textContainer h3 {
+        font-size: var(--size-6);
         width: 65%;
     }
 
@@ -142,12 +111,19 @@
     .image {
         top: 80px;
         right: 0;
-        width: 400px;
-        height: 400px;
+        width: 386px;
+        height: 363px;
+    }
+
+    .image img {
+        object-fit: fill;
+        object-position: top;
+        width: 100%;
+        height: 75%;
     }
 }
 
-@media (max-width: 425px) {
+@media screen and  (max-width: 425px) {
     .container {
         height: 200px;
     }
@@ -179,7 +155,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media screen and  (max-width: 320px) {
     .container {
         height: 180px;
     }

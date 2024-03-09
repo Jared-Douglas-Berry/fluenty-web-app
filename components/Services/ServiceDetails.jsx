@@ -15,7 +15,7 @@ export default function ServiceDetails({service}) {
             </Head>
             <main className={styles.main}>
                 <div className={styles.title}>
-                    <h2>{title}: <SiIcinga size={60} className={styles.iconTitle} /></h2>
+                    <h2>{title}: <SiIcinga className={styles.iconTitle} /></h2>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.image}>

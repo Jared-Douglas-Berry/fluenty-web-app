@@ -24,8 +24,40 @@
     margin-bottom: 15px;
 }
 
-@media (min-width: 768px) {
+@media screen and  (max-width: 768px) {
+    .blogs {
+        max-width: 47rem;
+        margin: var(--size-4) auto;
+    }
+
     .blogs h1 {
-        font-size: var(--size-16);
+        font-size: var(--text-sub-header-tab);
+    }
+
+    .blogs h3 {
+        font-size: var(--text-blue-sub-header-tab);
+    }
+
+    .text {
+        margin-bottom: 7.5px;
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .blogs {
+        max-width: 23.5rem;
+        margin: var(--size-2) auto;
+    }
+
+    .blogs h1 {
+        font-size: var(--text-sub-header-mobi);
+    }
+
+    .blogs h3 {
+        font-size: var(--text-blue-sub-header-mobi);
+    }
+
+    .text {
+        margin-bottom: 3.75px;
     }
 }

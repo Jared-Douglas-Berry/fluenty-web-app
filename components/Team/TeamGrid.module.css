@@ -11,3 +11,17 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+
+@media screen and  (max-width: 768px) {
+    .grid {
+        margin: 0 25px;
+        padding: 25px;
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .grid {
+        margin: 0 12.5px;
+        padding: 12.5px;
+    }
+}

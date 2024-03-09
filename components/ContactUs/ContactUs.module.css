@@ -107,14 +107,77 @@
     top: 33px;
     left: 20px;
 }
+.icon svg {
+    width: 30px;
+    height: 30px;
+}
 
 .actions {
     margin-top: var(--size-4);
     text-align: right;
 }
 
-@media (min-width: 768px) {
+@media screen and  (max-width: 768px) {
+    .contactUs {
+        max-width: 30rem;
+        margin: var(--size-4) auto;
+    }
+
     .contactUs h1 {
-        font-size: var(--size-16);
+        font-size: var(--text-sub-header-tab);
+    }
+
+    .contactUs h3 {
+        font-size: var(--text-blue-sub-header-tab);
+    }
+
+    .text {
+        margin-bottom: 7.5px;
+    }
+
+    .input {
+        padding: 4px 6px;
+        font-size: var(--size-3);
+        margin: 5px;
+        height: 25px;
+    }
+
+    .input input{
+        font-size: var(--size-3);
+        height: 23.5px;
+        padding-left: 5px;
+    }
+
+    .textBox {
+        top: -10px;
+        padding: 4px 6px 4px 25px;
+        margin: 5px;
+        height: 125px;
+        font-size: var(--size-3);
+    }
+
+    .icon {
+        top: 20.5px;
+        left: 10px;
+    }
+
+    .icon svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .actions {
+        margin-top: var(--size-2);
+    }
+}
+
+@media screen and  (max-width: 425px) {
+    .contactUs {
+        max-width: 18rem;
+        margin: var(--size-2) auto;
+    }
+
+    .sections {
+        flex-direction: column;
     }
 }

@@ -40,12 +40,46 @@
     align-items: center;
 }
 
-@media (max-width: 768px) {
-    .logo {
-        font-size: var(--size-10);
+.navigation p {
+    font-size: var(--size-4);
+}
+
+.logo svg {
+    width: 30px;
+    height: 30px;
+}
+
+.navigation svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and  (max-width: 768px) {
+    .footer {
+        padding: .5rem;
+        height: var(--size-10);
     }
 
+
     .navigation a {
-        font-size: var(--size-6);
+        font-size: var(--size-2);
+    }
+
+    .linkItem {
+        padding: 0 20px;
+    }
+
+    .navigation p {
+        font-size: var(--size-2);
+    }
+
+    .logo svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .navigation svg {
+        width: 10px;
+        height: 10px;
     }
 }
