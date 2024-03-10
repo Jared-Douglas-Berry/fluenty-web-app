@@ -11,15 +11,6 @@ function AuthPage() {
   const { data: session } = useSession();
 
   useEffect(() => {
-    const cleanup = () => {
-      console.log('Component is unmounting');
-      // Perform cleanup actions if needed
-    };
-
-    return cleanup;
-  }, []);
-
-  useEffect(() => {
     const fetchSession = async () => {
       if (session) {
         await router.replace('/admin');

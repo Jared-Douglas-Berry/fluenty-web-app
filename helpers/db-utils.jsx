@@ -4,10 +4,7 @@ import {MongoClient, ObjectId} from "mongodb";
 const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.foo9ysk.mongodb.net`
 
 export async function connectDatabase() {
-    const client = await MongoClient.connect(connectionString, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
+    const client = await MongoClient.connect(connectionString);
     return client;
 }
 
