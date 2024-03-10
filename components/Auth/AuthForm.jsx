@@ -112,7 +112,6 @@ export default function AuthForm() {
                         redirect: false,
                         email: enteredEmail,
                         password: enteredPassword,
-                        role: 'admin',
                     });
 
                     if (!result.error) {
