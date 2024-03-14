@@ -5,7 +5,7 @@ export default function AllTechStacks({techStacks}) {
         <section className={styles.tech}>
             <div className={styles.text}>
                 <h3>Where Expertise Meets Excellence</h3>
-                <h1>Tech Mastery and Tech Stack Where Expertise Meets Excellence</h1>
+                <h1>Tech Mastery and Tech Stack</h1>
             </div>
             <TechStackGrid techStacks={techStacks} />
         </section>

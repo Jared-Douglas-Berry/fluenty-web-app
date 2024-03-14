@@ -10,7 +10,9 @@ export default function Projects({projects}) {
                 <title>Fluenty Projects</title>
                 <meta name='description' content='Projects Fluenty working on'/>
             </Head>
-            <AllProjects projects={projects} />
+            <div className='pageSpace'>
+                <AllProjects projects={projects} />
+            </div>
         </Fragment>
     );
 }

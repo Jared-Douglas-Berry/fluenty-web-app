@@ -27,7 +27,7 @@ body {
   --color-grey-500: hsl(265, 3%, 53%);
   --color-grey-600: hsl(265, 4%, 42%);
   --color-grey-700: hsl(265, 4%, 31%);
-  --color-grey-800: hsl(276, 5%, 20%);
+  --color-grey-800: #1E1E1E;
   --color-grey-900: hsl(280, 5%, 13%);
 
   --color-primary-0: #fafaff;
@@ -128,7 +128,8 @@ body {
   --color-primary-495: #000014;
 
 
-  --color-secondary-1: #49a5e1;
+  --color-secondary-1: #37A4E1;
+  --color-secondary-2: #BABABA;
 
   --color-success-100: #a2f0bc;
   --color-success-500: #12bd4b;
@@ -162,36 +163,38 @@ body {
   --size-36: 9rem;
   --size-40: 10rem;
 
-  --text-sub-header: var(--size-8);
-  --text-sub-header-tab: var(--size-6);
-  --text-sub-header-mobi: var(--size-4);
-  --text-blue-sub-header: var(--size-6);
-  --text-blue-sub-header-tab: var(--size-4);
-  --text-blue-sub-header-mobi: var(--size-2);
+  --text-sub-header: var(--size-24);
+  --text-sub-header-tab: var(--size-18);
+  --text-sub-header-mobi: var(--size-12);
+  --text-blue-sub-header: var(--size-8);
+  --text-blue-sub-header-tab: var(--size-6);
+  --text-blue-sub-header-mobi: var(--size-4);
   --text-scrolling-banner: var(--size-16);
   --text-scrolling-banner-tab: var(--size-12);
   --text-scrolling-banner-mobi: var(--size-8);
+  --text-paragraph: var(--size-14);
+  --text-paragraph-two: var(--size-8);
 
-  --font-wight-bold: bold;
-  --font-wight-regular: regular;
-  --font-wight-semi-bold: semi-bold;
+  --font-weight-bold: bold;
+  --font-weight-regular: regular;
+  --font-weight-semi-bold: semi-bold;
 
   margin: 0;
-  background-color: var(--color-black-25);
+  background-color: var(--color-black-0);
   color: var(--color-grey-50);
-  font-family: "Avenir Next Condensed", Avenir-next, Avenir;
+  font-family: "Avenir Next", Avenir-next, Avenir;
 }
 
 h1,
 h2 {
-  font-family: "Avenir Next Condensed", Avenir-next, Avenir;
-  font-weight: var(--font-wight-bold);
+  font-family: "Avenir Next", Avenir-next, Avenir;
+  font-weight: var(--font-weight-bold);
 }
 
 h3,
 h4 {
-  font-family: "Avenir Next Condensed", Avenir-next, Avenir;
-  font-weight: var(--font-wight-regular);
+  font-family: "Avenir Next ", Avenir-next, Avenir;
+  font-weight: var(--font-weight-regular);
 }
 
 a {
@@ -220,3 +223,9 @@ ul {
   border: 0;
   width: 100%;
 }
+
+.pageSpace {
+  padding: 0 8rem;
+  margin: 0 .5rem;
+}
+

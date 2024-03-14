@@ -25,7 +25,7 @@ export default function ProjectsTable({ projects }) {
                         </div>
                         <div className={styles.rightBtn}>
                             <Link href={`/projects/${project.slug}`} className={styles.detailsBtn}>
-                                <PiArrowBendDoubleUpRightLight/>
+                                <PiArrowBendDoubleUpRightLight className={styles.icon}/>
                             </Link>
                         </div>
                     </div>

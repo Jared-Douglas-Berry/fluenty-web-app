@@ -1,4 +1,5 @@
 .header {
+    transition: height 0.3s ease;
     position: sticky;
     top: 0;
     width: 100%;
@@ -9,6 +10,16 @@
     height: var(--size-40);
     background-color: var(--color-grey-900);
     z-index: 100;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: var(--font-weight-semi-bold);
+}
+.scrolled {
+    height: var(--size-20); /* Adjusted height when scrolled */
+    padding: .5rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {

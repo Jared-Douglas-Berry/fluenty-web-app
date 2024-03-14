@@ -1,18 +1,20 @@
 .about {
-    width: 96%;
+    width: 100%;
     margin: var(--size-8) var(--size-4);
 }
 
-.about h1 {
+.content h1 {
     font-size: var(--text-sub-header);
     text-align: center;
-    margin: 0;
+    margin: 0 0 2rem 0;
 }
 
-.about h3 {
+.content h3 {
     margin: 0;
     font-size: var(--text-blue-sub-header);
     color: var(--color-secondary-1);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1.5px;
 }
 
 .content {
@@ -33,29 +35,32 @@
 }
 
 .contact h1 {
+    font-size: var(--text-paragraph);
+    text-align: center;
     margin: 0;
-    width: 62%;
+    width: 100%;
 }
 
 .contact h3 {
     margin: 0;
-    font-size: var(--text-sub-header);
+    font-size: var(--size-8);
     color: var(--color-grey-50);
+    letter-spacing: 1.5px;
 }
 
 .contact p {
     text-align: center;
-    width: 82%;
+    width: 100%;
     margin: 28px 0;
-    font-size: var(--text-sub-header);
+    font-size: var(--text-paragraph-two);
     color: var(--color-grey-50);
 }
 
 .contact span {
     text-align: center;
     width: 82%;
-    margin: 28px 0;
-    font-size: var(--text-sub-header);
+    margin: 28px 0 10rem 0;
+    font-size: var(--text-paragraph-two);
     color: var(--color-grey-50);
 }
 

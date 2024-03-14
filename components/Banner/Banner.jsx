@@ -9,7 +9,7 @@ export default function Banner() {
                 <h3>We're <span className={styles.textBlue}>code</span> craftsmen & <span
                     className={styles.textBlue}>tech</span> solution professionals
                 </h3>
-                <p>Unlock Innovation Through Our expertise</p>
+                <p className={styles.pBanner}>Unlock Innovation Through Our Expertise</p>
                 <p>Collaborative solutions, limitless possibilities</p>
             </div>
             <div className={styles.imageContainer}>
