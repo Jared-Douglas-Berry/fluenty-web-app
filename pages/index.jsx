@@ -19,35 +19,36 @@ export default function HomePage({services, techStacks, projects, team, options,
                 <meta name='description' content='Fluenty Development'/>
             </Head>
 
-            <Banner/>
+                <Banner/>
 
-            <section id="home">
-                <About />
+            <section className='pageSpace' id="home">
+                <About/>
             </section>
 
-            <section id="services">
+
+            <section className='pageSpace' id="services">
                 <AllServices services={services}/>
-                <ScrollingBanner items={services}/>
             </section>
+            <ScrollingBanner items={services}/>
 
-            <section>
+            <section className='pageSpace'>
                 <AllTechStacks techStacks={techStacks}/>
             </section>
 
-            <section id="projects">
+            <section className='pageSpace' id="projects">
                 <AllProjects projects={projects}/>
             </section>
 
-            <section id="team">
+            <section className='pageSpace' id="team">
                 <WholeTeam team={team}/>
             </section>
 
-            <section>
-                <AllBlogs blogs={blogs} />
+            <section className='pageSpace' id="blogs">
+                <AllBlogs blogs={blogs}/>
             </section>
 
-            <section>
-                <ContactUs options={options[0].subjects} />
+            <section className='pageSpace'>
+            <ContactUs options={options[0].subjects} />
             </section>
 
         </Fragment>

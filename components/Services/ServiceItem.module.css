@@ -2,11 +2,14 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     background-color: var(--color-grey-800);
     text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .serviceItem:hover {
     transform: scale(1.15);
-    background-color: var(--color-primary-220);
+    background-color: var(--color-secondary-1);
 }
 
 .serviceItem a {
@@ -14,43 +17,48 @@
 }
 
 .image {
-    width: 100%;
-    max-height: 10rem;
+    width: 96%;
     overflow: hidden;
 }
 
 .image img {
     object-fit: cover;
+    margin: 10px;
 }
 
 .icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    position: absolute;
-    width: 3rem;
-    max-height: 3rem;
+    margin: 1.5rem;
+    width: 6rem;
+    max-height: 6rem;
     overflow: hidden;
-    border-radius: 39%;
-    color: white;
+    color: white !important;
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }
 
 .icon img {
     object-fit: cover;
+    color: white !important;
+    -webkit-filter:invert(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(invert='1');
 }
 
 .content {
-    margin: 45px 0 0 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    text-align: left;
     padding: var(--size-4);
 }
 
 .content h2 {
     margin: 0;
     font-size: var(--size-6);
+    height: 66px;
 }
 
 .content time {

@@ -1,19 +1,20 @@
 .blogs {
-    width: 90%;
-    max-width: 94rem;
-    margin: var(--size-8) auto;
+    width: 100%;
+    margin: var(--size-8) var(--size-4);
 }
 
 .blogs h1 {
     font-size: var(--text-sub-header);
     text-align: center;
-    margin: 0;
+    margin: 0 0 2rem 0;
 }
 
 .blogs h3 {
     margin: 0;
     font-size: var(--text-blue-sub-header);
     color: var(--color-secondary-1);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1.5px;
 }
 
 .text {

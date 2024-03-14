@@ -1,6 +1,6 @@
 .projectTimeline {
     border-bottom: 1px solid var(--color-grey-300);
-    padding-bottom: 60px;
+    padding: 60px 15px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -12,10 +12,9 @@
     -o-transition: .3s;
     transition: .3s;
     max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
     justify-content: center;
     flex-direction: row;
+    background-color: var(--color-grey-800);
 }
 
 .projectTimeline .container {
@@ -26,7 +25,7 @@
     max-width: 90%;
     padding-left: 15px;
     padding-right: 15px;
-    width: 90%;
+    width: 100%;
 }
 
 .projectTimeline:hover {
@@ -34,7 +33,7 @@
 }
 
 .projectTimeline .content {
-    max-width: 350px;
+    width: 100%;
     margin-right: 20px;
 }
 
@@ -63,7 +62,7 @@
     line-height: 1.4;
     color: white;
     font-weight: 300;
-    font-size: 50px;
+    font-size: var(--text-paragraph-two) !important;
     margin-bottom: 45px;
     display: block;
     -webkit-transition: .3s;
@@ -93,10 +92,16 @@
 
 .rightBtn {
     visibility: visible;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .detailsBtn {
     color: white;
+    background: var(--color-secondary-2);
+    border-color: var(--color-secondary-2);
     width: 100px;
     height: 100px;
     -webkit-transition: 0.5s;
@@ -113,6 +118,8 @@
     transform: rotate(-45deg);
     /*border: 1px solid var(--color-secondary-1);*/
 }
+
+
 
 .projectTimeline:hover,
 .projectTimeline:focus,
@@ -138,6 +145,11 @@
 .projectTimeline:hover .rightBtn .detailsBtn {
     background: var(--color-secondary-1);
     color: white;
+}
+
+.detailsBtn svg {
+    width: 80px !important;
+    height: 80px !important;
 }
 
 @media screen and  (max-width: 768px) {

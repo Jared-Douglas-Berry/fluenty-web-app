@@ -4,11 +4,27 @@ import {useSession, signOut, signIn} from "next-auth/react"
 import { CgMenuGridO } from "react-icons/cg";
 import { CgCloseR } from "react-icons/cg";
 import {useEffect, useRef, useState} from "react";
+import NavLink from "./NavLink";
 
 export default function MainHeader() {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const {data: session, status, update} = useSession();
     const menuRef = useRef(null);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            setIsScrolled(scrollTop > 0); // Check if scrolled beyond the top
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
         function handleClickOutside(event) {
@@ -42,30 +58,42 @@ export default function MainHeader() {
     }
 
     return (
-        <header className={styles.header} onClick={handleMenu}>
+        <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} onClick={handleMenu}>
             <div className={styles.logo}>
                 <Link href='/'>Fluenty</Link>
             </div>
             <nav className={styles.navigation} ref={menuRef}>
                 <ul className={styles.navigationContainer}>
                     <li className={styles.linkItem}>
-                        <Link href='/#home'>Home</Link>
+                        <NavLink hrefActive="#home" href="/#home" >
+                            Home
+                        </NavLink>
                     </li>
                     <li className={styles.linkItem}>
-                        <Link href='/#services'>Services</Link>
+                        <NavLink hrefActive="#services" href="/#services" >
+                            Services
+                        </NavLink>
                     </li>
                     <li className={styles.linkItem}>
-                        <Link href='/#projects'>Projects</Link>
+                        <NavLink hrefActive="#projects" href="/#projects" >
+                            Projects
+                        </NavLink>
                     </li>
                     <li className={styles.linkItem}>
-                        <Link href='/#team'>Team</Link>
+                        <NavLink hrefActive="#team" href="/#team" >
+                            Team
+                        </NavLink>
                     </li>
                     <li className={styles.linkItem}>
-                        <Link href='/blogs'>Blog</Link>
+                        <NavLink hrefActive="#blogs" href="/blogs" >
+                            Blog
+                        </NavLink>
                     </li>
                     {session && status === 'authenticated' && (
-                        <li>
-                            <Link href='/' onClick={handleLogOut}>Logout</Link>
+                        <li className={styles.linkItem}>
+                            <NavLink href="/" onClick={handleLogOut} >
+                                Logout
+                            </NavLink>
                         </li>
                     )}
                 </ul>
