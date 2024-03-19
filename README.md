@@ -178,6 +178,7 @@ Currently, two official plugins are available:
 ### Deploy 
 
 Adding gitHub Actions for deployments.
+....
 role-to-assume: ${{ secrets.<deploymentRole> || nameOfRole }}
 
 Use standard build deploy, NOT Full Static Build.

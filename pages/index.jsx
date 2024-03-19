@@ -13,6 +13,7 @@ const About = dynamic(() => import('../components/About/About'));
 const AllBlogs = dynamic(() => import('../components/Blogs/AllBlogs'));
 
 export default function HomePage({services, techStacks, projects, team, options, blogs}) {
+    // testing the actions on GitHub
     return (
         <Fragment>
             <Head>
