@@ -25,6 +25,7 @@ jobs:
         run: |
           npm install
 #          npm run build
+           npm run export
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
