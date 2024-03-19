@@ -172,6 +172,6 @@ export async function getStaticProps() {
             options: serializedOptions,
             blogs: serializedBlogs
         },
-        revalidate: 1800,
+        // revalidate: 1800,
     };
 }

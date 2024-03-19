@@ -4,7 +4,7 @@ name: Next.js Deployment to Staging
 on:
   push:
     branches:
-      - github-actions # change to main
+      - main # change to main
     paths-ignore:
       - 'README.md'
 jobs:

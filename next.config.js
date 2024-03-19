@@ -11,11 +11,14 @@ module.exports = (phase) => {
 
     if (phase === PHASE_DEVELOPMENT_SERVER) {
         return {
+            pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
+            reactStrictMode: true,
             // output: 'export',
             images: {
-                domains: ['static.vecteezy.com', 'img.freepik.com', 'static-00.iconduck.com', "media.licdn.com" ],
+                unoptimized: true,
             },
             env: {
+                NEXTAUTH_URL: 'https://vite.fluenty.co.za/',
                 // NEXTAUTH_SECRET: generateKey(),
                 mongodb_username: 'fluenty',
                 mongodb_password: 'e9jcfRdqz6QcqyW7',
@@ -35,11 +38,14 @@ module.exports = (phase) => {
     }
 
     return {
-        // output: 'export',
+        pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
+        reactStrictMode: true,
+        output: 'export',
         images: {
-            domains: ['static.vecteezy.com', 'img.freepik.com', 'static-00.iconduck.com', "media.licdn.com" ],
+            unoptimized: true,
         },
         env: {
+            NEXTAUTH_URL: 'https://vite.fluenty.co.za/',
             // NEXTAUTH_SECRET: generateKey(),
             mongodb_username: 'fluenty',
             mongodb_password: 'e9jcfRdqz6QcqyW7',
