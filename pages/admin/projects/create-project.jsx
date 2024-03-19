@@ -1,6 +1,7 @@
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
-import CreateProject from "../../../components/Projects/CreateProject";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const CreateProject = dynamic(() => import('../../../components/Projects/CreateProject'));
 
 export default function AdminProjectCreate() {
     return (

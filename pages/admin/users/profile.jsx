@@ -1,8 +1,9 @@
 import { getServerSession } from "next-auth/next"
 import {authOptions} from "../../api/auth/[...nextauth]";
-import UserChangePassword from "../../../components/Users/UserChangePassword";
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const UserChangePassword = dynamic(() => import('../../../components/Users/UserChangePassword'));
 
 function ProfilePage() {
   return (

@@ -1,12 +1,12 @@
 import '../styles/globals.css'
 import Head from "next/head";
-import {Fragment} from "react";
 import Layout from "../components/Layout/Layout.jsx";
 import {SessionProvider} from "next-auth/react";
+import { AuthProvider } from '../authContext';
 
 export default function MyApp({Component, pageProps}) {
     return (
-        <Fragment>
+        <AuthProvider>
             <SessionProvider session={pageProps.session}>
                 <Layout>
                     <Head>
@@ -19,6 +19,6 @@ export default function MyApp({Component, pageProps}) {
                 </Layout>
             </SessionProvider>
 
-        </Fragment>
+        </AuthProvider>
     )
 }

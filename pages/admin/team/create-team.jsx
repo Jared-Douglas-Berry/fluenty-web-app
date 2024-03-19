@@ -1,6 +1,7 @@
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
-import CreateTeamMate from "../../../components/Team/CreateTeamMate";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const CreateTeamMate = dynamic(() => import('../../../components/Team/CreateTeamMate'));
 
 export default function AdminTeamCreate() {
     return (

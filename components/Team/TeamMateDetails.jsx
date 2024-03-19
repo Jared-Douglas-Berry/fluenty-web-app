@@ -28,7 +28,7 @@ export default function TeamMateDetails({teamMate}) {
             </Head>
             <div className={styles.container}>
                 <div className={styles.image}>
-                    <Image src={image} alt={firstName} width={800} height={1200} layout='responsive'/>
+                    <Image src={image} alt={firstName} width={800} height={1200} />
                 </div>
                 <div className={styles.content}>
                     <h1>{firstName} {middleName} {lastName}</h1>

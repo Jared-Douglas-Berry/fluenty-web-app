@@ -1,15 +1,16 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import Banner from "../components/Banner/Banner.jsx";
-import AllServices from "../components/Services/AllServices.jsx";
 import {connectDatabase, getAllDocuments} from "../helpers/db-utils";
-import ScrollingBanner from "../components/Banner/ScrollingBanner";
-import AllTechStacks from "../components/TechStacks/AllTechStacks";
-import AllProjects from "../components/Projects/AllProjects";
-import WholeTeam from "../components/Team/WholeTeam";
-import ContactUs from "../components/ContactUs/ContactUs";
-import About from "../components/About/About";
-import AllBlogs from "../components/Blogs/AllBlogs";
+import dynamic from "next/dynamic";
+const Banner = dynamic(() => import('../components/Banner/Banner.jsx'));
+const AllServices = dynamic(() => import('../components/Services/AllServices.jsx'));
+const ScrollingBanner = dynamic(() => import('../components/Banner/ScrollingBanner'));
+const AllTechStacks = dynamic(() => import('../components/TechStacks/AllTechStacks'));
+const AllProjects = dynamic(() => import('../components/Projects/AllProjects'));
+const WholeTeam = dynamic(() => import('../components/Team/WholeTeam'));
+const ContactUs = dynamic(() => import('../components/ContactUs/ContactUs'));
+const About = dynamic(() => import('../components/About/About'));
+const AllBlogs = dynamic(() => import('../components/Blogs/AllBlogs'));
 
 export default function HomePage({services, techStacks, projects, team, options, blogs}) {
     return (
@@ -48,7 +49,9 @@ export default function HomePage({services, techStacks, projects, team, options,
             </section>
 
             <section className='pageSpace'>
-            <ContactUs options={options[0].subjects} />
+                {options && options.length > 0 && (
+                    <ContactUs options={options[0]?.subjects || []} />
+                )}
             </section>
 
         </Fragment>
@@ -63,11 +66,11 @@ export async function getStaticProps() {
     // Extract only the necessary data for serialization
     const serializedServices = services.map(service => ({
         // Assuming _id is a string, if not, replace it with the appropriate property
-        _id: service._id.toString(),
-        title: service.title,
-        image: service.pickedImage1.src,
-        icon: service.pickedImage.src,
-        slug: service.title.trim().replace(/\s+/g, "-")
+        _id: service._id.toString() || null,
+        title: service.title || null,
+        image: service.pickedImage1.src || null,
+        icon: service.pickedImage.src || null,
+        slug: service.title.trim().replace(/\s+/g, "-") || null
         // Include other necessary fields here
     }));
 
@@ -76,9 +79,9 @@ export async function getStaticProps() {
     // Extract only the necessary data for serialization
     const serializedTechStacks = techStacks.map(techStack => ({
         // Assuming _id is a string, if not, replace it with the appropriate property
-        _id: techStack._id.toString(),
-        title: techStack.title,
-        icon: techStack.pickedImage.src,
+        _id: techStack._id.toString() || null,
+        title: techStack.title || null,
+        icon: techStack.pickedImage.src || null,
         // Include other necessary fields here
     }));
 
@@ -87,17 +90,17 @@ export async function getStaticProps() {
 // Extract only the necessary data for serialization
     const serializedProjects = projects.map((project, index) => ({
         // Assuming _id is a string, if not, replace it with the appropriate property
-        _id: project._id.toString(),
-        index: index,
-        title: project.title,
-        image: project.pickedImage.src,
-        category: project.category,
-        challenge: project.challenge,
-        client: project.client,
-        date: project.date,
-        location: project.location,
-        results: project.results,
-        slug: project.title.trim().replace(/\s+/g, "-")
+        _id: project._id.toString() || null,
+        index: index || null,
+        title: project.title || null,
+        image: project.pickedImage.src || null,
+        category: project.category || null,
+        challenge: project.challenge || null,
+        client: project.client || null,
+        date: project.date || null,
+        location: project.location || null,
+        results: project.results || null,
+        slug: project.title.trim().replace(/\s+/g, "-") || null
         // Include other necessary fields here
     }));
 
@@ -106,23 +109,23 @@ export async function getStaticProps() {
 // Extract only the necessary data for serialization
     const serializedTeam = team.map((teamMate, index) => ({
         // Assuming _id is a string, if not, replace it with the appropriate property
-        _id: teamMate._id.toString(),
-        index: index,
-        firstName: teamMate.firstName,
-        lastName: teamMate.lastName,
-        jobTitle: teamMate.jobTitle,
-        email: teamMate.email,
-        phone: teamMate.phone,
-        location: teamMate.location,
-        linkin: teamMate.linkin,
-        facebook: teamMate.facebook,
-        twitter: teamMate.twitter,
-        instagram: teamMate.instagram,
-        middleName: teamMate.middleName,
-        summary: teamMate.summary,
-        image: teamMate.pickedImage.src,
-        experience: teamMate.experience,
-        slug: `${teamMate.firstName} ${teamMate.middleName ? teamMate.middleName + ' ' : ''} ${teamMate.lastName}`.trim().replace(/\s+/g, "-")
+        _id: teamMate._id.toString() || null,
+        index: index || null,
+        firstName: teamMate.firstName || null,
+        lastName: teamMate.lastName || null,
+        jobTitle: teamMate.jobTitle || null,
+        email: teamMate.email || null,
+        phone: teamMate.phone || null,
+        location: teamMate.location || null,
+        linkin: teamMate.linkin || null,
+        facebook: teamMate.facebook || null,
+        twitter: teamMate.twitter || null,
+        instagram: teamMate.instagram || null,
+        middleName: teamMate.middleName || null,
+        summary: teamMate.summary || null,
+        image: teamMate.pickedImage.src || null,
+        experience: teamMate.experience || null,
+        slug: `${teamMate.firstName} ${teamMate.middleName ? teamMate.middleName + ' ' : ''} ${teamMate.lastName}`.trim().replace(/\s+/g, "-")  || null
         // Include other necessary fields here
     }));
 
@@ -131,10 +134,10 @@ export async function getStaticProps() {
 // Extract only the necessary data for serialization
     const serializedOptions = options.map((option) => ({
         // Assuming _id is a string, if not, replace it with the appropriate property
-        _id: option._id.toString(),
-        subjects: option.subjects,
-        modifiedDate: option.modifiedDate.toISOString(),
-        createdDate: option.createdDate.toISOString(),
+        _id: option._id.toString() || null,
+        subjects: option.subjects || null,
+        modifiedDate: option.modifiedDate.toISOString() || null,
+        createdDate: option.createdDate.toISOString() || null,
         // Include other necessary fields here
     }));
 
@@ -143,19 +146,19 @@ export async function getStaticProps() {
 // Extract only the necessary data for serialization
     const serializedBlogs = blogs.map((blog, index) => ({
         // Assuming _id is a string, if not, replace it with the appropriate property
-        index: index,
-        id: blog._id.toString(),
-        author: blog.author,
-        title: blog.title,
-        paragraphOne: blog.paragraphOne,
-        paragraphTwo: blog.paragraphTwo,
-        paragraphThree: blog.paragraphThree,
-        pickedImage: blog.pickedImage.src,
-        image: blog.pickedImage1.src,
-        pickedImage2: blog.pickedImage2.src,
-        modifiedDate: blog.modifiedDate.toISOString(),
-        createdDate: blog.createdDate.toISOString(),
-        slug: blog.title.trim().replace(/\s+/g, "-")
+        index: index || null,
+        id: blog._id.toString() || null,
+        author: blog.author || null,
+        title: blog.title || null,
+        paragraphOne: blog.paragraphOne || null,
+        paragraphTwo: blog.paragraphTwo || null,
+        paragraphThree: blog.paragraphThree || null,
+        pickedImage: blog.pickedImage.src || null,
+        image: blog.pickedImage1.src || null,
+        pickedImage2: blog.pickedImage2.src || null,
+        modifiedDate: blog.modifiedDate.toISOString() || null,
+        createdDate: blog.createdDate.toISOString() || null,
+        slug: blog.title.trim().replace(/\s+/g, "-") || null
         // Include other necessary fields here
     }));
 

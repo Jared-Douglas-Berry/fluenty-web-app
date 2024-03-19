@@ -9,7 +9,7 @@ export default function TechStackItem({techStack}) {
             <div className={styles.pill}>
                 <div className={styles.content}>
                     <div className={styles.icon}>
-                        <Image src={icon} alt={title} width={80} height={80} layout='responsive'/>
+                        <Image src={icon} alt={title} width={80} height={80} />
                     </div>
                     <h2>{title}</h2>
                 </div>

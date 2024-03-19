@@ -68,14 +68,14 @@ export default function BlogDetails({blogs, blog}) {
                 </div>
                 <div className={styles.content}>
                     <div className={styles.image}>
-                        <Image src={image} alt={title} width={300} height={200} layout='responsive'/>
+                        <Image src={image} alt={title} width={300} height={200} />
                     </div>
                     <div>
                         <p>{paragraphOne}</p>
                     </div>
                     {pickedImage1 && (
                         <div className={styles.image}>
-                            <Image src={pickedImage1} alt={title} width={300} height={200} layout='responsive'/>
+                            <Image src={pickedImage1} alt={title} width={300} height={200} />
                         </div>
                     )}
                     <div>
@@ -83,7 +83,7 @@ export default function BlogDetails({blogs, blog}) {
                     </div>
                     {pickedImage2 && (
                         <div className={styles.image}>
-                            <Image src={pickedImage2} alt={title} width={300} height={200} layout='responsive'/>
+                            <Image src={pickedImage2} alt={title} width={300} height={200} />
                         </div>
                     )}
                     <div>

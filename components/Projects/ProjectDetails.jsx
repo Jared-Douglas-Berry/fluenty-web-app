@@ -25,7 +25,7 @@ export default function ProjectDetails({project, projects}) {
                 </div>
                 <div>
                     <div className={styles.image}>
-                        <Image src={image} alt={title} width={1000} height={600} layout='responsive'/>
+                        <Image src={image} alt={title} width={1000} height={600} />
                     </div>
 
                     <div className={styles.contentCenter}>

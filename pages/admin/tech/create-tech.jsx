@@ -1,6 +1,7 @@
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
-import CreateTechStack from "../../../components/TechStacks/CreateTechStack";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const CreateTechStack = dynamic(() => import('../../../components/TechStacks/CreateTechStack'));
 
 export default function AdminTechCreate() {
     return (
