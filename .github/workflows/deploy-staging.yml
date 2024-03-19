@@ -4,7 +4,7 @@ name: Next.js Deployment to Staging
 on:
   push:
     branches:
-      - github-actions 
+      - github-actions
 
 jobs:
   build:
@@ -20,12 +20,10 @@ jobs:
         with:
           path: node_modules
           key: deps-node-modules-${{ hashFiles('./package-lock.json')}}
-
       - name: Install dependencies and build
         run: |
           npm install
-#          npm run build
-           npm run export
+          npm run export
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
