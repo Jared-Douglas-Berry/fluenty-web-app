@@ -15,12 +15,10 @@ export default async function handler(req, res) {
         return;
     }
 
-    console.log('------ test -------')
     let session;
     try {
         session = req.body.session;
 
-        console.log('session', session);
         // Handle successful session retrieval
     } catch (error) {
         console.error("Error while getting server session:", error);
@@ -67,7 +65,6 @@ export default async function handler(req, res) {
         res.status(200).json({ message: 'Updated Password!!!' });
     } catch (error) {
         console.error('Error processing request:', error);
-        console.log('------ test 1-------')
         res.status(500).json({ message: 'Internal Server Error' });
     } finally {
         client.close();

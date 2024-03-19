@@ -94,7 +94,7 @@ export async function getStaticProps(context) {
                     results: project.results,
                 },
             },
-            revalidate: 30
+            // revalidate: 30
         };
     } catch (error) {
         console.error("Error fetching service:", error);

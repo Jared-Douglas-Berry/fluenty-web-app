@@ -27,11 +27,9 @@ function UserChangePassword() {
 
                 if (user) {
                     const encodedUser = encodeURIComponent(JSON.stringify(user));
-                    console.log(encodedUser);
                     setUserData(encodedUser);
                 } else {
                     // Handle the case where no user is found
-                    console.log("User not found");
                     setUserData(null); // Or whatever default value you want to set
                 }
             } catch (error) {
@@ -104,7 +102,6 @@ function UserChangePassword() {
 
         }
 
-        console.log(data)
     }
 
 

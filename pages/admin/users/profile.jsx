@@ -1,5 +1,5 @@
-import { getServerSession } from "next-auth/next"
-import {authOptions} from "../../api/auth/[...nextauth]";
+// import { getServerSession } from "next-auth/next"
+// import {authOptions} from "../../api/auth/[...nextauth]";
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
 import Head from "next/head";
 import dynamic from "next/dynamic";
@@ -16,14 +16,14 @@ function ProfilePage() {
       </LayoutAdmin>);
 }
 
-export async function getServerSideProps(context) {
-  const session = await getServerSession(context.req, context.res, authOptions)
-
-  return {
-    props: {
-      session,
-    },
-  }
-}
+// export async function getStaticProps(context) {
+//   const session = await getServerSession(context.req, context.res, authOptions)
+//
+//   return {
+//     props: {
+//       session,
+//     },
+//   }
+// }
 
 export default ProfilePage;

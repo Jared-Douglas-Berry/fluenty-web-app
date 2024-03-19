@@ -6,8 +6,6 @@ const Auth = ({ children }) => {
     const {data: session, status, update} = useSession();
     const router = useRouter();
 
-    console.log('Session in Auth:', session);
-
     useEffect(() => {
         if (status === 'loading') return; // Do nothing while session is loading
         // Check if the session is expired
@@ -35,7 +33,6 @@ const Auth = ({ children }) => {
 };
 
 const isAdmin = (user) => {
-    console.log("isAdmin", user)
     // Assuming user object has a 'role' field indicating the user's role
     return user.role === 'admin';
 };
@@ -43,7 +40,6 @@ const isAdmin = (user) => {
 export async function getServerSideProps(context) {
     const session = await getSession(context);
 
-    console.log('Session in getServerSideProps:', session);
 
     if (!session) {
         // Redirect to login if user is not authenticated

@@ -75,7 +75,7 @@ export async function getStaticProps(context) {
                     experience: teamMate.experience,
                 },
             },
-            revalidate: 30
+            // revalidate: 30
         };
     } catch (error) {
         console.error("Error fetching service:", error);

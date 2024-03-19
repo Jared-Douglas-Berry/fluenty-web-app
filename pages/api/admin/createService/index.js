@@ -24,8 +24,6 @@ export default async function handler(req, res) {
             summary
         } = req.body;
 
-        console.log('pickedImage', pickedImage);
-        console.log('pickedImage1', pickedImage1);
 
         if (
             !title ||

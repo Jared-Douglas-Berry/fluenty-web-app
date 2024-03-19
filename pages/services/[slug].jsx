@@ -69,7 +69,7 @@ export async function getStaticProps(context) {
                     summary: service.summary,
                 },
             },
-            revalidate: 30
+            // revalidate: 30
         };
     } catch (error) {
         console.error("Error fetching service:", error);
