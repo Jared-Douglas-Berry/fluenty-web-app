@@ -31,7 +31,7 @@ export default function ItemCarousel({ items, itemsId, page }) {
             <div className={styles.btnLeft}>
                 <div className={styles.image}>
                     <Image src={items[previousProjectIndex].image} alt={items[previousProjectIndex].title} width={300}
-                           height={300}  layout='responsive'/>
+                           height={300} />
                 </div>
 
                 <div className={styles.contentPrevious}>
@@ -57,7 +57,7 @@ export default function ItemCarousel({ items, itemsId, page }) {
                 </div>
                 <div className={styles.image}>
                     <Image src={items[nextProjectIndex].image} alt={items[nextProjectIndex].title} width={300}
-                           height={300} layout='responsive'/>
+                           height={300} />
                 </div>
             </div>
         </div>

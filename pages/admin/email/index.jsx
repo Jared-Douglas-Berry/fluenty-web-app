@@ -1,6 +1,7 @@
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
-import CreateSubjects from "../../../components/Email/CreateSubjects";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const CreateSubjects = dynamic(() => import('../../../components/Email/CreateSubjects'));
 
 export default function AdminEmail() {
     return (

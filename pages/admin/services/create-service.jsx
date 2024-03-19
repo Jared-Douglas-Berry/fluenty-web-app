@@ -1,6 +1,7 @@
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
-import CreateServices from "../../../components/Services/CreateServices";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const CreateServices = dynamic(() => import('../../../components/Services/CreateServices'));
 
 
 export default function AdminServiceCreate() {

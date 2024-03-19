@@ -1,6 +1,7 @@
 import LayoutAdmin from "../../../components/Layout/LayoutAdmin";
-import CreateUser from "../../../components/Users/CreateUser";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const CreateUser = dynamic(() => import('../../../components/Users/CreateUser'));
 
 export default function AdminUserCreate() {
     return (

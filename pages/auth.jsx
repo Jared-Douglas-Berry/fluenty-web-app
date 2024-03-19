@@ -1,9 +1,10 @@
-import AuthForm from '../components/Auth/AuthForm';
 import {Fragment, useEffect, useState} from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import DNASpinnerLoading from "../components/Loader/Loader";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const AuthForm = dynamic(() => import('../components/Auth/AuthForm'));
+const DNASpinnerLoading = dynamic(() => import('../components/Loader/Loader'));
 
 function AuthPage() {
   const router = useRouter();

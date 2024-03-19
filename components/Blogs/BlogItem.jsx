@@ -36,7 +36,7 @@ export default function BlogItem({blog}) {
         return (
             <li className={styles.serviceItem}>
                     <div className={styles.image}>
-                        <Image src={image} alt={title} width={300} height={200} layout='responsive'/>
+                        <Image src={image} alt={title} width={300} height={200} />
                     </div>
                 <div className={styles.blogAuthor}>
                     <h4><LuCalendarDays className={styles.iconDot}/> {humanReadableDate}</h4>
