@@ -4,7 +4,7 @@ name: Next.js Deployment to Staging
 on:
   push:
     branches:
-      - github-actions  # Adjust the branch name as needed
+      - github-actions 
 
 jobs:
   build:
