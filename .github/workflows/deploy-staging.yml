@@ -5,7 +5,8 @@ on:
   push:
     branches:
       - github-actions # change to main
-
+    paths-ignore:
+      - 'readme.md'
 jobs:
   build:
     runs-on: ubuntu-latest
