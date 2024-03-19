@@ -6,7 +6,7 @@ on:
     branches:
       - github-actions # change to main
     paths-ignore:
-      - 'readme.md'
+      - 'README.md'
 jobs:
   build:
     runs-on: ubuntu-latest
