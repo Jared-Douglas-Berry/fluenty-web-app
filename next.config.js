@@ -1,5 +1,5 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
-const jose = require('node-jose');
+// const jose = require('node-jose');
 
 module.exports = (phase) => {
 
@@ -11,6 +11,7 @@ module.exports = (phase) => {
 
     if (phase === PHASE_DEVELOPMENT_SERVER) {
         return {
+            output: 'export',
             images: {
                 domains: ['static.vecteezy.com', 'img.freepik.com', 'static-00.iconduck.com', "media.licdn.com" ],
             },
@@ -34,6 +35,7 @@ module.exports = (phase) => {
     }
 
     return {
+        output: 'export',
         images: {
             domains: ['static.vecteezy.com', 'img.freepik.com', 'static-00.iconduck.com', "media.licdn.com" ],
         },
