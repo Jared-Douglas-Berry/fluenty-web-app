@@ -11,7 +11,7 @@ module.exports = (phase) => {
 
     if (phase === PHASE_DEVELOPMENT_SERVER) {
         return {
-            output: 'export',
+            // output: 'export',
             images: {
                 domains: ['static.vecteezy.com', 'img.freepik.com', 'static-00.iconduck.com', "media.licdn.com" ],
             },
@@ -35,7 +35,7 @@ module.exports = (phase) => {
     }
 
     return {
-        output: 'export',
+        // output: 'export',
         images: {
             domains: ['static.vecteezy.com', 'img.freepik.com', 'static-00.iconduck.com', "media.licdn.com" ],
         },
