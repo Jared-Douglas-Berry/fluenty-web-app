@@ -31,7 +31,7 @@ jobs:
         with:
             name: dist-files
             path:
-                ./.next
+                ./out
 
   deploy:
     runs-on: ubuntu-latest
