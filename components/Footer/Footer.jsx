@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from './Footer.module.css';
 import {CiLinkedin} from "react-icons/ci";
 import { MdCopyright } from "react-icons/md";
+import { version } from "../../package.json";
 
 export default function Footer() {
     return (
@@ -20,8 +21,8 @@ export default function Footer() {
                 </nav>
             </div>
             <div className={styles.navigation}>
-
-                <p><MdCopyright /> copyright 2024. All Rights Reserved</p>
+                <p><MdCopyright/> copyright 2024. All Rights Reserved</p>
+                <p>Version: {{version}}</p>
             </div>
 
         </footer>
