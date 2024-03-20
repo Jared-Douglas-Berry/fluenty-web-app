@@ -16,8 +16,8 @@ Fluenty web-site built in Next.js with React + Vite.
     - [Next.js](#nextjs)
     - [React + Vite](#react+vite)
     - [Deploy](#deploy)
-         - [Deployment Steps & Considerationsl](#deploymentsteps&considerations)
-         - [on Vercel](#deployonvercel)
+        - [Deployment Steps & Considerationsl](#deploymentsteps&considerations)
+        - [on Vercel](#deployonvercel)
 - [Acknowledgments](#acknowledgments)
 
 ## Getting Started
@@ -50,7 +50,7 @@ npm install
 ```bash
 npm run dev
 ```
-5. Open it up to see the results 
+5. Open it up to see the results
 ```
 Open [http://localhost:3000]
 (http://localhost:3000) 
@@ -122,6 +122,17 @@ your-project/
 
 List the key features of your project.
 
+### Commiting your work
+
+When commiting you work you need to add one of these :
+1. [PATCH] = bugs / fixes small tasks
+2. [MINOR] = functions / Mid to big task
+3. [MAJOR] = fall site up left / major task
+
+this will increase the version number.
+
+e.g. ❯ git commit -m "add Example [PATCH]"
+
 ## Contributing
 
 Writing code:
@@ -130,7 +141,7 @@ Writing code:
 3. Using Next-Auth version ^4.
 
 Creating a new branch flow:
-1. Pull main 
+1. Pull main
 2. Create a new branch of main
 3. Make changes and commit
 4. Push to the branch
@@ -175,7 +186,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-### Deploy 
+### Deploy
 
 Adding gitHub Actions for deployments.
 ....
