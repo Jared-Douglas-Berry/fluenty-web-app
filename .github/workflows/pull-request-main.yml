@@ -1,0 +1,50 @@
+name: Pull Request Main
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  get_task_id:
+    name: Get Task ID
+    uses: ./.github/workflows/get-task-id.yml
+    with:
+      branch_title: ${{ github.head_ref || github.ref_name }}
+
+  update_task_status:
+    name: Update Task Status
+    uses: ./.github/workflows/clickup-update-task-status.yml
+    needs: [get_task_id]
+    with:
+      task_id: ${{ needs.get_task_id.outputs.task_id }}
+      status: "Review"
+    secrets: inherit
+
+  check_pr_title:
+    name: Semver Validation and Bump
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+
+      - name: Get Semver Bump
+        run: |
+          echo The Title of your PR is ${{ github.event.pull_request.title }}
+          echo "BUMP=$(${GITHUB_WORKSPACE}/.github/scripts/check_for_semver_bump.sh '${{ github.event.pull_request.title }}')" >> $GITHUB_ENV
+          echo $BUMP
+
+      - name: Increment Version
+        run: |
+          PACKAGE_VERSION=$(cat package.json | jq -r '.version')
+          if [ $(git tag -l "$PACKAGE_VERSION") ]; then
+            echo "Tag for $PACKAGE_VERSION already exists; bumping version."
+            ${GITHUB_WORKSPACE}/.github/scripts/bump_package_version.sh ${{ env.BUMP }}
+            git config user.name "GitHub Actions"
+            git config user.email "github-actions@users.noreply.github.com"
+            git commit -am "Bumping version [skip ci]"
+            git push
+          else
+            echo "Tag for $PACKAGE_VERSION does not exist; nothing to do."
+          fi
