@@ -4,21 +4,6 @@ on:
     branches:
       - main
 jobs:
-  get_task_id:
-    name: Get Task ID
-    uses: ./.github/workflows/get-task-id.yml
-    with:
-      branch_title: ${{ github.head_ref || github.ref_name }}
-
-  update_task_status:
-    name: Update Task Status
-    uses: ./.github/workflows/clickup-update-task-status.yml
-    needs: [get_task_id]
-    with:
-      task_id: ${{ needs.get_task_id.outputs.task_id }}
-      status: "Review"
-    secrets: inherit
-
   check_pr_title:
     name: Semver Validation and Bump
     runs-on: ubuntu-latest
@@ -37,7 +22,7 @@ jobs:
 
       - name: Increment Version
         run: |
-          PACKAGE_VERSION=$(cat package.json | jq -r '.version')
+          PACKAGE_VERSION=$(cat ./package.json | jq -r '.version')
           if [ $(git tag -l "$PACKAGE_VERSION") ]; then
             echo "Tag for $PACKAGE_VERSION already exists; bumping version."
             ${GITHUB_WORKSPACE}/.github/scripts/bump_package_version.sh ${{ env.BUMP }}
