@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from './ServiceItem.module.css'
 
 export default function ServiceItem({service}) {
-    const { title, image, icon, slug } = service;
+    const { title, image, icon, slug, isFeatured } = service;
 
         const linkPath =`/services/${slug}`;
 

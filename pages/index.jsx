@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import {connectDatabase, getAllDocuments} from "../helpers/db-utils";
+import {connectDatabase, getFeturedDocs} from "../helpers/db-utils";
 import dynamic from "next/dynamic";
 const Banner = dynamic(() => import('../components/Banner/Banner.jsx'));
 const AllServices = dynamic(() => import('../components/Services/AllServices.jsx'));
@@ -62,7 +62,7 @@ export default function HomePage({services, techStacks, projects, team, options,
 export async function getStaticProps() {
     const client = await connectDatabase();
 
-    const services = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_services, { _id: -1 })
+    const services = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_services, { _id: -1 })
 
     // Extract only the necessary data for serialization
     const serializedServices = services.map(service => ({
@@ -71,11 +71,12 @@ export async function getStaticProps() {
         title: service.title || null,
         image: service.pickedImage1.src || null,
         icon: service.pickedImage.src || null,
+        isFeatured: service.isFeatured || false,
         slug: service.title.trim().replace(/\s+/g, "-") || null
         // Include other necessary fields here
     }));
 
-    const techStacks = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_tech, { _id: -1 })
+    const techStacks = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_tech, { _id: -1 })
 
     // Extract only the necessary data for serialization
     const serializedTechStacks = techStacks.map(techStack => ({
@@ -83,10 +84,11 @@ export async function getStaticProps() {
         _id: techStack._id.toString() || null,
         title: techStack.title || null,
         icon: techStack.pickedImage.src || null,
+        isFeatured: techStack.isFeatured || false,
         // Include other necessary fields here
     }));
 
-    const projects = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_projects, { _id: -1 });
+    const projects = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_projects, { _id: -1 });
 
 // Extract only the necessary data for serialization
     const serializedProjects = projects.map((project, index) => ({
@@ -101,11 +103,12 @@ export async function getStaticProps() {
         date: project.date || null,
         location: project.location || null,
         results: project.results || null,
+        isFeatured: project.isFeatured || false,
         slug: project.title.trim().replace(/\s+/g, "-") || null
         // Include other necessary fields here
     }));
 
-    const team = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_team, { _id: -1 });
+    const team = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_team, { _id: -1 });
 
 // Extract only the necessary data for serialization
     const serializedTeam = team.map((teamMate, index) => ({
@@ -126,11 +129,12 @@ export async function getStaticProps() {
         summary: teamMate.summary || null,
         image: teamMate.pickedImage.src || null,
         experience: teamMate.experience || null,
+        isFeatured: teamMate.isFeatured || false,
         slug: `${teamMate.firstName} ${teamMate.middleName ? teamMate.middleName + ' ' : ''} ${teamMate.lastName}`.trim().replace(/\s+/g, "-")  || null
         // Include other necessary fields here
     }));
 
-    const options = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_email_subjects, { _id: 1 });
+    const options = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_email_subjects, { _id: 1 });
 
 // Extract only the necessary data for serialization
     const serializedOptions = options.map((option) => ({
@@ -139,10 +143,11 @@ export async function getStaticProps() {
         subjects: option.subjects || null,
         modifiedDate: option.modifiedDate.toISOString() || null,
         createdDate: option.createdDate.toISOString() || null,
+        isFeatured: option.isFeatured || false,
         // Include other necessary fields here
     }));
 
-    const blogs = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_blog, { _id: -1 });
+    const blogs = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_blog, { _id: -1 });
 
 // Extract only the necessary data for serialization
     const serializedBlogs = blogs.map((blog, index) => ({
@@ -159,6 +164,7 @@ export async function getStaticProps() {
         pickedImage2: blog.pickedImage2.src || null,
         modifiedDate: blog.modifiedDate.toISOString() || null,
         createdDate: blog.createdDate.toISOString() || null,
+        isFeatured: blog.isFeatured || false,
         slug: blog.title.trim().replace(/\s+/g, "-") || null
         // Include other necessary fields here
     }));
