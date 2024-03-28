@@ -144,6 +144,7 @@ export default async function handler(req, res) {
             pickedImage1,
             pickedImage2,
             documentIdToUpdate,
+            isFeatured,
         } = req.body;
 
         const updatedData = {
@@ -155,6 +156,7 @@ export default async function handler(req, res) {
             pickedImage,
             pickedImage1,
             pickedImage2,
+            isFeatured,
             modifiedDate: new Date()
         };
 
