@@ -527,7 +527,7 @@ Then scroll down to 'Repository secrets', Click on 'new repository secret'
 fill in name and value of the secret. 
 repeat till all secrets are in.
 
-AWS_ROLE_KEY =
+AWS_ROLE_KEY = IAM -> Roles -> github-oidc-<YOUR BUCKET NAME-role, look for ARN and copy the value.
 AWS_SECRET_REGION_KEY = the region you selected when setting the AWS S3 bucket.
 AWS_S3_BUCKET = the AWS S3 bucket name.
 AWS_CLOUDFRONT_DISTRIBUTION_ID = CloudFront -> Distributions ->ID
