@@ -1,10 +1,9 @@
 name: Next.js Deployment to Staging
 
-
 on:
   push:
     branches:
-      - Fix-pipline # change to main
+      - main
     paths-ignore:
       - 'README.md'
 permissions:
@@ -57,4 +56,9 @@ jobs:
           aws-region: ${{ secrets.AWS_SECRET_REGION_KEY }}
       - name: Sync build output to S3 bucket
         run: |
-          aws s3 sync ./dist-files-s3 s3://fluenty-website
+          aws s3 sync ./dist-files-s3 s3://${{ secrets.AWS_S3_BUCKET }}
+      - name: Copy files to production website with the AWS CLI
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
