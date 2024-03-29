@@ -195,7 +195,17 @@ scroll to 'Bucket name' and enter the name you want and level everything as defa
 Click on 'Create bucket'
 then in 'General purpose buckets' search for your bucket you just create. and click on it.
 
+Once in the bucket look for 'Properties' and click it.
+Scroll down to 'Static website hosting' and click edit.
+Scroll down to 'Static website hosting' and click 'Enable'.
+Scroll down to 'Index document' and enter 'index.html'.
+Scroll down to 'Error document - optional' and enter '404.html'.
+click on 'Save changes',
 Once in the bucket look for 'Permissions' and click it.
+scroll down to 'Block public access (bucket settings)'
+click on 'edit',
+uncheck 'Block all public access'
+click on 'Save changes',
 scroll down to 'Bucket policy'
 click on 'edit' and  enter
 ````
