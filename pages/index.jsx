@@ -1,7 +1,10 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import {connectDatabase, getFeturedDocs} from "../helpers/db-utils";
+import {connectDatabase, getFeaturedDocs} from "../helpers/db-utils";
 import dynamic from "next/dynamic";
+import styles from "../components/Services/AllServices.module.css";
+import {PiArrowBendDoubleUpRightLight} from "react-icons/pi";
+import Link from "next/link";
 const Banner = dynamic(() => import('../components/Banner/Banner.jsx'));
 const AllServices = dynamic(() => import('../components/Services/AllServices.jsx'));
 const ScrollingBanner = dynamic(() => import('../components/Banner/ScrollingBanner'));
@@ -21,15 +24,17 @@ export default function HomePage({services, techStacks, projects, team, options,
                 <meta name='description' content='Fluenty Development'/>
             </Head>
 
-                <Banner/>
-
             <section className='pageSpace' id="home">
+                <Banner/>
                 <About/>
             </section>
 
 
             <section className='pageSpace' id="services">
                 <AllServices services={services}/>
+                <Link href="/services" className='detailsBtn'>
+                    View More <PiArrowBendDoubleUpRightLight />
+                </Link>
             </section>
             <ScrollingBanner items={services}/>
 
@@ -39,14 +44,23 @@ export default function HomePage({services, techStacks, projects, team, options,
 
             <section className='pageSpace' id="projects">
                 <AllProjects projects={projects}/>
+                <Link href="/projects" className='detailsBtn'>
+                    View More <PiArrowBendDoubleUpRightLight />
+                </Link>
             </section>
 
             <section className='pageSpace' id="team">
                 <WholeTeam team={team}/>
+                <Link href="/team" className='detailsBtn'>
+                    View More <PiArrowBendDoubleUpRightLight />
+                </Link>
             </section>
 
             <section className='pageSpace' id="blogs">
                 <AllBlogs blogs={blogs}/>
+                <Link href="/blogs" className='detailsBtn'>
+                    View More <PiArrowBendDoubleUpRightLight />
+                </Link>
             </section>
 
             <section className='pageSpace'>
@@ -62,7 +76,7 @@ export default function HomePage({services, techStacks, projects, team, options,
 export async function getStaticProps() {
     const client = await connectDatabase();
 
-    const services = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_services, { _id: -1 })
+    const services = await getFeaturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_services, { _id: -1 })
 
     // Extract only the necessary data for serialization
     const serializedServices = services.map(service => ({
@@ -76,7 +90,7 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
-    const techStacks = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_tech, { _id: -1 })
+    const techStacks = await getFeaturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_tech, { _id: -1 })
 
     // Extract only the necessary data for serialization
     const serializedTechStacks = techStacks.map(techStack => ({
@@ -88,7 +102,7 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
-    const projects = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_projects, { _id: -1 });
+    const projects = await getFeaturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_projects, { _id: -1 });
 
 // Extract only the necessary data for serialization
     const serializedProjects = projects.map((project, index) => ({
@@ -108,7 +122,7 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
-    const team = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_team, { _id: -1 });
+    const team = await getFeaturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_team, { _id: -1 });
 
 // Extract only the necessary data for serialization
     const serializedTeam = team.map((teamMate, index) => ({
@@ -134,7 +148,7 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
-    const options = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_email_subjects, { _id: 1 });
+    const options = await getFeaturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_email_subjects, { _id: 1 });
 
 // Extract only the necessary data for serialization
     const serializedOptions = options.map((option) => ({
@@ -147,7 +161,7 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
-    const blogs = await getFeturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_blog, { _id: -1 });
+    const blogs = await getFeaturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_blog, { _id: -1 });
 
 // Extract only the necessary data for serialization
     const serializedBlogs = blogs.map((blog, index) => ({

@@ -7,7 +7,6 @@ import Link from "next/link";
 
 const DynamicTable = ({apiEndpoint, createPageUrl}) => {
     const [data, setData] = useState([]);
-    const [isToggled, setIsToggled] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,35 +19,39 @@ const DynamicTable = ({apiEndpoint, createPageUrl}) => {
             }
         };
         fetchData();
-    }, []);
+    }, [data]);
 
-    const handleToggle = async () => {
-        try {
-            setIsToggled(!isToggled);
-            const formData = {
-                isFeatured: isToggled
+
+    const handleToggle = async (item) => {
+        const isConfirmed = window.confirm('Are you sure you want to make this feature on home page?');
+        if (isConfirmed) {
+            try {
+                console.log('Item', item)
+                const formData = {
+                    isFeaturedId: item._id,
+                    isFeatured: !item.isFeatured
+                }
+
+                const res = await fetch(apiEndpoint, {
+                    method: 'PUT',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+
+                if (res.ok) {
+                    // Remove the deleted item from the state
+                    setData(prevData => prevData.filter(dataItem => dataItem.isFeatured !== item.isFeatured));
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
             }
-
-            const res = await fetch(apiEndpoint, {
-                method: 'PUT',
-                body: JSON.stringify(formData),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            });
-
-            if (res.ok) {
-                // Remove the deleted item from the state
-                setData(prevData => prevData.filter(dataItem => dataItem._id !== item._id));
-            }
-
-        } catch (error) {
-            console.error('Error:', error);
         }
-
     };
 
-    const filteredKeys = data.length > 0 ? Object.keys(data[0]).filter(key => key !== '_id' && key !== 'password') : [];
+    const filteredKeys = data.length > 0 ? Object.keys(data[0]).filter(key => key !== '_id' && key !== 'password' && key !== 'isFeatured') : [];
 
     const renderTableCell = (value) => {
         if (value instanceof Date && !isNaN(value)) {
@@ -111,7 +114,7 @@ const DynamicTable = ({apiEndpoint, createPageUrl}) => {
                 <thead>
                 <tr>
                     <th>Modify</th>
-                    <th>Featured</th>
+                    <th>Feature On Home Page</th>
                     {filteredKeys.map(key => (
                         <th key={key}>{key}</th>
                     ))}
@@ -129,20 +132,22 @@ const DynamicTable = ({apiEndpoint, createPageUrl}) => {
                                 <FaTrashAlt onClick={() => handleDelete(item)} className={styles.trash} size={40}/>
                             </div>
                         </td>
-                        <td>
-                            <div className={styles.toggleContainer}>
-                                <input
-                                    type="checkbox"
-                                    className={styles.toggleInput}
-                                    checked={isToggled}
-                                    onChange={handleToggle}
-                                />
-                                <div className={styles.slider}></div>
-                            </div>
-                        </td>
-                        {Object.keys(item).filter(key => key !== '_id' && key !== 'password').map((key, index) => (
+                        {Object.keys(item).filter(key => key === 'isFeatured').map((key, index) => (
                             <td key={index}>
-                                <div className={styles.columns}>{renderTableCell(item[key])}</div>
+                                    <div className={styles.toggleContainer}>
+                                        <input
+                                            type="checkbox"
+                                            className={styles.toggleInput}
+                                            checked={item[key] || false}
+                                            onClick={() => handleToggle(item)}
+                                        />
+                                        <div className={styles.slider}></div>
+                                    </div>
+                            </td>
+                        ))}
+                        {Object.keys(item).filter(key => key !== '_id' && key !== 'password' && key !== 'isFeatured').map((key, index) => (
+                            <td key={index}>
+                                    <div className={styles.columns}>{renderTableCell(item[key])}</div>
                             </td>
                         ))}
                     </tr>

@@ -88,11 +88,40 @@ export default async function handler(req, res) {
             await clientMD.close();
         }
     } else if (req.method === 'PUT') {
-        const {
-            title,
-            pickedImage,
-            documentIdToUpdate,
-        } = req.body;
+        if (req.body.isFeaturedId) {
+            const {
+                isFeatured,
+                isFeaturedId,
+            } = req.body;
+
+            const updatedData = {
+                isFeatured,
+                modifiedDate: new Date()
+            };
+
+            try {
+                // Update the document
+                const result = await updateDocumentById(clientMD, process.env.mongodb_database, process.env.mongodb_database_tech, isFeaturedId, updatedData);
+
+                // Check the result
+                if (result.modifiedCount === 1) {
+                    res.status(200).json({message: "Document updated successfully"});
+                } else {
+                    res.status(404).json({message: "Document not found or not updated"});
+                }
+            } catch (error) {
+                console.error("Error updating document:", error);
+                res.status(500).json({message: "Internal server error"});
+            } finally {
+                // Close the connection
+                await clientMD.close();
+            }
+        } else {
+            const {
+                title,
+                pickedImage,
+                documentIdToUpdate,
+            } = req.body;
 
             const updatedData = {
                 title,
@@ -117,5 +146,6 @@ export default async function handler(req, res) {
                 // Close the connection
                 await clientMD.close();
             }
+        }
     }
 }
