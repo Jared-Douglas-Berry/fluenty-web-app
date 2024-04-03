@@ -229,3 +229,21 @@ ul {
   margin: 0 .5rem;
 }
 
+.detailsBtn {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: var(--size-12);
+  margin: 2rem 0;
+}
+
+.detailsBtn:hover {
+  color: var(--color-secondary-1);
+}
+
+.detailsBtn svg {
+  width: 50px !important;
+  height: 50px !important;
+}
+

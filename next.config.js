@@ -18,7 +18,7 @@ module.exports = (phase) => {
                 unoptimized: true,
             },
             env: {
-                NEXTAUTH_URL: 'https://vite.fluenty.co.za/',
+                // NEXTAUTH_URL: 'https://vite.fluenty.co.za/',
                 // NEXTAUTH_SECRET: generateKey(),
                 mongodb_username: 'fluenty',
                 mongodb_password: 'e9jcfRdqz6QcqyW7',

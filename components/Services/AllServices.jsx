@@ -1,5 +1,7 @@
 import ServicesGrid from "./ServicesGrid.jsx";
 import styles from './AllServices.module.css'
+import Link from "next/link";
+import {PiArrowBendDoubleUpRightLight} from "react-icons/pi";
 export default function AllServices({services}) {
     return (
         <section className={styles.services}>

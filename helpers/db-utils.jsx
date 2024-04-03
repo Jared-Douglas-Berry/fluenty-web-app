@@ -102,7 +102,7 @@ export async function updateUser(client, document1, document2, dbName, collectNa
     return result;
 }
 
-export async function getFeturedDocs(client, dbName, collectName, sort) {
+export async function getFeaturedDocs(client, dbName, collectName, sort) {
     const allDocs = await getAllDocuments(client, dbName, collectName, sort);
 
     return allDocs.filter(doc => doc.isFeatured);
