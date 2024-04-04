@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import Head from "next/head";
 import {connectDatabase, getFeaturedDocs} from "../helpers/db-utils";
 import dynamic from "next/dynamic";
-import styles from "../components/Services/AllServices.module.css";
 import {PiArrowBendDoubleUpRightLight} from "react-icons/pi";
 import Link from "next/link";
 const Banner = dynamic(() => import('../components/Banner/Banner.jsx'));
@@ -118,6 +117,8 @@ export async function getStaticProps() {
         location: project.location || null,
         results: project.results || null,
         isFeatured: project.isFeatured || false,
+        projectURL: project.projectURL,
+        projectMobileURL: project.projectMobileURL,
         slug: project.title.trim().replace(/\s+/g, "-") || null
         // Include other necessary fields here
     }));

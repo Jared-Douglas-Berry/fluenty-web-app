@@ -106,6 +106,15 @@
     align-items: flex-start;
 }
 
+.url {
+    color: white;
+    font-size: var(--size-5);
+}
+
+.url:hover {
+    color: var(--color-secondary-1);
+}
+
 @media screen and  (max-width: 768px) {
     .projects {
         margin: var(--size-6) var(--size-2);

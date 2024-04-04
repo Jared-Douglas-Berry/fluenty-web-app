@@ -3,9 +3,10 @@ import Image from "next/image";
 import ItemCarousel from "../Carousel/ItemCarousel";
 import {Fragment} from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function ProjectDetails({project, projects}) {
-    const { id, image, title, category, challenge, client, date, location, results, index } = project;
+    const { id, image, title, category, challenge, client, date, location, results, index, projectMobileURL, projectURL } = project;
 
     const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
         day: 'numeric',
@@ -47,6 +48,38 @@ export default function ProjectDetails({project, projects}) {
                                 <h4>Location</h4>
                                 <p>{location}</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.contentCenter}>
+                        <div className={styles.grid}>
+                            <h2></h2>
+                            <div className={styles.columnContent}>
+                                <h4>Website:</h4>
+                                <p>
+                                    <Link
+                                        href={`${projectURL}`}
+                                        className={styles.url}
+                                        target="_blank"
+                                    >
+                                        {projectURL}
+                                    </Link>
+                                </p>
+                            </div>
+                            {projectMobileURL !== '' && (
+                                <div className={styles.columnContent}>
+                                    <h4>Mobile Application:</h4>
+                                    <p>
+                                        <Link
+                                            href={`${projectMobileURL}`}
+                                            className={styles.url}
+                                            target="_blank"
+                                        >
+                                            {projectMobileURL}
+                                        </Link>
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </div>
 

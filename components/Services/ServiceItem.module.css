@@ -3,8 +3,8 @@
     background-color: var(--color-grey-800);
     text-align: center;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 
 .serviceItem:hover {

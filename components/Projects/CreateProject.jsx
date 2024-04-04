@@ -17,6 +17,8 @@ export default function CreateProject() {
     const [location, setLocation] = useState('');
     const [challenge, setChallenge] = useState('');
     const [results, setResults] = useState('');
+    const [projectURL, setProjectURL] = useState('');
+    const [projectMobileURL, setProjectMobileURL] = useState('');
     const [isInvalid, setIsInvalid] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -45,6 +47,8 @@ export default function CreateProject() {
             setLocation(parsedData.location);
             setChallenge(parsedData.challenge);
             setResults(parsedData.results);
+            setProjectURL(parsedData.projectURL);
+            setProjectMobileURL(parsedData.projectMobileURL);
         }
     }, []);
 
@@ -136,6 +140,8 @@ export default function CreateProject() {
                 location,
                 challenge,
                 results,
+                projectURL: projectURL ? projectURL : '',
+                projectMobileURL: projectMobileURL ? projectMobileURL : '',
                 documentIdToUpdate: projectId,
                 documentIdToDelete: null
             }
@@ -178,6 +184,8 @@ export default function CreateProject() {
                     setLocation('');
                     setChallenge('');
                     setResults('');
+                    setProjectURL('');
+                    setProjectMobileURL('');
                     setIsInvalid(false);
                     setErrorMessage('');
                     setErrorClient('');
@@ -275,6 +283,24 @@ export default function CreateProject() {
                             required
                         />
                         {isInvalid && <p className={styles.error}>{errorLocation}</p>}
+                    </div>
+                    <div>
+                        <label htmlFor="projectURL">Project URL:</label>
+                        <input
+                            type="text"
+                            id="projectURL"
+                            value={projectURL}
+                            onChange={(e) => setProjectURL(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="projectMobileURL">Project Mobile URL:</label>
+                        <input
+                            type="text"
+                            id="projectMobileURL"
+                            value={projectMobileURL}
+                            onChange={(e) => setProjectMobileURL(e.target.value)}
+                        />
                     </div>
                     <div>
                         <label htmlFor="challenge">The Challenge:</label>
