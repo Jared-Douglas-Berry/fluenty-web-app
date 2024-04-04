@@ -117,8 +117,8 @@ export async function getStaticProps() {
         location: project.location || null,
         results: project.results || null,
         isFeatured: project.isFeatured || false,
-        projectURL: project.projectURL,
-        projectMobileURL: project.projectMobileURL,
+        projectURL: project.projectURL || null,
+        projectMobileURL: project.projectMobileURL || null,
         slug: project.title.trim().replace(/\s+/g, "-") || null
         // Include other necessary fields here
     }));
