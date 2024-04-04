@@ -9,14 +9,20 @@ import NavLink from "./NavLink";
 export default function MainHeader() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
     const {data: session, status, update} = useSession();
     const menuRef = useRef(null);
 
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            setIsScrolled(scrollTop > 0); // Check if scrolled beyond the top
+            const currentScrollTop = window.pageYOffset > 160 || document.documentElement.scrollTop;
+            if (currentScrollTop > lastScrollTop) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+            setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -25,6 +31,18 @@ export default function MainHeader() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const scrollTop = window.scrollY;
+    //         setIsScrolled(scrollTop > 0); // Check if scrolled beyond the top
+    //     };
+    //
+    //     window.addEventListener('scroll', handleScroll);
+    //
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
     useEffect(() => {
         function handleClickOutside(event) {
@@ -58,7 +76,7 @@ export default function MainHeader() {
     }
 
     return (
-        <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} onClick={handleMenu}>
+        <header className={`${styles.header} ${isScrolled ? styles.scrolled : styles.header1}`} onClick={handleMenu}>
             <div className={styles.logo}>
                 <Link href='/'>Fluenty</Link>
             </div>
