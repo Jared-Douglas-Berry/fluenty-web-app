@@ -65,11 +65,6 @@
         height: 700px;
     }
 
-    .textContainer {
-        padding: 2.25rem .9rem .9rem 7rem;
-        width: 70%;
-    }
-
     .textContainer h1 {
         font-size: var(--size-18);
     }
@@ -95,11 +90,6 @@
 @media screen and  (max-width: 768px) {
     .container {
         height: 277px;
-    }
-
-    .textContainer {
-        padding: 1.25rem .5rem .5rem 2rem;
-        width: 50%;
     }
 
     .textContainer h1 {
@@ -135,11 +125,6 @@
         height: 200px;
     }
 
-    .textContainer {
-        padding: .2rem;
-        width: 75%;
-    }
-
     .textContainer h1 {
         font-size: var(--size-6);
     }
@@ -165,11 +150,6 @@
 @media screen and  (max-width: 320px) {
     .container {
         height: 180px;
-    }
-
-    .textContainer {
-        padding: .2rem;
-        width: 80%;
     }
 
     .textContainer h1 {
