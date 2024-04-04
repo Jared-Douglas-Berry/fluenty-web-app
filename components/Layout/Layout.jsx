@@ -6,9 +6,7 @@ import styles from './Layout.module.css';
 export default function Layout({children}) {
     return (
         <Fragment>
-            <header className={styles.header}>
-                <MainHeader />
-            </header>
+            <MainHeader />
 
             <main className={styles.main}>
                 {children}
