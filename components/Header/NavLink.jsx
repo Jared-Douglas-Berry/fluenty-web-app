@@ -55,7 +55,7 @@ function NavLink({ hrefActive, href, children }) {
     return (
         <Link
             href={href}
-            className={`${styles.link} ${isActive || path.startsWith(href) ? styles.active : ''}`}
+            className={`${styles.link} ${isActive || path.startsWith(href) || path.startsWith(hrefActive) ? styles.active : ''}`}
         >
             {children}
         </Link>
