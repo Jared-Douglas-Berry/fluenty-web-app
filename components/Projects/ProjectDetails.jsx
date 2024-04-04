@@ -66,7 +66,7 @@ export default function ProjectDetails({project, projects}) {
                                     </Link>
                                 </p>
                             </div>
-                            {projectMobileURL !== '' && (
+                            {projectMobileURL && (
                                 <div className={styles.columnContent}>
                                     <h4>Mobile Application:</h4>
                                     <p>

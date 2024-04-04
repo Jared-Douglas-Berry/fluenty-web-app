@@ -73,6 +73,7 @@ export async function getStaticProps(context) {
                     summary: teamMate.summary,
                     image: teamMate.pickedImage.src,
                     experience: teamMate.experience,
+                    isFeatured: teamMate.isFeatured,
                 },
             },
             // revalidate: 30

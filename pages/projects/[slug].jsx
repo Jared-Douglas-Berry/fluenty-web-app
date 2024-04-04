@@ -58,8 +58,8 @@ export async function getStaticProps(context) {
             date: project.date,
             location: project.location,
             results: project.results,
-            projectURL: project.projectURL,
-            projectMobileURL: project.projectMobileURL,
+            projectURL: project.projectURL || null,
+            projectMobileURL: project.projectMobileURL || null,
             slug: project.title.trim().replace(/\s+/g, "-")
             // Include other necessary fields here
         }));
@@ -94,8 +94,8 @@ export async function getStaticProps(context) {
                     date: project.date,
                     location: project.location,
                     results: project.results,
-                    projectURL: project.projectURL,
-                    projectMobileURL: project.projectMobileURL,
+                    projectURL: project.projectURL || null,
+                    projectMobileURL: project.projectMobileURL || null
                 },
             },
             // revalidate: 30
