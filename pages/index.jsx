@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import {connectDatabase, getFeaturedDocs} from "../helpers/db-utils";
+import {connectDatabase, getAllDocuments, getFeaturedDocs} from "../helpers/db-utils";
 import dynamic from "next/dynamic";
 import {PiArrowBendDoubleUpRightLight} from "react-icons/pi";
 import Link from "next/link";
@@ -149,7 +149,7 @@ export async function getStaticProps() {
         // Include other necessary fields here
     }));
 
-    const options = await getFeaturedDocs(client, process.env.mongodb_database, process.env.mongodb_database_email_subjects, { _id: 1 });
+    const options = await getAllDocuments(client, process.env.mongodb_database, process.env.mongodb_database_email_subjects, { _id: 1 });
 
 // Extract only the necessary data for serialization
     const serializedOptions = options.map((option) => ({
