@@ -25,7 +25,9 @@ export default async function handler(req, res) {
             date,
             location,
             challenge,
-            results
+            results,
+            projectURL,
+            projectMobileURL
         } = req.body;
 
         if (
@@ -90,7 +92,10 @@ export default async function handler(req, res) {
             location,
             challenge,
             results,
+            projectURL,
+            projectMobileURL,
             createdDate: new Date(),
+            isFeatured: false,
         };
 
         let result;
@@ -175,6 +180,8 @@ export default async function handler(req, res) {
                 location,
                 challenge,
                 results,
+                projectURL,
+                projectMobileURL,
                 documentIdToUpdate,
             } = req.body;
 
@@ -187,6 +194,8 @@ export default async function handler(req, res) {
                 location,
                 challenge,
                 results,
+                projectURL,
+                projectMobileURL,
                 modifiedDate: new Date()
             };
 

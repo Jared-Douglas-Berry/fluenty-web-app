@@ -28,6 +28,8 @@ export async function getStaticProps() {
         _id: project._id.toString(),
         index: index,
         title: project.title,
+        projectURL: project.projectURL,
+        projectMobileURL: project.projectMobileURL,
         image: project.pickedImage.src,
         slug: project.title.trim().replace(/\s+/g, "-")
         // Include other necessary fields here

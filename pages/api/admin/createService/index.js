@@ -60,6 +60,7 @@ export default async function handler(req, res) {
             pickedImage1,
             summary,
             createdDate: new Date(),
+            isFeatured: false,
         };
 
         let result;

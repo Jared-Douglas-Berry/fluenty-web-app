@@ -89,6 +89,7 @@ export default async function handler(req, res) {
             pickedImage1,
             pickedImage2,
             createdDate: new Date(),
+            isFeatured: false,
         };
 
         let result;
