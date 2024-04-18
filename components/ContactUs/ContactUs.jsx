@@ -1,4 +1,4 @@
-import styles from "./ContactUs.module.css";
+import styles from "./ContactUs.module.scss";
 import DropDown from "../Buttons/DropDown";
 import Submitting from "../Buttons/Submitting";
 import {useContext, useState} from "react";

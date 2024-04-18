@@ -1,0 +1,207 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.container {
+    width: 100%;
+    height: 50rem;
+    display: flex;
+}
+
+.textContainer {
+    padding: 2.5rem 0 1rem 0;
+    width: 100%;
+    z-index: 10;
+
+}
+.imageContainer {
+
+}
+
+.textContainer h1 {
+    font-weight: map-get($font-weights, 'semi-bold');
+    font-size: $header-laptop-1440;
+    margin: .5rem;
+    letter-spacing: 0.25rem;
+    width: 100%;
+}
+
+.textContainer h3 {
+    font-weight: map-get($font-weights, 'normal');
+    font-size: $paragraph-laptop-1440;
+    width: 100%;
+    margin: 1.5rem .5rem .5rem .5rem;
+}
+
+.textContainer p {
+    font-weight: map-get($font-weights, 'normal');
+    font-size: $paragraph-sub-laptop-1440;
+    width: 100%;
+    margin: 0 .5rem;
+    letter-spacing: 0.094rem;
+}
+
+.textBlue {
+    color: $primary
+}
+
+.image {
+    position: absolute;
+    right: 6.25rem;
+    width: 50rem;
+    height: 50rem;
+    z-index: 1;
+}
+.image img {
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+}
+
+.pBanner {
+    margin-top: 2rem !important;
+    font-weight: map-get($font-weights, 'bold') !important;
+}
+
+@include desktop {
+    .container {
+        height: 43.75rem;
+    }
+
+    .textContainer h1 {
+        font-size: $header-laptop-1024;
+    }
+
+    .textContainer h3 {
+        font-size: $paragraph-laptop-1024;
+        width: 100%;
+    }
+
+    .textContainer p {
+        font-size:  $paragraph-sub-laptop-1024;
+        width: 100%;
+    }
+
+    .image {
+        top: 3.75rem;
+        right: 0;
+        width: 43.75rem;
+        height: 43.75rem;
+    }
+}
+
+@include tablet {
+    .container {
+        height: 17.313rem;
+    }
+
+    .textContainer h1 {
+        font-size: $header-tab-768;
+    }
+
+    .textContainer h3 {
+        font-size: $paragraph-tab-768;
+        width: 100%;
+    }
+
+    .textContainer p {
+        font-size: $paragraph-tab-768;
+    }
+
+    .image {
+        top: 5rem;
+        right: 0;
+        width: 24.125rem;
+        height: 22.688rem;
+    }
+
+    .image img {
+        object-fit: fill;
+        object-position: top;
+        width: 100%;
+        height: 75%;
+    }
+}
+
+@include mobileLarge {
+    .container {
+        height: 12.5rem;
+    }
+
+    .textContainer h1 {
+        font-size: $header-mobi-425;
+    }
+
+    .textContainer h3 {
+        font-size: $paragraph-mobi-425;
+        width: 100%;
+    }
+
+    .textContainer p {
+        font-size: $paragraph-mobi-425;
+        width: 100%;
+    }
+
+    .image {
+        top: 5rem;
+        right: 0;
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+}
+
+@include mobile {
+    .container {
+        height: 11.25rem;
+    }
+
+    .textContainer h1 {
+        font-size: $header-mobi-375;
+    }
+
+    .textContainer h3 {
+        font-size: $paragraph-mobi-375;
+        width: 100%;
+    }
+
+    .textContainer p {
+        font-size: $paragraph-mobi-375;
+        width: 100%;
+    }
+
+    .image {
+        top: 5rem;
+        right: 0;
+        width: 11.25rem;
+        height: 11.25rem;
+    }
+}
+@include mobileSmall {
+    .container {
+        height: 11.25rem;
+    }
+
+    .textContainer h1 {
+        font-size: $header-mobi-320;
+    }
+
+    .textContainer h3 {
+        font-size: $paragraph-mobi-320;
+        width: 100%;
+    }
+
+    .textContainer p {
+        font-size: $paragraph-mobi-320;
+        width: 100%;
+    }
+
+    .image {
+        top: 5rem;
+        right: 0;
+        width: 11.25rem;
+        height: 11.25rem;
+    }
+}

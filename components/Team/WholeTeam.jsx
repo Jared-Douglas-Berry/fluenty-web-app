@@ -1,4 +1,4 @@
-import styles from "./WholeTeam.module.css";
+import styles from "./WholeTeam.module.scss";
 import TeamGrid from "./TeamGrid";
 
 export default function WholeTeam({team}) {

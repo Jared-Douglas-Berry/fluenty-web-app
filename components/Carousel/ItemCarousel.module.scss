@@ -1,0 +1,117 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1.25rem;
+    width: 100%;
+}
+
+.title {
+    text-decoration: none;
+    color: $grey-50;
+    font-size: map-get($font-sizes, '8');
+}
+
+.title:hover {
+    transform: scale(1.05);
+    color: $primary;
+}
+
+.btn {
+    text-decoration: none;
+    color: $grey-300;
+    font-size: map-get($font-sizes, '6');
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    color: $primary;
+}
+
+.image {
+    overflow: hidden;
+    max-width:18.75rem;
+    max-height:18.75rem;
+}
+
+.image img {
+    object-fit: cover;
+}
+
+.contentNext {
+    margin-right: 0.938rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.contentPrevious {
+    margin-left: 0.938rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.btnRight {
+    display: flex;
+    justify-content: right;
+}
+
+.btnLeft {
+    display: flex;
+    justify-content: left;
+}
+
+@include tablet {
+    .container {
+        margin: 0.625rem;
+    }
+
+    .title {
+        font-size: map-get($font-sizes, '4');
+    }
+
+    .btn {
+       font-size: map-get($font-sizes, '3');
+    }
+
+    .contentNext {
+        margin-right: 0.469rem;
+    }
+
+    .contentPrevious {
+        margin-left: 0.469rem;
+    }
+
+    .image {
+        max-width: 9.375rem;
+        max-height: 9.375rem;
+    }
+
+    .image img {
+        object-fit: cover;
+    }
+
+}
+
+@include mobileLarge {
+    .container {
+        flex-direction: column;
+    }
+
+    .btnRight {
+        margin-top: 0.938rem;
+    }
+
+    .btnLeft {
+        margin-bottom: 0.938rem;
+    }
+}

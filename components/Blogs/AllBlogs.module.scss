@@ -1,0 +1,70 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.blogs {
+  width: 100%;
+  margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+}
+
+.blogs h1 {
+  font-size: $sub-header-laptop-1440;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.blogs h3 {
+  margin: 0;
+  font-size: $blue-sub-header-laptop-1440;
+  color: $primary;
+  font-weight: map-get($font-weights, 'bold');
+  letter-spacing: map-get($line-heights, '1.5');
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.938rem;
+}
+
+@include tablet {
+  .blogs {
+    max-width: 47rem;
+    margin: map-get($spacing-sizes, '4') auto;
+  }
+
+  .blogs h1 {
+    font-size: $sub-header-tab-768;
+  }
+
+  .blogs h3 {
+    font-size: $blue-sub-header-tab-768;
+  }
+
+  .text {
+    margin-bottom: 0.469rem;
+  }
+}
+
+@include mobileLarge {
+  .blogs {
+    max-width: 23.5rem;
+    margin: map-get($spacing-sizes, '2') auto;
+  }
+
+  .blogs h1 {
+    font-size: $sub-header-mobi-425;
+  }
+
+  .blogs h3 {
+    font-size: $blue-sub-header-mobi-425;
+  }
+
+  .text {
+    margin-bottom: 0.234rem;
+  }
+}

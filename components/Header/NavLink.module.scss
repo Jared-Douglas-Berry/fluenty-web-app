@@ -1,0 +1,26 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    background: linear-gradient(90deg, $primary, $secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 1.125rem rgba(55,164,225, 0.8);
+}
+.active {
+    background: linear-gradient(90deg, $primary, $secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+

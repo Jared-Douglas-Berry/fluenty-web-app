@@ -1,4 +1,4 @@
-import styles from './ImagePicker.module.css';
+import styles from './ImagePicker.module.scss';
 import { useRef } from "react";
 import Image from "next/image";
 

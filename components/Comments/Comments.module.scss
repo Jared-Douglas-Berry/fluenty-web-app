@@ -1,0 +1,35 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.comments {
+  margin: 3rem auto;
+  width: 90%;
+  text-align: center;
+}
+
+.comments h1 {
+  text-align: left;
+  font-style: italic;
+  font-size: map-get($font-sizes, '8');
+  margin-bottom: 1.563rem;
+}
+
+.comments button {
+  font: inherit;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: $primary;
+  border: 0.063rem solid $primary;
+  cursor: pointer;
+}
+
+.comments button:hover,
+.comments button:active {
+  background-color: $primary!important;
+  border: 0.063rem solid $grey-50;
+  color: $grey-50;
+}

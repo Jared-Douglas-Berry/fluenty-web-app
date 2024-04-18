@@ -1,0 +1,43 @@
+@import "./_fonts.scss";
+
+$header-laptop-1440:  map-get($font-sizes, '37');
+$header-laptop-1024: map-get($font-sizes, '27');
+$header-tab-768: map-get($font-sizes, '21');
+$header-mobi-425: map-get($font-sizes, '10');
+$header-mobi-375: map-get($font-sizes, '8');
+$header-mobi-320: map-get($font-sizes, '8');
+
+$sub-header-laptop-1440: map-get($font-sizes, '12');
+$sub-header-laptop-1024: map-get($font-sizes, '12');
+$sub-header-tab-768: map-get($font-sizes, '12');
+$sub-header-mobi-425: map-get($font-sizes, '8');
+$sub-header-mobi-375: map-get($font-sizes, '8');
+$sub-header-mobi-320: map-get($font-sizes, '8');
+
+$blue-sub-header-laptop-1440: map-get($font-sizes, '5');
+$blue-sub-header-laptop-1024: map-get($font-sizes, '5');
+$blue-sub-header-tab-768: map-get($font-sizes, '5');
+$blue-sub-header-mobi-425: map-get($font-sizes, '5');
+$blue-sub-header-mobi-375: map-get($font-sizes, '5');
+$blue-sub-header-mobi-320: map-get($font-sizes, '5');
+
+$scrolling-banner-laptop-1440: map-get($font-sizes, '16');
+$scrolling-banner-laptop-1024: map-get($font-sizes, '12');
+$scrolling-banner-tab-768: map-get($font-sizes, '10');
+$scrolling-banner-mobi-425: map-get($font-sizes, '9');
+$scrolling-banner-mobi-375: map-get($font-sizes, '7');
+$scrolling-banner-mobi-320: map-get($font-sizes, '7');
+
+$paragraph-laptop-1440: map-get($font-sizes, '7');
+$paragraph-laptop-1024: map-get($font-sizes, '7');
+$paragraph-tab-768: map-get($font-sizes, '5');
+$paragraph-mobi-425: map-get($font-sizes, '4');
+$paragraph-mobi-375: map-get($font-sizes, '4');
+$paragraph-mobi-320: map-get($font-sizes, '4');
+
+$paragraph-sub-laptop-1440: map-get($font-sizes, '5');
+$paragraph-sub-laptop-1024: map-get($font-sizes, '5');
+$paragraph-sub-tab-768: map-get($font-sizes, '3');
+$paragraph-sub-mobi-425: map-get($font-sizes, '2');
+$paragraph-sub-mobi-375: map-get($font-sizes, '2');
+$paragraph-sub-mobi-320: map-get($font-sizes, '2');

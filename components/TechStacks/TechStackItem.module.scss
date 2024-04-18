@@ -1,0 +1,97 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.pill {
+    background-color: $grey-50;
+    text-align: center;
+    padding: 1.063rem 2.5rem;
+    border-radius: 2.5rem;
+    margin-bottom: 2.188rem;
+    margin-left: 0.938rem;
+    margin-right: 0.938rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    -webkit-box-shadow: 0 0.313rem 0 0 $primary;
+    box-shadow: 0 0.313rem 0 0 $primary;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.icon {
+    margin-right: 0.313rem;
+    width: 2rem;
+    max-height: 2rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.icon img {
+    display: inline-block;
+    object-fit: cover;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.content h2 {
+    margin: 0;
+    font-size: map-get($font-sizes, '6');
+    color: $black-25;
+}
+
+@include tablet {
+    .pill {
+        padding: 0.531rem 1.25rem;
+        margin-bottom: 1.094rem;
+        margin-left: 0.469rem;
+        margin-right: 0.469rem;
+    }
+
+    .icon {
+        margin-right: 0.156rem;
+        width: 1rem;
+        max-height: 1rem;
+    }
+
+    .content h2 {
+        font-size: map-get($font-sizes, '3');
+    }
+}
+
+@include mobileLarge {
+    .pill {
+        padding: 0.266rem 0.625rem;
+        margin-bottom: 0.547rem;
+        margin-left: 0.234rem;
+        margin-right: 0.234rem;
+    }
+
+    .icon {
+        margin-right: 0.078rem;
+        width: 1rem;
+        max-height: 1rem;
+    }
+
+    .content h2 {
+        font-size: map-get($font-sizes, '3');
+    }
+}

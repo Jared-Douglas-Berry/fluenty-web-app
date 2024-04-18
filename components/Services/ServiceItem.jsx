@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image";
-import styles from './ServiceItem.module.css'
+import styles from './ServiceItem.module.scss'
 
 export default function ServiceItem({service}) {
     const { title, image, icon, slug, isFeatured } = service;

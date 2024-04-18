@@ -1,5 +1,5 @@
 import ServiceItem from "./ServiceItem.jsx";
-import styles from './ServicesGrid.module.css'
+import styles from './ServicesGrid.module.scss'
 
 export default function ServicesGrid({services}) {
     return (

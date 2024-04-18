@@ -1,5 +1,5 @@
 import {Fragment} from 'react';
-import styles from './LayoutAdmin.module.css';
+import styles from './LayoutAdmin.module.scss';
 import NavSideBar from "../Admin/NavSideBar";
 import Auth from "../Auth/Auth";
 import Head from "next/head";

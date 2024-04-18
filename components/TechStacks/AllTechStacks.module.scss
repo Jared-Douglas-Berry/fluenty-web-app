@@ -1,0 +1,51 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.tech {
+    width: 96%;
+    margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+}
+
+.tech h1 {
+    font-size: $sub-header-laptop-1440;
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+.tech h3 {
+    margin: 6rem 0 0 0;
+    font-size: $blue-sub-header-laptop-1440;
+    color: $primary;
+    font-weight: map-get($font-weights, 'bold');
+    letter-spacing: map-get($line-heights, '1.5')
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.938rem;
+}
+
+@include tablet {
+    .tech {
+        max-width: 30rem;
+        margin: map-get($spacing-sizes, '4') auto;
+    }
+
+    .tech h1 {
+        font-size: $sub-header-tab-768;
+    }
+
+    .tech h3 {
+        font-size: $blue-sub-header-tab-768;
+    }
+
+    .text {
+        margin-bottom: 0.469rem;
+    }
+}

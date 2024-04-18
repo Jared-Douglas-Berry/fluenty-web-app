@@ -1,0 +1,15 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.main {
+    padding: 0 0 6.25rem  0;
+}
+
+@include tablet {
+    .main {
+        padding: 0 0 3.125rem 0;
+    }
+}

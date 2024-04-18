@@ -1,0 +1,51 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.container {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.container h1 {
+    font-size: map-get($font-sizes, '6');
+    margin-bottom: map-get($spacing-sizes, '5');
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    margin-bottom: 0.5rem;
+}
+
+.container input[type="text"],
+.container textarea {
+    width: 100%;
+    padding: 0.625rem;
+    margin-bottom: 0.938rem;
+    border: map-get($line-heights, '1') solid #ccc;
+    border-radius: map-get($line-heights, '5');
+}
+
+.actions {
+    padding: 1rem;
+    text-align: right;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+}
+
+.error {
+    margin-top: 0;
+    margin-bottom: 0.938rem;
+    color: $error-500;
+    font-size: map-get($font-sizes, '4');
+}

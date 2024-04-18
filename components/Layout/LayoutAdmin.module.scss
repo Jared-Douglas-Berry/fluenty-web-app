@@ -1,0 +1,47 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sideBar {
+    width: 15%;
+    background-color: $grey-800;
+    border-right:  0.188rem solid $primary;
+    padding: 10.313rem 1.875rem;
+}
+
+.child {
+    padding: 1.563rem 3.75rem;
+    width: 85%;
+}
+
+@include tablet {
+    .sideBar {
+        width: 20%;
+        padding: 0.469rem 0.938rem;
+    }
+
+    .child {
+        padding: 0.781rem 1.875rem;
+        width: 80%;
+    }
+}
+
+@include mobileLarge {
+    .sideBar {
+        width: max-content;
+        padding: 0.234rem 0.469rem;
+    }
+
+    .child {
+        width: 100%;
+    }
+}

@@ -1,0 +1,116 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    margin-left: 1.875rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: map-get($spacing-sizes, '4');
+    font-size: $sub-header-laptop-1440;
+}
+
+.iconTitle {
+    color: $primary;
+    width: 3.75rem;
+    height: 3.75rem;
+}
+
+.image {
+    width: 100%;
+    max-height: 100rem;
+    overflow: hidden;
+}
+
+.image img {
+    object-fit: cover;
+}
+
+.content {
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: map-get($spacing-sizes, '4');
+}
+
+.title h2 {
+    margin: 0;
+    font-size: map-get($font-sizes, '15');
+}
+
+.content p {
+    width: 100%;
+    margin: 0;
+    font-size: map-get($font-sizes, '6');
+}
+
+@include tablet {
+    .title {
+        margin-left: 0.938rem;
+        padding: map-get($spacing-sizes, '6');
+        font-size: $sub-header-tab-768;
+    }
+
+    .iconTitle {
+        width: 1.875rem;
+        height: 1.875rem;
+    }
+
+    .image {
+        max-height: 50rem;
+    }
+
+    .content {
+        padding: map-get($spacing-sizes, '4');
+    }
+
+    .title h2 {
+        font-size: map-get($font-sizes, '8');
+    }
+
+    .content p {
+        font-size: map-get($font-sizes, '6');
+    }
+}
+
+@include mobileLarge {
+    .title {
+        margin-left: 0.469rem;
+        padding: map-get($spacing-sizes, '3');
+        font-size: $sub-header-mobi-425;
+    }
+
+    .iconTitle {
+        width: 0.938rem;
+        height: 0.938rem;
+    }
+
+    .image {
+        max-height: 25rem;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: map-get($spacing-sizes, '2');
+    }
+
+    .title h2 {
+        font-size: map-get($font-sizes, '4');
+    }
+
+    .content p {
+        font-size: map-get($font-sizes, '3');
+    }
+}

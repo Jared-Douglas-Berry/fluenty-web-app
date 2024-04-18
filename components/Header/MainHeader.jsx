@@ -1,4 +1,4 @@
-import styles from './MainHeader.module.css';
+import styles from './MainHeader.module.scss';
 import Link from "next/link";
 import {useSession, signOut, signIn} from "next-auth/react"
 import { CgMenuGridO } from "react-icons/cg";

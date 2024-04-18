@@ -1,5 +1,5 @@
 import BlogItem from "./BlogItem.jsx";
-import styles from './BlogsGrid.module.css'
+import styles from './BlogsGrid.module.scss'
 
 export default function BlogsGrid({blogs}) {
     return (

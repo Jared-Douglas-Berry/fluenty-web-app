@@ -1,4 +1,4 @@
-import styles from './ScrollingBanner.module.css';
+import styles from './ScrollingBanner.module.scss';
 import { FaStarOfLife } from "react-icons/fa";
 
 export default function ScrollingBanner({items}) {

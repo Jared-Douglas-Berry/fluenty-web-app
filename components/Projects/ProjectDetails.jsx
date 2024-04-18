@@ -1,4 +1,4 @@
-import styles from "./ProjectDetails.module.css";
+import styles from "./ProjectDetails.module.scss";
 import Image from "next/image";
 import ItemCarousel from "../Carousel/ItemCarousel";
 import {Fragment} from "react";

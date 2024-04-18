@@ -1,4 +1,4 @@
-import styles from './CreateServices.module.css';
+import styles from './CreateServices.module.scss';
 import ImagePicker from '../Images/ImagePicker.js';
 import Submitting from "../Buttons/Submitting.js";
 import {Fragment, useEffect, useState} from "react";

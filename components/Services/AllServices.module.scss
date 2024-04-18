@@ -1,0 +1,62 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.services {
+    width: 100%;
+    margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+}
+
+.services h1 {
+    font-size: $sub-header-laptop-1440;
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+.services h3 {
+    margin: 0;
+    font-size: $blue-sub-header-laptop-1440;
+    color: $primary;
+    font-weight: map-get($font-weights, 'bold');
+    letter-spacing: map-get($line-heights, '1.5');
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.938rem;
+}
+
+@include tablet {
+    .services {
+        max-width: 30rem;
+        margin: map-get($spacing-sizes, '4') auto;
+    }
+
+    .services h1 {
+        font-size: $sub-header-tab-768;
+    }
+
+    .services h3 {
+        font-size: $blue-sub-header-tab-768;
+    }
+}
+
+@include mobileLarge {
+    .services {
+        max-width: 15rem;
+        margin: map-get($spacing-sizes, '2') auto;
+    }
+
+    .services h1 {
+        font-size: $sub-header-mobi-425;
+    }
+
+    .services h3 {
+        font-size: $blue-sub-header-mobi-425;
+    }
+}

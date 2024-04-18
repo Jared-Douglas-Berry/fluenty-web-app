@@ -1,4 +1,4 @@
-import styles from './CommentList.module.css';
+import styles from './CommentList.module.scss';
 import {GoDotFill} from "react-icons/go";
 
 function CommentList({ items }) {

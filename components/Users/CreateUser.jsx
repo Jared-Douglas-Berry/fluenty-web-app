@@ -1,4 +1,4 @@
-import styles from './CreateUser.module.css';
+import styles from './CreateUser.module.scss';
 import Submitting from "../Buttons/Submitting.js";
 import {Fragment, useEffect, useState} from "react";
 import {useRouter} from "next/router";

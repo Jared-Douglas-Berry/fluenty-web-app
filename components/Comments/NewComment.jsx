@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import styles from './NewComment.module.css';
+import styles from './NewComment.module.scss';
 
 function NewComment(props) {
   const [isInvalid, setIsInvalid] = useState(false);

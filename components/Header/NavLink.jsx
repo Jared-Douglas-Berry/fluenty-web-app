@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./NavLink.module.css";
+import styles from "./NavLink.module.scss";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";

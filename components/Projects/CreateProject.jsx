@@ -1,4 +1,4 @@
-import styles from './CreateProject.module.css';
+import styles from './CreateProject.module.scss';
 import ImagePicker from '../Images/ImagePicker.js';
 import Submitting from "../Buttons/Submitting.js";
 import {Fragment, useEffect, useState} from "react";

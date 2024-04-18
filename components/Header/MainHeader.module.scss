@@ -1,0 +1,136 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.header {
+    position: sticky !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 10%;
+    height: map-get($height-sizes, '40');
+    background-color: $grey-900;
+    z-index: 100;
+    text-transform: uppercase;
+    letter-spacing: map-get($line-heights, '3');
+    font-weight: map-get($font-weights, 'semi-bold');
+    top: -10rem;
+    transition: top 0.8s;
+}
+
+.header1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 10%;
+    height: map-get($height-sizes, '40');
+    background-color: $grey-900;
+    z-index: 100;
+    text-transform: uppercase;
+    letter-spacing: map-get($line-heights, '3');
+    font-weight: map-get($font-weights, 'semi-bold');
+}
+.scrolled {
+    height: map-get($height-sizes, '20'); /* Adjusted height when scrolled */
+    padding: .5rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+}
+
+.logo {
+    font-size: map-get($font-sizes, '16');
+    color: $grey-50;
+    font-family: 'Fira', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: $grey-50;
+
+}
+
+.navigation a {
+    font-size: map-get($font-sizes, '6');
+    text-decoration: none;
+    color: $grey-50;
+}
+
+.linkItem {
+    padding: 0 map-get($spacing-sizes, '5');
+}
+
+.navigationContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: none;
+}
+.navigationContainerDropDown {
+    display: none;
+}
+
+@include tablet  {
+    .logo {
+        font-size: map-get($font-sizes, '10');
+    }
+
+    .navigation a {
+        font-size: map-get($font-sizes, '4');
+    }
+
+    .linkItem {
+        padding: 0 0.625rem;
+    }
+
+    .header {
+        padding: 1rem 5%;
+        height: map-get($height-sizes, '20');
+    }
+}
+
+@include mobileLarge {
+    .logo {
+        font-size: map-get($font-sizes, '10');
+    }
+
+    .navigation a {
+        font-size: map-get($font-sizes, '6');
+    }
+
+    .navigationContainer {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .header {
+        padding: 1rem 10%;
+        height: map-get($height-sizes, '20');
+    }
+
+    .navigationContainerDropDown {
+        display: flex;
+        position: absolute;
+        right: 2.688rem;
+        bottom: -10.875rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: $black-0;
+        border-radius: 0.625rem;
+        padding: 0.938rem;
+    }
+}

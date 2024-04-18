@@ -1,5 +1,5 @@
 import {Fragment, useEffect, useState} from "react";
-import styles from "./CreateSubjects.module.css";
+import styles from "./CreateSubjects.module.scss";
 import Submitting from "../Buttons/Submitting";
 import { MdAddCircleOutline } from "react-icons/md";
 import { FaTrashAlt } from "react-icons/fa";

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image";
-import styles from './BlogItem.module.css'
+import styles from './BlogItem.module.scss'
 import {LuCalendarDays} from "react-icons/lu";
 import {TfiComments} from "react-icons/tfi";
 import {GoDotFill} from "react-icons/go";

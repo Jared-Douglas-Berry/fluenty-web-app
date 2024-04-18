@@ -1,0 +1,251 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.about {
+    width: 100%;
+    margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+}
+
+.content h1 {
+    font-size: $sub-header-laptop-1440;
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+.content h3 {
+    margin: 0;
+    font-size: $blue-sub-header-laptop-1440;
+    color: $primary;
+    font-weight: map-get($font-weights, 'bold');
+    letter-spacing: 0.094rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 0.938rem;
+    width: 100%;
+}
+
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact h1 {
+    font-size: $paragraph-laptop-1440;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.contact h3 {
+    margin: 0;
+    font-size: map-get($font-sizes, '8');
+    color: $grey-50;
+    letter-spacing: 0.094rem;
+}
+
+.contact p {
+    text-align: center;
+    width: 100%;
+    margin: 1.75rem 0;
+    font-size: $paragraph-sub-laptop-1440;
+    color: $grey-50;
+}
+
+.contact span {
+    text-align: center;
+    width: 82%;
+    margin: 1.75rem 0 10rem 0;
+    font-size: $paragraph-sub-laptop-1440;
+    color: $grey-50;
+}
+
+.line {
+    margin: 1.375rem 0;
+    width: 6rem;
+    border-bottom: 0.313rem solid $primary;
+}
+
+@include desktop {
+    .about h1 {
+        font-size: $sub-header-laptop-1024;
+    }
+
+    .about h3 {
+        font-size: $blue-sub-header-laptop-1024;
+    }
+
+    .contact h3 {
+        font-size: $sub-header-laptop-1024;
+    }
+
+    .contact p {
+        font-size: $paragraph-laptop-1024;
+    }
+
+    .contact span {
+        margin: 1.313rem 0;
+        font-size: $sub-header-laptop-1024;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    .line {
+        margin: 0.688rem 0;
+    }
+}
+
+@include tablet {
+    .about h1 {
+        font-size: $sub-header-tab-768;
+    }
+
+    .about h3 {
+        font-size: $blue-sub-header-tab-768;
+    }
+
+    .contact h3 {
+        font-size: $sub-header-tab-768;
+    }
+
+    .contact p {
+        font-size: $paragraph-tab-768;
+    }
+
+    .contact span {
+        margin: 1.313rem 0;
+        font-size: $sub-header-tab-768;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    .line {
+        margin: 0.688rem 0;
+    }
+}
+
+@include mobileLarge {
+    .about h1 {
+        font-size: $sub-header-mobi-425;
+    }
+
+    .about h3 {
+        font-size: $blue-sub-header-mobi-425;
+    }
+
+    .contact h3 {
+        font-size: $sub-header-mobi-425;
+    }
+
+    .contact p {
+        font-size: $paragraph-mobi-425;
+    }
+
+    .contact span {
+        margin: 1.313rem 0;
+        font-size: $sub-header-mobi-425;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    .line {
+        margin: 0.375rem 0;
+    }
+}
+
+@include mobile {
+    .about h1 {
+        font-size: $sub-header-mobi-375;
+    }
+
+    .about h3 {
+        font-size: $blue-sub-header-mobi-375;
+    }
+
+    .contact h3 {
+        font-size: $sub-header-mobi-375;
+    }
+
+    .contact p {
+        font-size: $paragraph-mobi-375;
+    }
+
+    .contact span {
+        margin: 1.313rem 0;
+        font-size: $sub-header-mobi-375;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    .line {
+        margin: 0.375rem 0;
+    }
+}
+@include mobileSmall {
+    .about h1 {
+        font-size: $sub-header-mobi-320;
+    }
+
+    .about h3 {
+        font-size: $blue-sub-header-mobi-320;
+    }
+
+    .contact h3 {
+        font-size: $sub-header-mobi-320;
+    }
+
+    .contact p {
+        font-size: $paragraph-mobi-320;
+    }
+
+    .contact span {
+        margin: 1.313rem 0;
+        font-size: $sub-header-mobi-320;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    .line {
+        margin: 0.375rem 0;
+    }
+}
