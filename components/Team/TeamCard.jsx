@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from './TeamCard.module.css'
+import styles from './TeamCard.module.scss'
 import Link from "next/link";
 import {PiArrowBendDoubleUpRightLight} from "react-icons/pi";
 import {FaFacebook, FaInstagramSquare, FaLinkedin} from "react-icons/fa";

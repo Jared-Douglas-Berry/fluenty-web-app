@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from './NavSideBar.module.css';
+import styles from './NavSideBar.module.scss';
 import { GoProjectSymlink } from "react-icons/go";
 import { RxDashboard } from "react-icons/rx";
 import { FaBlog } from "react-icons/fa";

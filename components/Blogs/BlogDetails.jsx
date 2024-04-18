@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from './BlogDetails.module.css'
+import styles from './BlogDetails.module.scss'
 import {Fragment, useEffect, useState} from "react";
 import Head from "next/head";
 import Link from "next/link";

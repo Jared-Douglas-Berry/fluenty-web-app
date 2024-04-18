@@ -1,0 +1,41 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.button {
+    font: inherit;
+    cursor: pointer;
+    background-color: $blue-175;
+    border: 0.063rem solid $blue-175;
+   padding: map-get($spacing-sizes, '2') map-get($spacing-sizes, '4');
+    border-radius: 0.25rem;
+    color: $blue-50;
+    box-shadow: 0 0.063rem 0.25rem rgba(0, 0, 0, 0.2);
+    width: 180px;
+    font-size: map-get($font-sizes, '5');
+}
+
+.button:hover {
+    background-color: $primary;
+    border-color: $black-0;
+    color: $black-0;
+}
+
+.error {
+    color: $error-500;
+    font-size: map-get($font-sizes, '8');
+}
+
+@include tablet {
+    .button {
+        padding: map-get($spacing-sizes, '1') map-get($spacing-sizes, '2');
+        width: 5.625rem;
+       font-size: map-get($font-sizes, '3');
+    }
+
+    .error {
+        font-size: map-get($font-sizes, '4');
+    }
+}

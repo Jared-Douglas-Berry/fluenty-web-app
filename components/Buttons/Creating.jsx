@@ -1,5 +1,5 @@
 import {Fragment} from "react";
-import styles from './Creating.module.css';
+import styles from './Creating.module.scss';
 
 export default function Creating({bntText, isLoading}) {
 

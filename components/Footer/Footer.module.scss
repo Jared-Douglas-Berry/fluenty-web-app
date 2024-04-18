@@ -1,0 +1,92 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: map-get($height-sizes, '20');
+    background-color: $grey-900;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+
+.logo {
+    color: $grey-50;
+    font-family: 'Fira', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: $grey-50;
+}
+
+.navigation a {
+    font-size: map-get($font-sizes, '4');
+    text-decoration: none;
+    color: $grey-50;
+}
+
+.linkItem {
+    padding: 0 2.5rem;
+}
+
+.navigationContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation p {
+    font-size: map-get($font-sizes, '4');
+}
+
+.logo svg {
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+.navigation svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+@include tablet {
+    .footer {
+        padding: .5rem;
+        height: map-get($height-sizes, '10');
+    }
+
+
+    .navigation a {
+        font-size: map-get($font-sizes, '2');
+    }
+
+    .linkItem {
+        padding: 0 1.25rem;
+    }
+
+    .navigation p {
+        font-size: map-get($font-sizes, '2');
+    }
+
+    .logo svg {
+        width: 0.938rem;
+        height: 0.938rem;
+    }
+
+    .navigation svg {
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+}

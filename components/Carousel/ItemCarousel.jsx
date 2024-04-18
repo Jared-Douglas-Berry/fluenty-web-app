@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Image from "next/image";
-import styles from './ItemCarousel.module.css';
+import styles from './ItemCarousel.module.scss';
 import Link from "next/link";
 import {PiArrowBendDoubleUpRightLight, PiArrowBendDoubleUpLeftLight} from "react-icons/pi";
 

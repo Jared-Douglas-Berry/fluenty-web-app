@@ -1,0 +1,17 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.grid {
+    list-style: none;
+    padding: 0 1rem 0 0;
+    margin: 0 0 6rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 21rem);
+    gap: 1.5rem;
+    align-content: center;
+    justify-content: center;
+}
+

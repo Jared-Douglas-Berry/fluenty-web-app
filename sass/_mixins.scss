@@ -1,0 +1,66 @@
+$desktopLarge: 2560px;
+$desktopMax: 1199px;
+$desktopMin: 992px;
+$tabletLandScape: 991px;
+$tablet: 780px;
+$mobileLarge: 479px;
+$mobile: 374px;
+$mobileSmall: 320px;
+
+@mixin mobileSmall {
+  @media screen and (max-width: #{$mobileSmall}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (min-width: #{$mobileSmall}) and (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin mobileLarge {
+  @media screen and (min-width: #{$mobile}) and (max-width: #{$mobileLarge}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$mobileLarge}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin tabletLandScape {
+  @media screen and (min-width: #{$tablet}) and (max-width: #{$tabletLandScape}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$desktopMin}) and (max-width: #{$desktopMax}) {
+    @content;
+  }
+}
+
+@mixin desktopLarge {
+  @media screen and (max-width: #{$desktopLarge}) {
+    @content;
+  }
+}
+
+// ------ to call it in a .scss file
+//@include desktopLarge {
+//}
+//@include desktop {
+//}
+//@include tabletLandScape {
+//}
+//@include tablet {
+//}
+//@include mobileLarge {
+//}
+//@include mobile {
+//}
+//@include mobileSmall {
+//}

@@ -1,5 +1,5 @@
 import BlogsGrid from "./BlogsGrid.jsx";
-import styles from './AllBlogs.module.css'
+import styles from './AllBlogs.module.scss'
 export default function AllBlogs({blogs}) {
     return (
         <section className={styles.blogs}>

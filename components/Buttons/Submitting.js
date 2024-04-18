@@ -1,5 +1,5 @@
 import {Fragment} from "react";
-import styles from './Submitting.module.css';
+import styles from './Submitting.module.scss';
 
 export default function Submitting({bntText, isInvalid, isLoading, error}) {
 

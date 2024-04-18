@@ -1,0 +1,171 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.projects {
+    width: 100%;
+    margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+}
+
+.projects h1 {
+    font-size: $sub-header-laptop-1440;
+    text-align: center;
+    margin: 0;
+}
+
+.projects h3 {
+    margin: 0;
+    font-size: $blue-sub-header-laptop-1440;
+    color: $primary;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.image {
+    width: 100%;
+    max-height: 100rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.image img {
+    object-fit: cover;
+}
+
+.contentCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem auto;
+}
+
+.contentCenter h2 {
+    margin: 0;
+    font-size: map-get($font-sizes, '12');
+}
+
+.contentCenter h4 {
+    margin: 0;
+    font-size: map-get($font-sizes, '8');
+}
+.contentCenter p {
+    font-size: map-get($font-sizes, '5');
+}
+
+.grid {
+    width: 85%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: 1.5rem;
+    align-content: center;
+}
+
+.grid > *:first-child {
+    grid-column: span 2; /* Adjust the span value to make it wider */
+}
+
+.gridTwo {
+    width: 85%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: 1.5rem;
+    align-content: center;
+}
+
+.gridTwo > *:first-child {
+    grid-column: span 2; /* Adjust the span value to make it wider */
+}
+
+.gridTwo > *:nth-child(2) {
+    grid-column: span 3;
+}
+
+.line {
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    border-bottom: 0.063rem solid $grey-300;
+}
+
+.columnContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.url {
+    color: white;
+    font-size:  map-get($font-sizes, '5');
+}
+
+.url:hover {
+    color: $primary;
+}
+
+@include tablet {
+    .projects {
+        margin: map-get($spacing-sizes, '6') map-get($spacing-sizes, '2');
+    }
+
+    .projects h1 {
+        font-size: $sub-header-tab-768;
+    }
+
+    .projects h3 {
+        font-size: $blue-sub-header-tab-768;
+    }
+
+    .content {
+        margin-bottom: 3rem;
+    }
+
+    .image {
+        max-height: 25rem;
+    }
+
+    .contentCenter {
+        margin: 2.5rem auto;
+    }
+
+    .contentCenter h2 {
+        font-size: map-get($font-sizes, '8');
+    }
+
+    .contentCenter h4 {
+        font-size: map-get($font-sizes, '4');
+    }
+    .contentCenter p {
+        font-size: map-get($font-sizes, '4');
+    }
+
+    .grid {
+        width: 85%;
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        gap: 1.5rem;
+    }
+
+    .gridTwo {
+        width: 85%;
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        gap: 1.5rem;
+    }
+}

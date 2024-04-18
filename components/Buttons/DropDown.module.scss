@@ -1,0 +1,41 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.dropdown {
+    display: inline-block;
+    width: 96%;
+    flex: 1;
+    height: 3.125rem;
+    font-size: map-get($font-sizes, '6');
+}
+
+.dropdown select {
+    padding: 0.5rem 0.75rem;
+    color: $grey-50;
+    border-bottom: 0.125rem solid $primary;
+    background-color: $grey-800;
+    margin: 0.625rem;
+    width: 96%;
+    flex: .5;
+    font-size: map-get($font-sizes, '6');
+    border-radius: 0.25rem;
+    cursor: pointer;
+    height:3.125rem;
+}
+
+@include tablet {
+    .dropdown {
+        height: 1.563rem;
+       font-size: map-get($font-sizes, '3');
+    }
+
+    .dropdown select {
+        padding: 0.25rem 0.375rem;
+        margin: 0.313rem;
+       font-size: map-get($font-sizes, '3');
+        height: 1.563rem;
+    }
+}

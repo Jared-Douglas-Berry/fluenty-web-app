@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 
 import CommentList from './CommentList';
 import NewComment from './NewComment';
-import styles from './Comments.module.css';
+import styles from './Comments.module.scss';
 
 function Comments({ slug }) {
 

@@ -28,7 +28,6 @@ export default function HomePage({services, techStacks, projects, team, options,
                 <About/>
             </section>
 
-
             <section className='pageSpace' id="services">
                 <AllServices services={services}/>
                 <Link href="/services" className='detailsBtn'>

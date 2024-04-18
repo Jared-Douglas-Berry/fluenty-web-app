@@ -1,7 +1,7 @@
 import {Fragment} from 'react';
 import MainHeader from '../Header/MainHeader.jsx';
 import Footer from "../Footer/Footer.jsx";
-import styles from './Layout.module.css';
+import styles from './Layout.module.scss';
 
 export default function Layout({children}) {
     return (

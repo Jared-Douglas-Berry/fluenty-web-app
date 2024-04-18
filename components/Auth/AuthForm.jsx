@@ -1,7 +1,7 @@
 import {useRef, useState} from 'react';
 import {signIn} from 'next-auth/react';
 import {useRouter} from 'next/router';
-import styles from './AuthForm.module.css';
+import styles from './AuthForm.module.scss';
 import CreateUser from './CreateUser';
 import SigninUser from './SigninUser';
 import {verifyPassword} from '../../helpers/auth';

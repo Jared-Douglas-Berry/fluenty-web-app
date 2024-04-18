@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from './ServiceDetails.module.css'
+import styles from './ServiceDetails.module.scss'
 import {Fragment} from "react";
 import Head from "next/head";
 import { SiIcinga } from "react-icons/si";

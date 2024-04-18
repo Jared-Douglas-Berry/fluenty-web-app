@@ -1,0 +1,33 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.grid {
+  margin: 0 3.125rem;
+  padding: 3.125rem;
+  align-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@include tablet {
+  .grid {
+    margin: 0 1.563rem;
+    padding: 1.563rem;
+  }
+}
+
+@include mobileLarge {
+  .grid {
+    margin: 0 0.781rem;
+    padding: 0.781rem;
+  }
+}

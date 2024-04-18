@@ -1,0 +1,78 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.serviceItem {
+    box-shadow: 0 0.063rem 0.25rem rgba(0, 0, 0, 0.2);
+    background-color: $grey-800;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceItem:hover {
+    transform: scale(1.15);
+    background-color: $primary;
+}
+
+.serviceItem a {
+    color: $grey-100;
+}
+
+.image {
+    width: 96%;
+    overflow: hidden;
+}
+
+.image img {
+    object-fit: cover;
+    margin: 0.625rem;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
+    width: 6rem;
+    max-height: 6rem;
+    overflow: hidden;
+}
+
+.icon img {
+    object-fit: cover;
+    filter: brightness(0) saturate(100%) invert(83%) sepia(11%) saturate(7457%) hue-rotate(180deg) brightness(100%) contrast(101%);
+}
+
+.serviceItem:hover .icon img {
+    object-fit: cover;
+    filter: brightness(100%) saturate(0%) invert(100%);
+}
+
+.content {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding: map-get($spacing-sizes, '6');
+}
+
+.content h2 {
+    margin: 0;
+    font-size: map-get($font-sizes, '6');
+    height: 66px;
+}
+
+.content time {
+    font-style: italic;
+    color: $grey-300;
+}
+
+.content p {
+    line-height: map-get($line-heights, '24');
+}
+

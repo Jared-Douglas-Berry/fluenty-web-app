@@ -1,4 +1,4 @@
-import styles from './TeamGrid.module.css'
+import styles from './TeamGrid.module.scss'
 import TeamCard from "./TeamCard";
 
 export default function TeamGrid({team}) {

@@ -1,0 +1,51 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.container {
+    overflow: hidden;
+    width: 100%;
+    background-color: $primary;
+    padding: 2rem 0;
+}
+
+.content {
+    display: flex; /* Display items in a row */
+    gap: 3.125rem; /* Adjust the gap between items */
+    white-space: nowrap;
+    animation: scroll 25s linear infinite;  /* Adjust duration to make it slower */
+}
+
+.icon {
+    margin-right: 3.125rem;
+    font-size: 1.625rem;
+}
+
+.context {
+    display: flex; /* Ensure the icon and text are aligned */
+    align-items: center; /* Center items vertically */
+    font-size: $scrolling-banner-laptop-1440;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(-243%);
+    }
+}
+
+@include tablet {
+    .context {
+        font-size: $scrolling-banner-tab-768;
+    }
+}
+
+@include mobileLarge {
+    .context {
+        font-size: $scrolling-banner-mobi-425;
+    }
+}

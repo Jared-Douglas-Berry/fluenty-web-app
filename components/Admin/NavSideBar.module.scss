@@ -1,0 +1,95 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.container {
+    width: 100%;
+}
+
+.container ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+.container li {
+    padding: 0.5rem;
+    margin-bottom: 0.625rem; /* Add margin between list items */
+}
+
+.negativeImage {
+    filter: invert(100%);
+}
+
+.link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent */
+    cursor: pointer; /* Removes pointer cursor */
+    font-size: map-get($font-sizes, '6');
+}
+
+.icon {
+    color: $primary;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+.navigation {
+    display: block;
+}
+
+.menu {
+    display: none;
+}
+
+.containerBtn {
+    display: flex;
+    flex-direction: column;
+}
+
+.iconMenu {
+    color: $primary;
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+@include tablet {
+    .container li {
+        padding: 0.25rem;
+        margin-bottom: 0.313rem; /* Add margin between list items */
+    }
+
+    .link {
+        font-size: map-get($font-sizes, '4');
+    }
+
+    .icon {
+        width:  0.65rem;
+        height:  0.65rem;
+    }
+}
+
+@include mobileLarge {
+    .navigation {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+    .container li {
+        width: 6.25rem ;
+    }
+
+    .container button {
+        background-color: transparent;
+        border: 0 solid transparent;
+    }
+
+    .containerBtn {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from './TechStackItem.module.css'
+import styles from './TechStackItem.module.scss'
 
 export default function TechStackItem({techStack}) {
     const {title, icon} = techStack;

@@ -1,0 +1,203 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.teamMember {
+  position: relative;
+}
+
+.teamMember:hover {
+
+}
+
+.teamMember .image {
+  width: 100%;
+  max-height: 50rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamMember .image img {
+  object-fit: cover;
+}
+
+.teamMember .content {
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  position: relative;
+  padding-right: 1.875rem;
+}
+
+.teamMember:hover .content {
+  opacity: 0;
+}
+
+.teamMember .content h4 {
+  line-height: 1.4;
+  font-size: map-get($font-sizes, '12');
+  margin: 1.563rem 0;
+}
+
+.teamMember .content span {
+  line-height: 1.4;
+  font-size: map-get($font-sizes, '8');
+  margin: 0;
+}
+
+.teamMember .content .readMore {
+  position: absolute;
+  right: 0;
+  top: 0.938rem;
+  font-size: 1.875rem;
+}
+
+.teamMember .btnSocial {
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  left: 0;
+  bottom: 10rem;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  position: relative;
+  padding-right: 1.875rem;
+}
+
+.teamMember:hover .btnSocial {
+  opacity: 1;
+}
+
+.teamMember .btnSocial:hover .readMore:hover {
+  color: $primary;
+}
+
+.teamMember .btnSocial .readMore {
+  color: $grey-50;
+  line-height: 1.4;
+  font-size: map-get($font-sizes, '8');
+  margin: 1.563rem 0.625rem;
+}
+
+.readMore {
+  font-weight: 500;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  text-decoration: underline;
+  text-transform: capitalize;
+  text-underline-position: under;
+  color: $grey-50;
+}
+
+.teamMember .btnSocial .socialStyleTwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.625rem;
+}
+
+.socialStyleTwo a {
+  margin-left: 0.938rem;
+  margin-right: 0.938rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  background: transparent;
+  line-height: 3.125rem;
+  border-radius: 50%;
+  text-align: center;
+  border: 0.063rem solid rgba(255, 255, 255, 0.1);
+  color: $grey-50;
+}
+
+.socialStyleTwo .facebook:hover, .instagram:hover, .linkin:hover, .twitter:hover {
+  color: $primary;
+  transform: scale(1.1);
+}
+
+.readMore svg {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.facebook svg, .instagram svg, .linkin svg {
+  width: 2.625rem;
+  height: 2.625rem;
+}
+
+.twitter svg {
+  width: 2.938rem;
+  height: 2.938rem;
+}
+
+@include tablet {
+  .teamMember .image {
+    max-height: 25rem;
+  }
+
+  .teamMember .content {
+    padding-right: 0.938rem;
+  }
+
+  .teamMember .content h4 {
+    line-height: .7;
+    font-size: map-get($font-sizes, '6');
+    margin: 0.781rem 0;
+  }
+
+  .teamMember .content span {
+    line-height: .7;
+    font-size: map-get($font-sizes, '4');
+  }
+
+  .teamMember .content .readMore {
+    top: 0.469rem;
+    font-size: 0.938rem;
+  }
+
+  .teamMember .btnSocial {
+    bottom: 3.75rem;
+    padding-right: 0.938rem;
+  }
+
+  .teamMember .btnSocial .readMore {
+    line-height: .7;
+    font-size: map-get($font-sizes, '4');
+    margin: 0.781rem 0.313rem;
+  }
+
+  .teamMember .btnSocial .socialStyleTwo {
+    margin-top: 0.313rem;
+  }
+
+  .socialStyleTwo a {
+    margin-left: 0.469rem;
+    margin-right: 0.469rem;
+    width: 1.563rem;
+    height: 1.563rem;
+    line-height: 1.563rem;
+  }
+
+  .readMore svg {
+    width: 1.563rem;
+    height: 1.563rem;
+  }
+
+  .facebook svg, .instagram svg, .linkin svg {
+    width: 1.313rem;
+    height: 1.313rem;
+  }
+
+  .twitter svg {
+    width: 1.469rem;
+    height: 1.469rem;
+  }
+}

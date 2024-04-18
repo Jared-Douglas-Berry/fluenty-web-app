@@ -1,4 +1,4 @@
-import styles from './TechStackGrid.module.css'
+import styles from './TechStackGrid.module.scss'
 import TechStackItem from "./TechStackItem";
 
 export default function TechStackGrid({techStacks}) {

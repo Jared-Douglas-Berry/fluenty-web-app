@@ -1,0 +1,90 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.container {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.container h1 {
+    font-size: map-get($font-sizes, '6');
+    margin-bottom: 1.25rem;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    margin-bottom: 0.5rem;
+}
+
+.container input[type="text"],
+.container input[type="number"],
+.container textarea {
+    width: 100%;
+    padding: 0.625rem;
+    margin-bottom: 0.938rem;
+    border: 0.063rem solid #ccc;
+    border-radius: 0.313rem;
+}
+
+.actions {
+    padding: 1rem;
+    text-align: right;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+}
+
+.error {
+    margin-top: 0;
+    margin-bottom: 0.938rem;
+    color: $error-500;
+    font-size: map-get($font-sizes, '4');
+}
+
+@include tablet {
+    .container {
+        max-width: 75%;
+        padding: 0.625rem;
+    }
+
+    .container h1 {
+        font-size: 0.75rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .container label {
+        margin-bottom: 0.25rem;
+    }
+
+    .container input[type="text"],
+    .container input[type="number"],
+    .container textarea {
+        padding: 0.313rem;
+        margin-bottom: 0.469rem;
+    }
+
+    .actions {
+        padding: .5rem;
+    }
+
+    .error {
+        margin-bottom: 0.469rem;
+        font-size: map-get($font-sizes, '3');
+    }
+}
+
+@include mobileLarge {
+    .container {
+        max-width: 100%;
+    }
+}

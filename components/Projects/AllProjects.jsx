@@ -1,4 +1,4 @@
-import styles from "./AllProjects.module.css";
+import styles from "./AllProjects.module.scss";
 import ProjectsTable from "./ProjectsTable";
 
 export default function AllProjects({projects}) {

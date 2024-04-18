@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from './DropDown.module.css';
+import styles from './DropDown.module.scss';
 
 export default function DropDown({ options = [], onSelect }) {
     const [selectedOption, setSelectedOption] = useState('');

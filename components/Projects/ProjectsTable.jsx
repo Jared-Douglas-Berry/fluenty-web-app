@@ -1,4 +1,4 @@
-import styles from './ProjectsTable.module.css';
+import styles from './ProjectsTable.module.scss';
 import { Fragment } from "react";
 import Image from "next/image";
 import { PiArrowBendDoubleUpRightLight } from "react-icons/pi";

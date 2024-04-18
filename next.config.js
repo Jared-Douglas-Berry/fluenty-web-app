@@ -1,4 +1,5 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
+const path = require('path')
 // const jose = require('node-jose');
 
 module.exports = (phase) => {
@@ -11,6 +12,9 @@ module.exports = (phase) => {
 
     if (phase === PHASE_DEVELOPMENT_SERVER) {
         return {
+            sassOptions: {
+                includePaths: [path.join(__dirname, 'styles')],
+            },
             pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
             reactStrictMode: true,
             // output: 'export',
@@ -38,6 +42,9 @@ module.exports = (phase) => {
     }
 
     return {
+        sassOptions: {
+            includePaths: [path.join(__dirname, 'styles')],
+        },
         pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
         reactStrictMode: true,
         output: 'export',

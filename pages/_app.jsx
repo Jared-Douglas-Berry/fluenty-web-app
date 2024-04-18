@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import './index.scss'
 import Head from "next/head";
 import Layout from "../components/Layout/Layout.jsx";
 import {SessionProvider} from "next-auth/react";

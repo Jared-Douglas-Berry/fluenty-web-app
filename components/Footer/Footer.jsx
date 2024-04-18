@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 import {CiLinkedin} from "react-icons/ci";
 import { MdCopyright } from "react-icons/md";
 import packageJson from "../../package.json";

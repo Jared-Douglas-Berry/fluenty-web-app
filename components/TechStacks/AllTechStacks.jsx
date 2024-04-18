@@ -1,4 +1,4 @@
-import styles from './AllTechStacks.module.css'
+import styles from './AllTechStacks.module.scss'
 import TechStackGrid from "./TechStackGrid";
 export default function AllTechStacks({techStacks}) {
     return (

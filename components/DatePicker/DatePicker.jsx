@@ -1,6 +1,6 @@
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import styles from './DatePicker.module.css';
+import styles from './DatePicker.module.scss';
 
 const Datepicker = ({selectedDate, setSelectedDate, label}) => {
     const handleChange = (date) => {
