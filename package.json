@@ -8,9 +8,6 @@
     "build": "next build",
     "start": "npx serve@latest out"
   },
-  "engines": {
-    "node": ">=20"
-  },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "aws-sdk-js-codemod": "^1.2.5",
