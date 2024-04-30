@@ -21,8 +21,11 @@ export default function Footer() {
                 </nav>
             </div>
             <div className={styles.navigation}>
-                <p><MdCopyright/> copyright 2024. All Rights Reserved</p>
-                <p>Version: {packageJson.version}</p>
+                <div className={styles.navigationCopy}>
+                    <p><MdCopyright/> copyright 2024. All Rights Reserved</p>
+                    <p>Version: {packageJson.version}</p>
+                </div>
+
             </div>
 
         </footer>

@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 1rem 10%;
+    padding: 1rem map-get($spacing-sizes, '15');
     height: map-get($height-sizes, '40');
     background-color: $grey-900;
     z-index: 100;
@@ -24,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 1rem 10%;
+    padding: 1rem map-get($spacing-sizes, '15');
     height: map-get($height-sizes, '40');
     background-color: $grey-900;
     z-index: 100;
@@ -34,7 +34,7 @@
 }
 .scrolled {
     height: map-get($height-sizes, '20'); /* Adjusted height when scrolled */
-    padding: .5rem 10%;
+    padding: .5rem map-get($spacing-sizes, '15');
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,6 +80,47 @@
     display: none;
 }
 
+
+@include desktop {
+    .header {
+        height: map-get($height-sizes, '40');
+        padding: 1rem map-get($spacing-sizes, '12');
+    }
+    .scrolled {
+        height: map-get($height-sizes, '20'); /* Adjusted height when scrolled */
+        padding: 1rem map-get($spacing-sizes, '12');
+    }
+    .navigation a {
+        font-size: map-get($font-sizes, '5');
+    }
+    .logo {
+        font-size: map-get($font-sizes, '12');
+    }
+}
+
+@include tabletLandScape {
+    .logo {
+        font-size: map-get($font-sizes, '10');
+    }
+
+    .navigation a {
+        font-size: map-get($font-sizes, '4');
+    }
+
+    .linkItem {
+        padding: 0 0.625rem;
+    }
+
+    .header {
+        padding: 1rem map-get($spacing-sizes, '10');
+        height: map-get($height-sizes, '20');
+    }
+    .scrolled {
+        height: map-get($height-sizes, '10'); /* Adjusted height when scrolled */
+        padding: 1rem map-get($spacing-sizes, '10');
+    }
+}
+
 @include tablet  {
     .logo {
         font-size: map-get($font-sizes, '10');
@@ -94,9 +135,15 @@
     }
 
     .header {
-        padding: 1rem 5%;
+        padding: 1rem map-get($spacing-sizes, '10');
         height: map-get($height-sizes, '20');
     }
+
+    .scrolled {
+        height: map-get($height-sizes, '10'); /* Adjusted height when scrolled */
+        padding: 1rem map-get($spacing-sizes, '10');
+    }
+
 }
 
 @include mobileLarge {
@@ -117,8 +164,90 @@
         align-items: center;
     }
     .header {
-        padding: 1rem 10%;
+        padding: 1rem map-get($spacing-sizes, '4');
         height: map-get($height-sizes, '20');
+    }
+
+    .scrolled {
+        height: map-get($height-sizes, '10'); /* Adjusted height when scrolled */
+        padding: 1rem map-get($spacing-sizes, '4');
+    }
+
+    .navigationContainerDropDown {
+        display: flex;
+        position: absolute;
+        right: 2.688rem;
+        bottom: -10.875rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: $black-0;
+        border-radius: 0.625rem;
+        padding: 0.938rem;
+    }
+}
+
+@include mobile {
+    .logo {
+        font-size: map-get($font-sizes, '10');
+    }
+
+    .navigation a {
+        font-size: map-get($font-sizes, '6');
+    }
+
+    .navigationContainer {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .header {
+        padding: 1rem map-get($spacing-sizes, '4');
+        height: map-get($height-sizes, '20');
+    }
+
+    .scrolled {
+        height: map-get($height-sizes, '10'); /* Adjusted height when scrolled */
+        padding: 1rem map-get($spacing-sizes, '4');
+    }
+
+    .navigationContainerDropDown {
+        display: flex;
+        position: absolute;
+        right: 2.688rem;
+        bottom: -10.875rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: $black-0;
+        border-radius: 0.625rem;
+        padding: 0.938rem;
+    }
+}
+
+@include mobileSmall {
+    .logo {
+        font-size: map-get($font-sizes, '10');
+    }
+
+    .navigation a {
+        font-size: map-get($font-sizes, '6');
+    }
+
+    .navigationContainer {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .header {
+        padding: 1rem map-get($spacing-sizes, '4');
+        height: map-get($height-sizes, '10');
     }
 
     .navigationContainerDropDown {

@@ -8,7 +8,7 @@
     overflow: hidden;
     width: 100%;
     background-color: $primary;
-    padding: 2rem 0;
+    padding: 5rem 0 4.063rem 0;
 }
 
 .content {
@@ -38,14 +38,56 @@
     }
 }
 
+@include desktop {
+    .context {
+        font-size: $scrolling-banner-laptop-1024;
+    }
+    .container {
+        padding: 5rem 0 4.063rem 0;
+    }
+}
+
+@include tabletLandScape {
+    .context {
+        font-size: $scrolling-banner-tab-768;
+    }
+    .container {
+        padding: 5rem 0 4.063rem 0;
+    }
+}
+
 @include tablet {
     .context {
         font-size: $scrolling-banner-tab-768;
+    }
+    .container {
+        padding: 5rem 0 4.063rem 0;
     }
 }
 
 @include mobileLarge {
     .context {
         font-size: $scrolling-banner-mobi-425;
+    }
+    .container {
+        padding: 5rem 0 4.063rem 0;
+    }
+}
+
+@include mobile {
+    .context {
+        font-size: $scrolling-banner-mobi-375;
+    }
+    .container {
+        padding: 5rem 0 4.063rem 0;
+    }
+}
+
+@include mobileSmall {
+    .context {
+        font-size: $scrolling-banner-mobi-320;
+    }
+    .container {
+        padding: 5rem 0 4.063rem 0;
     }
 }

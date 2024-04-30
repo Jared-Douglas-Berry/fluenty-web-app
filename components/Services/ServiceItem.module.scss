@@ -8,9 +8,54 @@
     box-shadow: 0 0.063rem 0.25rem rgba(0, 0, 0, 0.2);
     background-color: $grey-800;
     text-align: center;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    z-index: 1;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    position: relative;
+    margin-bottom: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: calc(100% - 30px);
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.serviceFourItem {
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.serviceFourItem:after, .serviceFourItem:before {
+    content: '';
+    z-index: -1;
+    width: 110px;
+    height: 110px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    position: absolute;
+    right: 30px;
+    top: 35px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .serviceItem:hover {
@@ -23,23 +68,45 @@
 }
 
 .image {
-    width: 96%;
+    width: 100%;
     overflow: hidden;
 }
 
 .image img {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
     object-fit: cover;
-    margin: 0.625rem;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    //margin: 0.625rem;
 }
 
 .icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1.5rem;
-    width: 6rem;
-    max-height: 6rem;
-    overflow: hidden;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.icon svg {
+    width: 40px;
+    height: 40px;
+    color: $primary;
+    -webkit-transform: translate(30px, -30px);
+    -ms-transform: translate(30px, -30px);
+    transform: translate(30px, -30px);
+}
+.serviceItem:hover .icon svg {
+    color: $grey-50;
+    -webkit-transform: translate(30px, -30px);
+    -ms-transform: translate(30px, -30px);
+    transform: translate(30px, -30px);
 }
 
 .icon img {
@@ -53,16 +120,12 @@
 }
 
 .content {
-    margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: left;
-    padding: map-get($spacing-sizes, '6');
+
 }
 
 .content h2 {
-    margin: 0;
+    margin-bottom: 0;
+    margin-top: 18px;
     font-size: map-get($font-sizes, '6');
     height: 66px;
 }
@@ -76,3 +139,21 @@
     line-height: map-get($line-heights, '24');
 }
 
+@include desktop {
+}
+
+@include tabletLandScape {
+}
+
+@include tablet {
+}
+
+@include mobileLarge {
+}
+
+@include mobile {
+}
+
+@include mobileSmall {
+
+}

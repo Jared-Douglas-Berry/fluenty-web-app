@@ -26,39 +26,87 @@ export default function TeamMateDetails({teamMate}) {
                 <title>Fluenty Team Mate - {firstName} {middleName} {lastName}</title>
                 <meta name='description' content={`Fluenty Team Mate - ${firstName} ${middleName} ${lastName}`}/>
             </Head>
-            <div className={styles.container}>
-                <div className={styles.image}>
-                    <Image src={image} alt={firstName} width={800} height={1200} />
-                </div>
-                <div className={styles.content}>
-                    <h1>{firstName} {middleName} {lastName}</h1>
-                    <h3>{jobTitle}</h3>
-                    <p>{summary}</p>
 
-                    <h3>Get In Touch</h3>
-                    <div className={styles.gITContainer}>
-                        <span><FaLocationDot /></span>
-                        <div className={styles.gITContent}>
-                            <h1>Location</h1>
-                            <h2>{location}</h2>
+            <section
+                className={`${styles.teamProfileArea} ${styles.pt220} ${styles.rpt150} ${styles.pb130} ${styles.rpb100} ${styles.rel}`}
+            >
+                <div className={`${styles.container} ${styles.container1290}`}>
+                    <div className={`${styles.row} ${styles.alignItemsCenter}`}>
+                        <div className={styles.colLg6}>
+                            <div
+                                className={`${styles.teamProfileImage} ${styles.rmb55} ${styles.wow} ${styles.fadeInLeft} ${styles.delay02s}`}
+                                style={{visibility: 'visible'}}
+                            >
+                                <Image src={image} alt={firstName} width={800} height={1200}/>
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.gITContainer}>
-                        <span><IoMdMail /></span>
-                        <div className={styles.gITContent}>
-                            <h3>Email Address</h3>
-                            <Link href={`mailto:${email}`}><h4>{email}</h4></Link>
-                        </div>
-                    </div>
-                    <div className={styles.gITContainer}>
-                        <span><FaPhone /></span>
-                        <div className={styles.gITContent}>
-                            <h3>Phone Us</h3>
-                            <Link href={`callto:${phone}`}><h4>{phone}</h4></Link>
+                        <div className={styles.colLg6}>
+                            <div
+                                className={`${styles.teamProfileContent} ${styles.wow} ${styles.fadeInRight} ${styles.delay02s}`}
+                                style={{visibility: 'visible'}}
+                            >
+                                <h2>
+                                    {firstName} {middleName} {lastName}
+                                </h2>
+                                <span className={styles.designation}>
+                                    {jobTitle}
+                                </span>
+                                <p>
+                                    {summary}
+                                </p>
+                                <div className={`${styles.teamSubTitle} ${styles.mt55} ${styles.mb30}`}>
+                                    <h4>
+                                        Get In Touch
+                                    </h4>
+                                </div>
+                                <div className={styles.contactInfoItem}>
+                                    <div className={styles.icon}>
+                                        <FaLocationDot/>
+                                    </div>
+                                    <div className={styles.content}>
+                                        <b className={styles.title}>
+                                            Location
+                                        </b>
+                                        <span className={styles.text}>
+                                            {location}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className={styles.contactInfoItem}>
+                                    <div className={styles.icon}>
+                                        <IoMdMail/>
+                                    </div>
+                                    <div className={styles.content}>
+                                        <b className={styles.title}>
+                                            Email Address
+                                        </b>
+                                        <span className={styles.text}>
+                                            <Link href={`mailto:${email}`}>
+                                                {email}
+                                            </Link>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className={styles.contactInfoItem}>
+                                    <div className={styles.icon}>
+                                        <FaPhone/>
+                                    </div>
+                                    <div className={styles.content}>
+                                        <b className={styles.title}>
+                                            Phone Us
+                                        </b>
+                                        <span className={styles.text}>
+                                            <Link href={`callto:${phone}`}>
+                                                {phone}
+                                            </Link>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </Fragment>
 
     );

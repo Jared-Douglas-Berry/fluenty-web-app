@@ -1,4 +1,4 @@
-import {connectDatabase, getDocumentId, insertDocument} from "../../../helpers/db-utils";
+import {connectDatabase, getDocumentId, insertDocument, updateCommentWithReply} from "../../../helpers/db-utils";
 
 async function handler(req, res) {
     const slug = req.query.slug;
@@ -12,7 +12,32 @@ async function handler(req, res) {
         return;
     }
 
-    if (req.method === 'POST') {
+
+
+    if (req.method === 'POST' && req.body._id) {
+        const comments = req.body;
+
+        try {
+                const newReply = {
+                    email: comments.email,
+                    name: comments.name,
+                    text: comments.text,
+                    createdDate: new Date(),
+                };
+
+                const result = await updateCommentWithReply(process.env.mongodb_database, process.env.mongodb_database_comments, client, comments._id, newReply);
+                console.log('result', result);
+                console.log('result.modifiedCount', result.modifiedCount);
+                if (result.modifiedCount !== 1) {
+                    res.status(500).json({ message: 'Updating comment failed' });
+                    client.close();
+                    return;
+                }
+                res.status(201).json({ message: 'Successfully Submitted Replies' });
+        } catch (error) {
+            res.status(500).json({ message: 'Inserting data failed' });
+        }
+    } else if (req.method === 'POST') {
         const {email, name, text} = req.body;
 
         if (

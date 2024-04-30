@@ -5,8 +5,8 @@
 @import "../../sass/_text.scss";
 
 .tech {
-    width: 96%;
-    margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+    width: 100%;
+    margin: map-get($spacing-sizes, '8') 0;
 }
 
 .tech h1 {
@@ -31,12 +31,17 @@
     margin-bottom: 0.938rem;
 }
 
-@include tablet {
-    .tech {
-        max-width: 30rem;
-        margin: map-get($spacing-sizes, '4') auto;
+@include desktop {
+    .tech h1 {
+        font-size: $sub-header-laptop-1024;
     }
 
+    .tech h3 {
+        font-size: $blue-sub-header-laptop-1024;
+    }
+}
+
+@include tabletLandScape {
     .tech h1 {
         font-size: $sub-header-tab-768;
     }
@@ -44,8 +49,44 @@
     .tech h3 {
         font-size: $blue-sub-header-tab-768;
     }
+}
 
-    .text {
-        margin-bottom: 0.469rem;
+@include tablet {
+    .tech h1 {
+        font-size: $sub-header-tab-768;
+    }
+
+    .tech h3 {
+        font-size: $blue-sub-header-tab-768;
+    }
+}
+
+@include mobileLarge {
+    .tech h1 {
+        font-size: $sub-header-mobi-425;
+    }
+
+    .tech h3 {
+        font-size: $blue-sub-header-mobi-425;
+    }
+}
+
+@include mobile {
+    .tech h1 {
+        font-size: $sub-header-mobi-375;
+    }
+
+    .tech h3 {
+        font-size: $blue-sub-header-mobi-375;
+    }
+}
+
+@include mobileSmall {
+    .tech h1 {
+        font-size: $sub-header-mobi-320;
+    }
+
+    .tech h3 {
+        font-size: $blue-sub-header-mobi-320;
     }
 }

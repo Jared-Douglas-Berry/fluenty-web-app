@@ -41,3 +41,7 @@ $paragraph-sub-tab-768: map-get($font-sizes, '3');
 $paragraph-sub-mobi-425: map-get($font-sizes, '2');
 $paragraph-sub-mobi-375: map-get($font-sizes, '2');
 $paragraph-sub-mobi-320: map-get($font-sizes, '2');
+
+$gutter-y: 0;
+$gutter-x: 1.875rem;
+$gutter-x-gap100: 100px;

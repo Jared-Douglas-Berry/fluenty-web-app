@@ -6,7 +6,7 @@
 
 .blogs {
   width: 100%;
-  margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+  margin: map-get($spacing-sizes, '8') 0;
 }
 
 .blogs h1 {
@@ -31,12 +31,17 @@
   margin-bottom: 0.938rem;
 }
 
-@include tablet {
-  .blogs {
-    max-width: 47rem;
-    margin: map-get($spacing-sizes, '4') auto;
+@include desktop {
+  .blogs h1 {
+    font-size: $sub-header-laptop-1024;
   }
 
+  .blogs h3 {
+    font-size: $blue-sub-header-laptop-1024;
+  }
+}
+
+@include tabletLandScape {
   .blogs h1 {
     font-size: $sub-header-tab-768;
   }
@@ -44,18 +49,19 @@
   .blogs h3 {
     font-size: $blue-sub-header-tab-768;
   }
+}
 
-  .text {
-    margin-bottom: 0.469rem;
+@include tablet {
+  .blogs h1 {
+    font-size: $sub-header-tab-768;
+  }
+
+  .blogs h3 {
+    font-size: $blue-sub-header-tab-768;
   }
 }
 
 @include mobileLarge {
-  .blogs {
-    max-width: 23.5rem;
-    margin: map-get($spacing-sizes, '2') auto;
-  }
-
   .blogs h1 {
     font-size: $sub-header-mobi-425;
   }
@@ -63,8 +69,24 @@
   .blogs h3 {
     font-size: $blue-sub-header-mobi-425;
   }
+}
 
-  .text {
-    margin-bottom: 0.234rem;
+@include mobile {
+  .blogs h1 {
+    font-size: $sub-header-mobi-375;
+  }
+
+  .blogs h3 {
+    font-size: $blue-sub-header-mobi-375;
+  }
+}
+
+@include mobileSmall {
+  .blogs h1 {
+    font-size: $sub-header-mobi-320;
+  }
+
+  .blogs h3 {
+    font-size: $blue-sub-header-mobi-320;
   }
 }

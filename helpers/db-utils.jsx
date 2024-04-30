@@ -107,3 +107,14 @@ export async function getFeaturedDocs(client, dbName, collectName, sort) {
 
     return allDocs.filter(doc => doc.isFeatured);
 }
+
+export async function updateCommentWithReply(dbName, collectName, client, commentId, newReply) {
+    const db = client.db(dbName)
+
+    const result = await db.collection(collectName).updateOne(
+        { _id: new ObjectId(commentId) },
+        { $push: { replies: newReply } }
+    );
+
+    return result;
+}

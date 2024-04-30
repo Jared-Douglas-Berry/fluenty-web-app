@@ -21,7 +21,7 @@ export default function ServiceDetails({service}) {
                     <div className={styles.image}>
                         <Image src={image} alt={title} width={300} height={200} />
                     </div>
-                    <div>
+                    <div className={styles.summary}>
                         <p>{summary}</p>
                     </div>
                 </div>

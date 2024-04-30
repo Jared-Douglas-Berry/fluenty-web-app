@@ -31,18 +31,6 @@ export default function MainHeader() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         const scrollTop = window.scrollY;
-    //         setIsScrolled(scrollTop > 0); // Check if scrolled beyond the top
-    //     };
-    //
-    //     window.addEventListener('scroll', handleScroll);
-    //
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
 
     useEffect(() => {
         function handleClickOutside(event) {

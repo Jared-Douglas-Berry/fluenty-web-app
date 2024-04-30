@@ -3,9 +3,8 @@ import Image from "next/image";
 import styles from './BlogItem.module.scss'
 import {LuCalendarDays} from "react-icons/lu";
 import {TfiComments} from "react-icons/tfi";
-import {GoDotFill} from "react-icons/go";
 import {PiArrowBendDoubleUpRightLight} from "react-icons/pi";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 export default function BlogItem({blog}) {
     const {
@@ -17,14 +16,14 @@ export default function BlogItem({blog}) {
     const [comments, setComments] = useState([]);
     const [commentsData, setCommentsData] = useState([]);
 
-        const linkPath =`/blogs/${slug}`;
+    const linkPath = `/blogs/${slug}`;
 
     useEffect(() => {
-            fetch(`/api/comments/${slug}`)
-                .then((response) => response.json())
-                .then((data) => {
-                    setCommentsData(data.comments);
-                });
+        fetch(`/api/comments/${slug}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setCommentsData(data.comments);
+            });
     }, [comments, slug]);
 
     const humanReadableDate = new Date(createdDate).toLocaleDateString('en-US', {
@@ -33,28 +32,37 @@ export default function BlogItem({blog}) {
         year: 'numeric',
     });
 
-        return (
-            <li className={styles.serviceItem}>
+    return (
+        <div className={styles.row}>
+            <div className={styles.col}>
+                <div className={`${styles.blogItem} ${styles.wow} ${styles.fadeInUp} ${styles.delay02s}`}
+                     style={{visibility: 'visible'}}>
                     <div className={styles.image}>
-                        <Image src={image} alt={title} width={300} height={200} />
+                        <Image src={image} alt={title} width={300} height={200}/>
                     </div>
-                <div className={styles.blogAuthor}>
-                    <h4><LuCalendarDays className={styles.iconDot}/> {humanReadableDate}</h4>
-                    <GoDotFill className={styles.iconDot}/>
-                    <Link className={styles.comments} href={`/blogs/${slug}#comments`}><TfiComments className={styles.iconDot}/>
-                        Comment ({commentsData.length})
-                    </Link>
-                </div>
-                <div className={styles.content}>
-                    <Link className={styles.content} href={linkPath}>
-                        <h2>{title}</h2>
-                    </Link>
-                </div>
-                <div className={styles.btn}>
+                    <ul className={styles.blogMeta}>
+                        <li>
+                            <Link className={`${styles.far} ${styles.faCalendarAlt}`} href={linkPath}>
+                                <LuCalendarDays />
+                                {humanReadableDate}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className={`${styles.far} ${styles.faComments}`} href={`/blogs/${slug}#comments`}>
+                                <TfiComments />
+                                Comment ({commentsData.length})
+                            </Link>
+                        </li>
+                    </ul>
+                    <hr/>
                     <Link href={linkPath}>
+                        <h4>{title}</h4>
+                    </Link>
+                    <Link className={styles.readMore} href={linkPath}>
                         Read More <PiArrowBendDoubleUpRightLight/>
                     </Link>
                 </div>
-            </li>
-        );
+            </div>
+        </div>
+    );
 }

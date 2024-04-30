@@ -6,7 +6,7 @@
 
 .about {
     width: 100%;
-    margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+    margin: map-get($spacing-sizes, '8') 0;
 }
 
 .content h1 {
@@ -77,6 +77,10 @@
 }
 
 @include desktop {
+    .about {
+        margin: map-get($spacing-sizes, '8') 0;
+    }
+
     .about h1 {
         font-size: $sub-header-laptop-1024;
     }
@@ -111,7 +115,50 @@
     }
 }
 
+@include tabletLandScape {
+    .about {
+        margin: map-get($spacing-sizes, '8') 0;
+    }
+
+    .about h1 {
+        font-size: $sub-header-tab-768;
+    }
+
+    .about h3 {
+        font-size: $blue-sub-header-tab-768;
+    }
+
+    .contact h3 {
+        font-size: $sub-header-tab-768;
+    }
+
+    .contact p {
+        font-size: $paragraph-tab-768;
+    }
+
+    .contact span {
+        margin: 1.313rem 0;
+        font-size: $sub-header-tab-768;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    .line {
+        margin: 0.688rem 0;
+    }
+}
+
 @include tablet {
+    .about {
+        margin: map-get($spacing-sizes, '8') 0;
+    }
+
     .about h1 {
         font-size: $sub-header-tab-768;
     }
@@ -147,6 +194,9 @@
 }
 
 @include mobileLarge {
+    .about {
+        margin: map-get($spacing-sizes, '8') 0;
+    }
     .about h1 {
         font-size: $sub-header-mobi-425;
     }
@@ -157,6 +207,7 @@
 
     .contact h3 {
         font-size: $sub-header-mobi-425;
+        text-align: center;
     }
 
     .contact p {
@@ -164,6 +215,7 @@
     }
 
     .contact span {
+        width: 100%;
         margin: 1.313rem 0;
         font-size: $sub-header-mobi-425;
     }
@@ -182,6 +234,9 @@
 }
 
 @include mobile {
+    .about {
+        margin: map-get($spacing-sizes, '8') 0;
+    }
     .about h1 {
         font-size: $sub-header-mobi-375;
     }
@@ -192,6 +247,7 @@
 
     .contact h3 {
         font-size: $sub-header-mobi-375;
+        text-align: center;
     }
 
     .contact p {
@@ -199,6 +255,7 @@
     }
 
     .contact span {
+        width: 100%;
         margin: 1.313rem 0;
         font-size: $sub-header-mobi-375;
     }
@@ -216,6 +273,10 @@
     }
 }
 @include mobileSmall {
+    .about {
+        margin: map-get($spacing-sizes, '8') 0;
+    }
+
     .about h1 {
         font-size: $sub-header-mobi-320;
     }
@@ -226,6 +287,7 @@
 
     .contact h3 {
         font-size: $sub-header-mobi-320;
+        text-align: center;
     }
 
     .contact p {
@@ -233,6 +295,7 @@
     }
 
     .contact span {
+        width: 100%;
         margin: 1.313rem 0;
         font-size: $sub-header-mobi-320;
     }

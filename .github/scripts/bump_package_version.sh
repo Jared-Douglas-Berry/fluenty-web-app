@@ -20,17 +20,17 @@ increment_version() {
 case $1 in
     "MAJOR" | "major")
         new_version=$(increment_version "$current_version" 1)
-        ;
+        ;;
     "MINOR" | "minor")
         new_version=$(increment_version "$current_version" 2)
-        ;
+        ;;
     "PATCH" | "patch")
         new_version=$(increment_version "$current_version" 3)
-        ;
+        ;;
     *)
         echo "Error: Invalid argument. Please provide either MAJOR, MINOR, or PATCH."
         exit 1
-        ;
+        ;;
 esac
 
 # Update the version in package.json files

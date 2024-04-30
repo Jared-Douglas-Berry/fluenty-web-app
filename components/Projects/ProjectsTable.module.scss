@@ -5,22 +5,22 @@
 @import "../../sass/_text.scss";
 
 .projectTimeline {
+    padding: 0 0 3.75rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 3.75rem 0;
+    flex-direction: row;
     border-bottom: 0.063rem solid $grey-300;
-    padding: 3.75rem 0.938rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 3.75rem;
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
-    max-width: 100%;
-    justify-content: center;
-    flex-direction: row;
-    background-color: $grey-800;
 }
 
 .projectTimeline .container {
@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    max-width: 90%;
+    max-width: 100%;
     padding-left: 0.938rem;
     padding-right: 0.938rem;
     width: 100%;
@@ -39,14 +39,14 @@
 }
 
 .projectTimeline .content {
-    width: 100%;
+    max-width: 21.875rem;
     margin-right: 1.25rem;
 }
 
 .projectTimeline .content .serialNumber {
     color: white;
     font-weight: map-get($spacing-sizes, 'light');
-    font-size: 3.125rem;
+    font-size: map-get($font-sizes, '12');
     margin-bottom: 2.813rem;
     display: block;
     -webkit-transition: .3s;
@@ -66,15 +66,15 @@
 
 .projectTimeline .content h4 a {
     line-height: 1.4;
+    font-size: map-get($font-sizes, '6');
+    margin: 0 0 .5rem 0;
     color: white;
-    font-weight: 300;
-    font-size: $paragraph-sub-laptop-1440 !important;
-    margin-bottom: 2.813rem;
-    display: block;
+    font-weight: 600;
     -webkit-transition: .3s;
     -o-transition: .3s;
-    transition: .3s;
+    transition: 0.3s;
     text-decoration: none;
+    display: block;
 }
 
 .projectTimeline .image  {
@@ -83,31 +83,35 @@
 }
 
 .image {
-    width: 100%;
-    max-height: 100rem;
+    max-height: 100%;
     overflow: hidden;
-    display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    display: inline-block;
 }
 
 .image img {
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
     object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .rightBtn {
     visibility: visible;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .detailsBtn {
-    color: white;
-    background: $secondary;
-    border-color: $secondary;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     width: 6.25rem;
     height: 6.25rem;
     -webkit-transition: 0.5s;
@@ -151,94 +155,268 @@
     color: white;
 }
 
-.detailsBtn svg {
+.icon svg {
+    color: white;
     width: 5rem !important;
     height: 5rem !important;
 }
 
+@include desktop {
+    .projectTimeline {
+        padding: 0 0 3.75rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0 0 3.75rem 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+    }
+    .projectTimeline .content {
+        max-width: 21.875rem;
+        margin-right: 1.25rem;
+    }
+    .projectTimeline .serialNumber {
+        font-size: map-get($font-sizes, '12');
+        margin-bottom: 2.813rem;
+    }
+    .projectTimeline .content h4 a {
+        line-height: 1.4;
+        font-size: map-get($font-sizes, '6');
+        margin: 0 0 .5rem 0;
+        color: white;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+}
+
+@include tabletLandScape {
+    .projectTimeline {
+        padding: 0 0 3.75rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0 0 3.75rem 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+    }
+    .projectTimeline .content {
+        max-width: 21.875rem;
+        margin-right: 1.25rem;
+    }
+    .projectTimeline .serialNumber {
+        font-size: map-get($font-sizes, '12');
+        margin-bottom: 2.813rem;
+    }
+    .projectTimeline .content h4 a {
+        line-height: 1.4;
+        font-size: map-get($font-sizes, '6');
+        margin: 0 0 .5rem 0;
+        color: white;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+    .rightBtn {
+        visibility: hidden;
+        display: none;
+    }
+}
+
 @include tablet {
     .projectTimeline {
-        padding-bottom: 1.875rem;
-        margin-bottom: 1.875rem;
-        padding-left: 0.469rem;
-        padding-right: 0.469rem;
+        padding: 0 0 3.75rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0 0 3.75rem 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
     }
-
-    .projectTimeline .container {
-        padding-left: 0.469rem;
-        padding-right: 0.469rem;
-    }
-
-
     .projectTimeline .content {
-        max-width: 10.938rem;
-        margin-right: 0.625rem;
+        max-width: 21.875rem;
+        margin-right: 1.25rem;
     }
-
-    .projectTimeline .content .serialNumber {
-        font-size: 1.563rem;
-        margin-bottom: 1.406rem;
+    .projectTimeline .serialNumber {
+        font-size: map-get($font-sizes, '12');
+        margin-bottom: 2.813rem;
     }
-
     .projectTimeline .content h4 a {
-        line-height: .7;
-        font-size: 1.563rem;
-        margin-bottom: 1.406rem;
+        line-height: 1.4;
+        font-size: map-get($font-sizes, '6');
+        margin: 0 0 .5rem 0;
+        color: white;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
     }
-
-    .detailsBtn {
-        width: 3.125rem;
-        height: 3.125rem;
-        font-size: 0.75rem;
-        line-height: 3.125rem;
-    }
-
-    .image {
-        width: 60%;
-        max-height: 75rem;
+    .rightBtn {
+        visibility: hidden;
+        display: none;
     }
 }
 
 @include mobileLarge {
     .projectTimeline {
-        padding-bottom: 0.938rem;
-        margin-bottom: 0.938rem;
-        padding-left: 0.234rem;
-        padding-right: 0.234rem;
+        flex-direction: column;
+        padding: 0 0 3.75rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0 0 3.75rem 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
     }
-
     .projectTimeline .container {
-        padding-left: 0.234rem;
-        padding-right: 0.234rem;
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+        width: 100%;
     }
-
-
     .projectTimeline .content {
-        max-width: 5.469rem;
-        margin-right: 0.313rem;
-    }
-
-    .projectTimeline .content .serialNumber {
-        font-size: 0.969rem;
-        margin-bottom: 0.703rem;
-    }
-
-    .projectTimeline .content h4 a {
-        line-height: 1;
-        font-size: 0.969rem;
-        margin-bottom: 0.703rem;
-    }
-
-    .detailsBtn {
-        display: none;
-        visibility: hidden;
+        margin-right: 0;
     }
     .rightBtn {
-        display: none;
         visibility: hidden;
+        display: none;
+    }
+    .projectTimeline .serialNumber {
+        font-size: map-get($font-sizes, '12');
+        margin-bottom: 2.813rem;
+    }
+    .projectTimeline .content h4 a {
+        line-height: 1.4;
+        font-size: map-get($font-sizes, '6');
+        margin: 0 0 .5rem 0;
+        color: white;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
     }
     .image {
-        width: 50%;
-        max-height: 11rem;
+        max-width: 100%;
+        display: inline-block;
+        object-fit: cover;
+        max-height: 100%;
+        margin: 30px 0 0 0;
+    }
+}
+
+@include mobile {
+    .projectTimeline {
+        flex-direction: column;
+        padding: 0 0 3.75rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0 0 3.75rem 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+    }
+    .projectTimeline .container {
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .projectTimeline .content {
+        margin-right: 0;
+    }
+    .rightBtn {
+        visibility: hidden;
+        display: none;
+    }
+    .projectTimeline .serialNumber {
+        font-size: map-get($font-sizes, '12');
+        margin-bottom: 2.813rem;
+    }
+    .projectTimeline .content h4 a {
+        line-height: 1.4;
+        font-size: map-get($font-sizes, '6');
+        margin: 0 0 .5rem 0;
+        color: white;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+    .image {
+        max-width: 100%;
+        display: inline-block;
+        object-fit: cover;
+        max-height: 100%;
+        margin: 30px 0 0 0;
+    }
+}
+
+@include mobileSmall {
+    .projectTimeline {
+        flex-direction: column;
+        padding: 0 0 3.75rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0 0 3.75rem 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+    }
+    .projectTimeline .container {
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .projectTimeline .content {
+        margin-right: 0;
+    }
+    .rightBtn {
+        visibility: hidden;
+        display: none;
+    }
+    .projectTimeline .serialNumber {
+        font-size: map-get($font-sizes, '12');
+        margin-bottom: 2.813rem;
+    }
+    .projectTimeline .content h4 a {
+        line-height: 1.4;
+        font-size: map-get($font-sizes, '6');
+        margin: 0 0 .5rem 0;
+        color: white;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+    .image {
+        max-width: 100%;
+        display: inline-block;
+        object-fit: cover;
+        max-height: 100%;
+        margin: 30px 0 0 0;
     }
 }

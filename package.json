@@ -1,6 +1,6 @@
 {
   "name": "Fluenty-Web-Site",
-  "version": "1.28.1",
+  "version": "1.29.0",
   "description": "Fluenty web application",
   "private": true,
   "scripts": {
@@ -9,23 +9,23 @@
     "start": "npx serve@latest out"
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
     "aws-sdk-js-codemod": "^1.2.5",
     "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.2.2",
-    "next": "^13.0.7",
+    "next": "^13.5.6",
     "next-auth": "^4.24.6",
     "node-jose": "^2.2.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-datepicker": "^6.1.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.0.1",
     "react-loader-spinner": "^6.1.6",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.22.1"
   },
   "devDependencies": {

@@ -21,6 +21,7 @@ export default function HomePage({services, techStacks, projects, team, options,
             <Head>
                 <title>Welcome to Fluenty</title>
                 <meta name='description' content='Fluenty Development'/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </Head>
 
             <section className='pageSpace' id="home">
@@ -31,7 +32,7 @@ export default function HomePage({services, techStacks, projects, team, options,
             <section className='pageSpace' id="services">
                 <AllServices services={services}/>
                 <Link href="/services" className='detailsBtn'>
-                    View More <PiArrowBendDoubleUpRightLight />
+                    View More Services <PiArrowBendDoubleUpRightLight />
                 </Link>
             </section>
             <ScrollingBanner items={services}/>
@@ -43,21 +44,21 @@ export default function HomePage({services, techStacks, projects, team, options,
             <section className='pageSpace' id="projects">
                 <AllProjects projects={projects}/>
                 <Link href="/projects" className='detailsBtn'>
-                    View More <PiArrowBendDoubleUpRightLight />
+                    View More Projects <PiArrowBendDoubleUpRightLight />
                 </Link>
             </section>
 
             <section className='pageSpace' id="team">
                 <WholeTeam team={team}/>
                 <Link href="/team" className='detailsBtn'>
-                    View More <PiArrowBendDoubleUpRightLight />
+                    View More Team Mates <PiArrowBendDoubleUpRightLight />
                 </Link>
             </section>
 
             <section className='pageSpace' id="blogs">
                 <AllBlogs blogs={blogs}/>
                 <Link href="/blogs" className='detailsBtn'>
-                    View More <PiArrowBendDoubleUpRightLight />
+                    View More Blogs <PiArrowBendDoubleUpRightLight />
                 </Link>
             </section>
 

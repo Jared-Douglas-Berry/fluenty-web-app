@@ -1,12 +1,14 @@
 @import "./_colors.scss";
 @import "./_fonts.scss";
 @import "./_mixins.scss";
+@import "./_spacing.scss";
 @import "./_text.scss";
 
 $base-font-size: 16px;
 
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
+
 }
 
 body {
@@ -38,10 +40,10 @@ button {
   cursor: pointer;
 }
 
-ul {
+ul, li {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .center {
@@ -57,8 +59,8 @@ ul {
 }
 
 .pageSpace {
-  padding: 0 8rem;
-  margin: 0 .5rem;
+  padding: 0 map-get($spacing-sizes, '4');
+  margin: 0 map-get($spacing-sizes, '11');
 }
 
 .detailsBtn {
@@ -66,7 +68,7 @@ ul {
   display: flex;
   justify-content: center;
   align-content: center;
-  font-size: map-get($font-sizes, '12');
+  font-size: map-get($font-sizes, '4');
   margin: 2rem 0;
 }
 
@@ -75,49 +77,51 @@ ul {
 }
 
 .detailsBtn svg {
-  width:3.125rem !important;
-  height:3.125rem !important;
+  margin-left: 1rem !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
 }
+
 
 @include desktopLarge {
   .pageSpace {
-    padding: 0 8rem;
-    margin: 0 .5rem;
+    padding: 0 map-get($spacing-sizes, '4');
+    margin: 0 map-get($spacing-sizes, '11');
   }
 }
 @include desktop {
   .pageSpace {
-    padding: 0 8rem;
-    margin: 0 .5rem;
+    padding: 0 map-get($spacing-sizes, '3');
+    margin: 0 map-get($spacing-sizes, '8');
   }
 }
 @include tabletLandScape {
   .pageSpace {
-    padding: 0 4rem;
-    margin: 0 .25rem;
+    padding: 0 map-get($spacing-sizes, '3');
+    margin: 0 map-get($spacing-sizes, '6');
   }
 }
 @include tablet {
   .pageSpace {
-    padding: 0 4rem;
-    margin: 0 .25rem;
+    padding: 0 map-get($spacing-sizes, '3');
+    margin: 0 map-get($spacing-sizes, '6');
   }
 }
 @include mobileLarge {
   .pageSpace {
-    padding: 0;
-    margin: 0;
+    padding: 0 map-get($spacing-sizes, '3');
+    margin: 0 ;
   }
 }
 @include mobile {
   .pageSpace {
-    padding: 0;
+    padding: 0 map-get($spacing-sizes, '3');
     margin: 0;
   }
 }
 @include mobileSmall {
   .pageSpace {
-    padding: 0;
+    padding: 0 map-get($spacing-sizes, '3');
     margin: 0;
   }
 }

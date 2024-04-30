@@ -39,3 +39,30 @@
         height: 1.563rem;
     }
 }
+
+@include mobileLarge {
+    .dropdown select {
+        padding: 0.5rem 0;
+        margin: 0.625rem 0;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
+
+@include mobile {
+    .dropdown select {
+        padding: 0.5rem 0;
+        margin: 0.625rem 0;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
+
+@include mobileSmall {
+    .dropdown select {
+        padding: 0.5rem 0;
+        margin: 0.625rem 0;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
