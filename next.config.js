@@ -24,6 +24,7 @@ module.exports = (phase) => {
             env: {
                 // NEXTAUTH_URL: 'https://vite.fluenty.co.za/',
                 // NEXTAUTH_SECRET: generateKey(),
+                NEXTAUTH_URL: 'https://d36841g6o19rmz.cloudfront.net/',
                 mongodb_username: 'fluenty',
                 mongodb_password: 'e9jcfRdqz6QcqyW7',
                 mongodb_clustername: 'cluster0',
@@ -52,7 +53,7 @@ module.exports = (phase) => {
             unoptimized: true,
         },
         env: {
-            NEXTAUTH_URL: 'https://vite.fluenty.co.za/',
+            NEXTAUTH_URL: 'https://d36841g6o19rmz.cloudfront.net/',
             // NEXTAUTH_SECRET: generateKey(),
             mongodb_username: 'fluenty',
             mongodb_password: 'e9jcfRdqz6QcqyW7',
