@@ -43,6 +43,6 @@ export async function getStaticProps() {
         props: {
             blogs: serializedBlogs,
         },
-        revalidate: 1800,
+        // revalidate: 1800,
     };
 }
