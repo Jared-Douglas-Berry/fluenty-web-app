@@ -5,10 +5,9 @@
 @import "../../sass/_text.scss";
 
 .pill {
-    background-color: $grey-50;
-    text-align: center;
     padding: 1.063rem 2.5rem;
     border-radius: 2.5rem;
+    background-color: $grey-50;
     margin-bottom: 2.188rem;
     margin-left: 0.938rem;
     margin-right: 0.938rem;
@@ -18,80 +17,106 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    justify-content: center;
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
     -webkit-box-shadow: 0 0.313rem 0 0 $primary;
     box-shadow: 0 0.313rem 0 0 $primary;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
 }
 
 .icon {
-    margin-right: 0.313rem;
-    width: 2rem;
-    max-height: 2rem;
-    overflow: hidden;
-    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .icon img {
     display: inline-block;
     object-fit: cover;
+    vertical-align: middle;
+    max-width: 100%;
 }
 
 .content {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .content h2 {
-    margin: 0;
+    margin-left: 1rem;
     font-size: map-get($font-sizes, '6');
     color: $black-25;
 }
 
-@include tablet {
+@include mobileLarge {
     .pill {
-        padding: 0.531rem 1.25rem;
-        margin-bottom: 1.094rem;
-        margin-left: 0.469rem;
-        margin-right: 0.469rem;
+        padding: 0.5rem 0.938rem;
+        margin-left: 0.313rem;
+        margin-right: 0.313rem;
+        margin-bottom: 1.25rem;
     }
 
     .icon {
-        margin-right: 0.156rem;
-        width: 1rem;
-        max-height: 1rem;
+        max-width: 1.25rem;
+        max-height: 1.25rem;
+    }
+
+    .icon img {
+        max-width: 1.25rem;
+        max-height: 1.25rem;
     }
 
     .content h2 {
-        font-size: map-get($font-sizes, '3');
+        margin-left: 0.5rem;
+        font-size: map-get($font-sizes, '4');
     }
 }
 
-@include mobileLarge {
+@include mobile {
     .pill {
-        padding: 0.266rem 0.625rem;
-        margin-bottom: 0.547rem;
-        margin-left: 0.234rem;
-        margin-right: 0.234rem;
+        padding: 0.5rem 0.938rem;
+        margin-left: 0.313rem;
+        margin-right: 0.313rem;
+        margin-bottom: 1.25rem;
     }
 
     .icon {
-        margin-right: 0.078rem;
-        width: 1rem;
-        max-height: 1rem;
+        max-width: 1.25rem;
+        max-height: 1.25rem;
+    }
+
+    .icon img {
+        max-width: 1.25rem;
+        max-height: 1.25rem;
     }
 
     .content h2 {
-        font-size: map-get($font-sizes, '3');
+        margin-left: 0.5rem;
+        font-size: map-get($font-sizes, '4');
+    }
+}
+
+@include mobileSmall {
+    .pill {
+        padding: 0.5rem 0.938rem;
+        margin-left: 0.313rem;
+        margin-right: 0.313rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .icon {
+        max-width: 1.25rem;
+        max-height: 1.25rem;
+    }
+
+    .icon img {
+        max-width: 1.25rem;
+        max-height: 1.25rem;
+    }
+
+    .content h2 {
+        margin-left: 0.5rem;
+        font-size: map-get($font-sizes, '4');
     }
 }

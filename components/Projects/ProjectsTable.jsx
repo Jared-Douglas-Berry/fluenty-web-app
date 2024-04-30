@@ -21,11 +21,12 @@ export default function ProjectsTable({ projects }) {
                             </h4>
                         </div>
                         <div className={styles.image}>
-                            <Image src={project.image} alt={project.title} width={300} height={300}/>
+                            <Image src={project.image} alt={project.title} width={400} height={300}/>
                         </div>
                         <div className={styles.rightBtn}>
                             <Link href={`/projects/${project.slug}`} className={styles.detailsBtn}>
-                                <PiArrowBendDoubleUpRightLight className={styles.icon}/>
+                                <span className={styles.icon}><PiArrowBendDoubleUpRightLight /></span>
+
                             </Link>
                         </div>
                     </div>

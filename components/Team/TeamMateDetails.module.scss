@@ -4,160 +4,213 @@
 @import "../../sass/_spacing.scss";
 @import "../../sass/_text.scss";
 
-.container {
+.pb130, .py130 {
+  padding-bottom: 8.125rem;
+}
+
+.pt220, .py220 {
+  padding-top: 6.875rem;
+}
+
+.rel {
+  position: relative;
+}
+
+.container  {
   width: 100%;
+  padding-right: .75rem;
+  padding-left: .75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 0 9.375rem;
-  margin: 9.375rem 0;
+  flex-wrap: wrap;
+  margin-top: calc($gutter-y * -1);
 }
 
-.content {
-  flex: .5;
-  padding: 0 3.125rem;
+.row>* {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc($gutter-x-gap100 * .5);
+  padding-left: calc($gutter-x-gap100* .5);
+  margin-top: $gutter-y;
 }
 
-.content h1 {
-  font-size: map-get($font-sizes, '20');
-  margin: 3.125rem auto 1.563rem auto;
+.colLg6 {
+  flex: 0 0 auto;
+  width: 50%;
 }
 
-.content h3 {
-  font-size: map-get($font-sizes, '10');
-  margin: 0;
+.delay02s {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
-.content p {
-  font-size: map-get($font-sizes, '6');
-  margin: 3.125rem auto 3.125rem auto;
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
 }
 
-.gITContainer {
-  margin: 1.25rem 0;
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+.teamProfileImage img {
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  max-height: 100%;
+  height: 100%;
+}
+
+.teamProfileImage img {
+  vertical-align: middle;
+}
+
+.teamProfileContent h2 {
+  font-size: 4.063rem;
+  margin-bottom: 1.25rem;
+}
+
+.teamProfileContent .designation {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 3.125rem;
+}
+
+.teamProfileContent p {
+  font-size: 1.125rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.mb30, .my30 {
+  margin-bottom: 1.875rem;
+}
+
+.mt55, .my55 {
+  margin-top: 3.438rem;
+}
+
+.teamSubTitle h4 {
+  line-height: 1.4;
+  font-size: 1.5rem;
+}
+
+.contactInfoItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
-.gITContainer span {
-  border: 0.063rem solid $primary;
-  width: 3.125rem;
-  height: 3.125rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $primary;
-  color: $black-0;
+.contactInfoItem:not(:last-child) {
+  margin-bottom: 2.188rem;
 }
 
-.gITContent {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1.25rem;
-}
-
-.gITContent h1, .gITContent h3 {
-  margin: 0;
-  font-size: map-get($font-sizes, '6');
+.contactInfoItem .icon {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  font-size: 1.25rem;
   color: $grey-50;
+  margin-right: 1.563rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  background: $primary;
+  line-height: 3.75rem;
+  border-radius: 50%;
+  text-align: center;
 }
 
-.gITContent h2, .gITContent h4 {
-  margin: 0;
-  font-size: map-get($font-sizes, '5');
-  color: $grey-200;
+.icon svg {
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
 }
 
-.gITContent:hover h4 {
-  font-size: map-get($font-sizes, '6');
+.contactInfoItem .content .title {
+  color: white;
+  display: block;
+}
+
+.contactInfoItem .content b {
+  font-weight: bolder;
+}
+
+.text, .text a {
+  color: $grey-400;
+}
+
+.text:hover a {
   color: $primary;
 }
 
-.image {
-  flex: .5;
-  padding: 6.25rem 3.125rem;
-  width: 100%;
-  max-height: 80rem;
-  overflow: hidden;
-}
-
-.image img {
-  object-fit: cover;
-}
-
-.gITContainer svg {
-  width: 1.875rem;
-  height: 1.875rem;
-}
-
 @include tablet {
-  .container {
-    padding: 0 4.688rem;
-    margin: 4.688rem 0;
+  .pt220, .py220 {
+    padding-top: 6.875rem;
   }
 
-  .content {
-    padding: 0 1.563rem;
+  .teamProfileContent h2 {
+    font-size: 2.5rem;
   }
 
-  .content h1 {
-    font-size: map-get($font-sizes, '10');
-  }
-
-  .content h3 {
-    font-size: map-get($font-sizes, '5');
-  }
-
-  .content p {
-    font-size: map-get($font-sizes, '4');
-    margin: 1.563rem auto 1.563rem auto;
-  }
-
-  .gITContainer {
-    margin: 0.625rem 0;
-  }
-
-  .gITContainer span {
-    width: 1.563rem;
-    height: 1.563rem;
-  }
-
-  .gITContent {
-    margin-left: 0.625rem;
-  }
-
-  .gITContent h1, .gITContent h3 {
-    font-size: map-get($font-sizes, '3');
-  }
-
-  .gITContent h2, .gITContent h4 {
-    font-size: map-get($font-sizes, '3');
-  }
-
-  .gITContent:hover h4 {
-    font-size: map-get($font-sizes, '3');
-  }
-
-  .image {
-    padding: 3.125rem 1.563rem;
-    max-height: 40rem;
-    max-width: 20rem;
-  }
-
-  .gITContainer svg {
-    width: 0.938rem;
-    height: 0.938rem;
+  .colLg6 {
+    flex: 0 0 auto;
+    width: 100%;
   }
 }
 
 @include mobileLarge {
-  .container {
-    flex-direction: column;
+  .pt220, .py220 {
+    padding-top: 3.75rem;
   }
 
-  .image {
-    padding: 0 1.563rem;
+  .teamProfileContent h2 {
+    font-size: 2.188rem;
+  }
+
+  .colLg6 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+@include mobile {
+  .pt220, .py220 {
+    padding-top: 3.75rem;
+  }
+
+  .teamProfileContent h2 {
+    font-size: 1.875rem;
+  }
+
+  .colLg6 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+@include mobileSmall {
+  .pt220, .py220 {
+    padding-top: 3.75rem;
+  }
+  .teamProfileContent h2 {
+    font-size: 1.875rem;
+  }
+
+  .colLg6 {
+    flex: 0 0 auto;
+    width: 100%;
   }
 }

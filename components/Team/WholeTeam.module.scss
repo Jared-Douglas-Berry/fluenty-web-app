@@ -6,7 +6,7 @@
 
 .projects {
   width: 100%;
-  margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+  margin: map-get($spacing-sizes, '8') 0;
 }
 
 .projects h1 {
@@ -32,11 +32,17 @@
   width: 100%;
 }
 
-@include tablet {
-  .projects {
-    margin: map-get($spacing-sizes, '4') map-get($spacing-sizes, '2');
+@include desktop {
+  .projects h1 {
+    font-size: $sub-header-laptop-1024;
   }
 
+  .projects h3 {
+    font-size: $blue-sub-header-laptop-1024;
+  }
+}
+
+@include tabletLandScape {
   .projects h1 {
     font-size: $sub-header-tab-768;
   }
@@ -44,17 +50,19 @@
   .projects h3 {
     font-size: $blue-sub-header-tab-768;
   }
+}
 
-  .content {
-    margin-bottom: 0.469rem;
+@include tablet {
+  .projects h1 {
+    font-size: $sub-header-tab-768;
+  }
+
+  .projects h3 {
+    font-size: $blue-sub-header-tab-768;
   }
 }
 
 @include mobileLarge {
-  .projects {
-    margin: map-get($spacing-sizes, '2') map-get($spacing-sizes, '1');
-  }
-
   .projects h1 {
     font-size: $sub-header-mobi-425;
   }
@@ -62,8 +70,24 @@
   .projects h3 {
     font-size: $blue-sub-header-mobi-425;
   }
+}
 
-  .content {
-    margin-bottom: 0.234rem;
+@include mobile {
+  .projects h1 {
+    font-size: $sub-header-mobi-375;
+  }
+
+  .projects h3 {
+    font-size: $blue-sub-header-mobi-375;
+  }
+}
+
+@include mobileSmall {
+  .projects h1 {
+    font-size: $sub-header-mobi-320;
+  }
+
+  .projects h3 {
+    font-size: $blue-sub-header-mobi-320;
   }
 }

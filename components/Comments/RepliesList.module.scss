@@ -4,12 +4,8 @@
 @import "../../sass/_spacing.scss";
 @import "../../sass/_text.scss";
 
-.commentsList {
-
-}
-
-.commentBody {
-  margin-bottom: 55px;
+.replyBody {
+  margin: 25px;
 }
 
 .delay02s {
@@ -22,16 +18,15 @@
   animation-name: fadeInUp;
 }
 
-.commentBody .authorThumb {
+.replyBody .authorThumb {
   -webkit-box-flex: 0;
   -ms-flex: none;
   flex: none;
   max-width: 100px;
-  margin-right: 40px;
-  margin-bottom: 20px;
+  margin-right: 10px;
 }
 
-.commentBody .authorThumb img {
+.replyBody .authorThumb img {
   border-radius: 50%;
 }
 
@@ -41,11 +36,11 @@
   vertical-align: middle;
 }
 
-.commentBody .content .blogMeta {
+.replyBody .content .blogMetaReply {
   margin-bottom: 5px;
 }
 
-.blogMeta {
+.blogMetaReply {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,11 +51,11 @@
   align-items: center;
 }
 
-.commentBody .content .blogMeta li {
+.replyBody .content .blogMetaReply li {
   text-transform: capitalize;
 }
 
-.blogMeta li {
+.blogMetaReply li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,14 +72,14 @@
   color: $secondary;
 }
 
-.commentBody .content h6 {
+.replyBody .content h6 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
   color: $secondary;
 }
 
-.blogMeta li:not(:last-child):after {
+.blogMetaReply li:not(:first-child):not(:last-child):after {
   content: '';
   width: 5px;
   height: 5px;
@@ -101,7 +96,7 @@
   justify-content: flex-start;
 }
 
-.commentsList button, {
+.replyList button, {
   font: inherit;
   border-radius: 0.375rem;
   padding: 0;
@@ -112,99 +107,92 @@
   display: flex;
 }
 
-.commentsList button:hover, .commentsList button:active {
+.replyList button:hover, .replyList button:active {
   background-color: transparent!important;
   border: none;
-  color: $primary;
-  text-decoration: underline;
-}
-
-.readMoreBtn, {
-  font: inherit;
-  border-radius: 0.375rem;
-  padding: 0;
-  background-color: transparent!important;
-  color: $secondary !important;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  margin-bottom: 20px!important;
-}
-
-.readMoreBtn:hover {
-  background-color: transparent!important;
-  border: none;
-  color: $secondary !important;
+  color: #37A4E1;
   text-decoration: underline;
 }
 
 @include tablet {
-  .blogMeta li {
+  .blogMetaReply li {
     font-size: 15px;
   }
 
-  .blogMeta li:not(:last-child):after {
+  .blogMetaReply li:not(:first-child):not(:last-child):after {
     margin-left: 14px;
     margin-right: 14px;
   }
 }
 
 @include mobileLarge {
-  .commentBody .authorThumb {
+  .replyBody .authorThumb {
     margin-right: 25px;
   }
 
-  .blogMeta li {
+  .blogMetaReply li {
     font-size: 15px;
   }
 
-  .blogMeta li:not(:last-child):after {
+  .blogMetaReply li:not(:first-child):not(:last-child):after {
     margin-left: 14px;
     margin-right: 14px;
   }
 
-  .commentForm {
+  .replyForm {
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .replyBody {
+    margin: 10px;
   }
 }
 
 @include mobile {
-  .commentBody .authorThumb {
+  .replyBody .authorThumb {
     margin-right: 25px;
   }
 
-  .blogMeta li {
+  .blogMetaReply li {
     font-size: 15px;
   }
 
-  .blogMeta li:not(:last-child):after {
+  .blogMetaReply li:not(:first-child):not(:last-child):after {
     margin-left: 14px;
     margin-right: 14px;
   }
 
-  .commentForm {
+  .replyForm {
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .replyBody {
+    margin: 10px;
   }
 }
 
 @include mobileSmall {
-  .commentBody .authorThumb {
+  .replyBody .authorThumb {
     margin-right: 25px;
   }
 
-  .blogMeta li {
+  .blogMetaReply li {
     font-size: 15px;
   }
 
-  .blogMeta li:not(:last-child):after {
+  .blogMetaReply li:not(:first-child):not(:last-child):after {
     margin-left: 14px;
     margin-right: 14px;
   }
 
-  .commentForm {
+  .replyForm {
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .replyBody {
+    margin: 10px;
   }
 }

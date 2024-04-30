@@ -5,7 +5,6 @@
 @import "../../sass/_text.scss";
 
 .projects {
-    width: 100%;
     margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
 }
 
@@ -31,8 +30,10 @@
 }
 
 .image {
+    height: 100%;
     width: 100%;
-    max-height: 100rem;
+    max-height: 100%;
+    max-width: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -42,6 +43,10 @@
 
 .image img {
     object-fit: cover;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .contentCenter {
@@ -64,38 +69,79 @@
     font-size: map-get($font-sizes, '5');
 }
 
-.grid {
-    width: 85%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-    gap: 1.5rem;
-    align-content: center;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc($gutter-y * -1);
 }
 
-.grid > *:first-child {
-    grid-column: span 2; /* Adjust the span value to make it wider */
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.pb35, .py35 {
+    padding-bottom: 2.188rem;
+}
+
+.delay02s {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.row>* {
+    flex-shrink: 0;
+    padding-right: calc($gutter-x * .5);
+    padding-left: calc($gutter-x * .5);
+    margin-top: $gutter-y;
+}
+
+.colLg4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+.mb30, .my30 {
+    margin-bottom: 1.875rem;
+    padding-left: 3rem;
+}
+
+.colLg8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+}
+
+.rowCols>* {
+    flex: 0 0 auto;
+    width: 25%
+}
+
+.col {
+    flex: 1 0 0%;
+}
+
+.mb20, .my20 {
+    margin-bottom: 1.25rem;
+}
+
+.mt2 {
+    margin-top: -2rem;
 }
 
 .gridTwo {
-    width: 85%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-    gap: 1.5rem;
-    align-content: center;
+    margin: 0 map-get($spacing-sizes, '12');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.gridTwo > *:first-child {
-    grid-column: span 2; /* Adjust the span value to make it wider */
-}
-
-.gridTwo > *:nth-child(2) {
-    grid-column: span 3;
+.gridTwo h2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
 }
 
 .line {
@@ -157,15 +203,141 @@
         font-size: map-get($font-sizes, '4');
     }
 
-    .grid {
-        width: 85%;
-        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-        gap: 1.5rem;
+    .row {
+        margin-right: 2.5rem;
+        margin-left: 2.5rem;
+    }
+
+    .rowCols>* {
+        flex: 0 0 auto;
+        width: 50%
+    }
+
+    .colLg4 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .colLg8 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .display {
+        display: none;
     }
 
     .gridTwo {
         width: 85%;
         grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
         gap: 1.5rem;
+    }
+}
+
+@include mobileLarge {
+    .projects h1 {
+        font-size: $sub-header-mobi-425;
+    }
+
+    .projects h3 {
+        font-size: $blue-sub-header-mobi-425;
+    }
+
+    .rowCols>* {
+        flex: 0 0 auto;
+        width: 100%
+    }
+
+    .colLg4 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .colLg8 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .display {
+        display: none;
+    }
+
+    .contentCenter {
+        margin: 1rem auto;
+    }
+
+    .contentCenter h2 {
+        font-size: map-get($font-sizes, '8');
+    }
+    .gridTwo {
+        margin: 0 map-get($spacing-sizes, '4');
+    }
+}
+
+@include mobile {
+    .projects h1 {
+        font-size: $sub-header-mobi-375;
+    }
+
+    .projects h3 {
+        font-size: $blue-sub-header-mobi-375;
+    }
+
+    .rowCols>* {
+        flex: 0 0 auto;
+        width: 100%
+    }
+
+    .colLg4 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .colLg8 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .display {
+        display: none;
+    }
+
+    .contentCenter {
+        margin: 1rem auto;
+    }
+
+    .contentCenter h2 {
+        font-size: map-get($font-sizes, '8');
+    }
+
+    .gridTwo {
+        margin: 0 map-get($spacing-sizes, '4');
+    }
+}
+
+@include mobileSmall {
+    .projects h1 {
+        font-size: $sub-header-mobi-320;
+    }
+
+    .projects h3 {
+        font-size: $blue-sub-header-mobi-320;
+    }
+
+    .rowCols>* {
+        flex: 0 0 auto;
+        width: 100%
+    }
+
+    .contentCenter {
+        margin: 1rem auto;
+    }
+
+    .contentCenter h2 {
+        font-size: map-get($font-sizes, '8');
+    }
+
+    .gridTwo {
+        margin: 0 map-get($spacing-sizes, '4');
     }
 }

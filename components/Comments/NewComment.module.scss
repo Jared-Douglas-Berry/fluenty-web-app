@@ -4,47 +4,178 @@
 @import "../../sass/_spacing.scss";
 @import "../../sass/_text.scss";
 
-.form {
-  margin: 2rem auto;
-  width: 100%;
-  border-radius: 0.375rem;
-  background-color: $black-100;
-  box-shadow: 0 0.125rem 0.5rem rgba(255, 255, 255, 0.6);
-  padding: 1rem;
-  max-width: 40rem;
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.delay02s {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.commentForm {
+  padding: 40px 60px 50px;
+}
+
+.mt95, .my95 {
+  margin-top: 95px;
+}
+
+.bgcLighter {
+  background-color: $grey-700;
+}
+
+.commentForm h4 {
+  margin-bottom: 5px;
+  line-height: 1.4;
+  font-size: 24px;
+}
+
+.commentForm p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.mt30, .my30 {
+  margin-top: 30px;
 }
 
 .row {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  margin-top: calc($gutter-y * -1);
+  margin-right: calc($gutter-x * -.5);
+  margin-left: calc($gutter-x * -.5);
 }
 
-.control {
-  margin-bottom: 0.5rem;
-  flex: 1;
-  min-width: 10rem;
-}
-
-.control label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: white;
-  text-align: left;
-}
-
-.control input,
-.control textarea {
-  font: inherit;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  border-bottom:  0.188rem; solid $primary;
+.row>* {
+  flex-shrink: 0;
   width: 100%;
-  background-color: $grey-600;
-  color: $grey-50;
+  max-width: 100%;
+  padding-right: calc($gutter-x * .5);
+  padding-left: calc($gutter-x * .5);
+  margin-top: $gutter-y;
 }
 
-.form button {
-  background-color: white!important;
+.colMd6 {
+  flex: 0 0 auto;
+  width: 50%
+}
+
+.commentForm .formGroup {
+  margin-bottom: 30px;
+}
+
+.commentForm .formControl {
+  color: $grey-50;
+  border: none;
+  border-radius: 0;
+  padding: 18px 30px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.formControl input, .formControl textarea {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  padding: 15px 30px;
+  background-color: $grey-50;
+  border: 1px solid $primary;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.formControl {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $grey-600;
+  background-color: $grey-50;
+  background-clip: padding-box;
+  border: 1px solid $grey-50;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.mb0 {
+  margin-bottom: 0 !important;
+}
+
+.themeBtn.styleTwo, a.themeBtn.styleTwo {
+  color: $secondary;
+  background: $primary;
+  border-color: $primary;
+  cursor: pointer;
+}
+
+.themeBtn, a.themeBtn {
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: 600;
+  text-align: center;
+  padding: 13px 35px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background: transparent;
+  color: $secondary;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  border: 1px solid $secondary;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+@include mobileLarge {
+  .commentForm {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .colMd6 {
+    flex: 0 0 auto;
+    width: 100%
+  }
+}
+
+@include mobile {
+  .commentForm {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .colMd6 {
+    flex: 0 0 auto;
+    width: 100%
+  }
+}
+
+@include mobileSmall {
+  .commentForm {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .colMd6 {
+    flex: 0 0 auto;
+    width: 100%
+  }
 }

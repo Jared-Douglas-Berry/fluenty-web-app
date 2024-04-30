@@ -5,10 +5,29 @@
 @import "../../sass/_text.scss";
 
 .main {
+    width: 100vw;
     padding: 0 0 6.25rem  0;
 }
 
 @include tablet {
+    .main {
+        padding: 0 0 3.125rem 0;
+    }
+}
+
+@include mobileLarge {
+    .main {
+        padding: 0 0 3.125rem 0;
+    }
+}
+
+@include mobile {
+    .main {
+        padding: 0 0 3.125rem 0;
+    }
+}
+
+@include mobileSmall {
     .main {
         padding: 0 0 3.125rem 0;
     }

@@ -6,7 +6,7 @@
 
 .contactUs {
     width: 100%;
-    margin: map-get($spacing-sizes, '8') map-get($spacing-sizes, '4');
+    margin: map-get($spacing-sizes, '8') 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@
 }
 
 .form {
-    width: 80%;
+    width: 100%;
 }
 
 .content {
@@ -126,8 +126,7 @@
 
 @include tablet {
     .contactUs {
-        max-width: 30rem;
-        margin: map-get($spacing-sizes, '4') auto;
+        max-width: 100%;
     }
 
     .contactUs h1 {
@@ -161,6 +160,7 @@
         margin: 0.313rem;
         height: 11.563rem;
        font-size: map-get($font-sizes, '3');
+        width: 94%;
     }
 
     .icon {
@@ -180,11 +180,81 @@
 
 @include mobileLarge {
     .contactUs {
-        max-width: 18rem;
-        margin: map-get($spacing-sizes, '2') auto;
+        max-width: 100%;
     }
 
     .sections {
         flex-direction: column;
+    }
+
+    .input {
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+        margin: 0.625rem 0;
+    }
+
+    .form {
+        width: 96%;
+    }
+
+    .textBox {
+        padding: 0.5rem 0;
+        margin: 1.625rem 0;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
+
+@include mobile {
+    .contactUs {
+        max-width: 100%;
+    }
+
+    .sections {
+        flex-direction: column;
+    }
+
+    .input {
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+        margin: 0.625rem 0;
+    }
+
+    .form {
+        width: 96%;
+    }
+
+    .textBox {
+        padding: 0.5rem 0;
+        margin: 1.625rem 0;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
+
+@include mobileSmall {
+    .contactUs {
+        max-width: 100%;
+    }
+
+    .sections {
+        flex-direction: column;
+    }
+
+    .input {
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+        margin: 0.625rem 0;
+    }
+
+    .form {
+        width: 96%;
+    }
+
+    .textBox {
+        padding: 0.5rem 0;
+        margin: 1.625rem 0;
+        width: 100%;
+        font-size: 1.5rem;
     }
 }

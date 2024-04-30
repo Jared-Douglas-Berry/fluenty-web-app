@@ -1,10 +1,9 @@
 $desktopLarge: 2560px;
-$desktopMax: 1199px;
-$desktopMin: 992px;
-$tabletLandScape: 991px;
+$desktop: 1199px;
+$tabletLandScape: 992px;
 $tablet: 780px;
 $mobileLarge: 479px;
-$mobile: 374px;
+$mobile: 375px;
 $mobileSmall: 320px;
 
 @mixin mobileSmall {
@@ -38,7 +37,7 @@ $mobileSmall: 320px;
 }
 
 @mixin desktop {
-  @media screen and (min-width: #{$desktopMin}) and (max-width: #{$desktopMax}) {
+  @media screen and (min-width: #{$tabletLandScape}) and (max-width: #{$desktop}) {
     @content;
   }
 }

@@ -31,6 +31,17 @@
     margin-bottom: 0.938rem;
 }
 
+@include desktop {
+    .services h1 {
+        font-size: $sub-header-laptop-1024;
+    }
+
+    .services h3 {
+        font-size: $blue-sub-header-laptop-1024;
+    }
+}
+
+
 @include tablet {
     .services {
         max-width: 30rem;
@@ -48,8 +59,8 @@
 
 @include mobileLarge {
     .services {
-        max-width: 15rem;
-        margin: map-get($spacing-sizes, '2') auto;
+        max-width: 100%;
+        margin: map-get($spacing-sizes, '1') ;
     }
 
     .services h1 {
@@ -58,5 +69,35 @@
 
     .services h3 {
         font-size: $blue-sub-header-mobi-425;
+    }
+}
+
+@include mobile {
+    .services {
+        max-width: 100%;
+        margin: map-get($spacing-sizes, '1') 0;
+    }
+
+    .services h1 {
+        font-size: $sub-header-mobi-375;
+    }
+
+    .services h3 {
+        font-size: $blue-sub-header-mobi-375;
+    }
+}
+
+@include mobileSmall {
+    .services {
+        max-width: 100%;
+        margin: map-get($spacing-sizes, '1') 0;
+    }
+
+    .services h1 {
+        font-size: $sub-header-mobi-320;
+    }
+
+    .services h3 {
+        font-size: $blue-sub-header-mobi-320;
     }
 }

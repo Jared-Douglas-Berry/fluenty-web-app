@@ -5,7 +5,6 @@
 @import "../../sass/_text.scss";
 
 .footer {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,6 +13,8 @@
     background-color: $grey-900;
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 999;
 }
 
@@ -47,8 +48,17 @@
     align-items: center;
 }
 
-.navigation p {
+.navigationCopy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigationCopy p {
     font-size: map-get($font-sizes, '4');
+    margin: 0;
+    padding: 0;
 }
 
 .logo svg {
@@ -78,6 +88,116 @@
 
     .navigation p {
         font-size: map-get($font-sizes, '2');
+    }
+
+    .logo svg {
+        width: 0.938rem;
+        height: 0.938rem;
+    }
+
+    .navigation svg {
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+}
+
+@include mobileLarge {
+    .footer {
+        flex-direction: column;
+        padding: .5rem;
+        height: map-get($height-sizes, '10');
+    }
+
+    .navigation a {
+        font-size: map-get($font-sizes, '2');
+    }
+
+    .linkItem {
+        padding: 0 1.25rem;
+    }
+
+    .navigationCopy {
+        flex-direction: row;
+    }
+
+    .navigationCopy p {
+        font-size: map-get($font-sizes, '2');
+        margin: 0 1rem;
+        padding: 0;
+    }
+
+    .logo svg {
+        width: 0.938rem;
+        height: 0.938rem;
+    }
+
+    .navigation svg {
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+}
+
+@include mobile {
+    .footer {
+        flex-direction: column;
+        padding: .5rem;
+        height: map-get($height-sizes, '10');
+    }
+
+
+    .navigation a {
+        font-size: map-get($font-sizes, '2');
+    }
+
+    .linkItem {
+        padding: 0 1.25rem;
+    }
+
+    .navigationCopy {
+        flex-direction: row;
+    }
+
+    .navigationCopy p {
+        font-size: map-get($font-sizes, '2');
+        margin: 0 1rem;
+        padding: 0;
+    }
+
+    .logo svg {
+        width: 0.938rem;
+        height: 0.938rem;
+    }
+
+    .navigation svg {
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+}
+
+@include mobileSmall {
+    .footer {
+        flex-direction: column;
+        padding: .5rem;
+        height: map-get($height-sizes, '10');
+    }
+
+
+    .navigation a {
+        font-size: map-get($font-sizes, '2');
+    }
+
+    .linkItem {
+        padding: 0 1.25rem;
+    }
+
+    .navigationCopy {
+        flex-direction: row;
+    }
+
+    .navigationCopy p {
+        font-size: map-get($font-sizes, '2');
+        margin: 0 1rem;
+        padding: 0;
     }
 
     .logo svg {

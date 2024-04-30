@@ -1,0 +1,29 @@
+@import "../../sass/_colors.scss";
+@import "../../sass/_fonts.scss";
+@import "../../sass/_mixins.scss";
+@import "../../sass/_spacing.scss";
+@import "../../sass/_text.scss";
+
+.z1 {
+  z-index: 1;
+}
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white; /* Adjust the background color as needed */
+  border: 1px solid black; /* Example border style */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Example box shadow */
+  z-index: 2; /* Higher z-index for content */
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Adjust the transparency as needed */
+}
