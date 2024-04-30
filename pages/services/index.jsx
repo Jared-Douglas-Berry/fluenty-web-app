@@ -37,6 +37,6 @@ export async function getStaticProps() {
         props: {
             services: serializedServices,
         },
-        // revalidate: 1800,
+        revalidate: 1800,
     };
 }

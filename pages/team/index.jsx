@@ -47,6 +47,6 @@ export async function getStaticProps() {
         props: {
             team: serializedTeam,
         },
-        // revalidate: 1800,
+        revalidate: 1800,
     };
 }

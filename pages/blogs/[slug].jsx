@@ -98,7 +98,7 @@ export async function getStaticProps(context) {
                     slug: blog.title.trim().replace(/\s+/g, "-")
                 },
             },
-            // revalidate: 1
+            revalidate: 1
         };
     } catch (error) {
         console.error("Error fetching blogs:", error);
