@@ -15,7 +15,7 @@
     "express-session": "^1.18.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.2.2",
-    "next": "^13.5.6",
+    "next": "^14.1.1",
     "next-auth": "^4.24.6",
     "node-jose": "^2.2.0",
     "passport": "^0.7.0",
